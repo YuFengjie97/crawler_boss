@@ -5,7 +5,8 @@
   "main": "index.js",
   "workspaces": [],
   "scripts": {
-    "crawler": "pnpm -r run crawler"
+    "crawler": "pnpm -r run crawler",
+    "dev": "pnpm -r run dev"
   },
   "keywords": [],
   "author": "",
