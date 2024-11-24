@@ -1,4 +1,5 @@
 import * as echarts from 'echarts';
+import { type JobInfo } from '@crawler/types/index'
 
 const a: JobInfo[] = []
 

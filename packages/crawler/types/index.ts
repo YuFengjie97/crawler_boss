@@ -1,8 +1,5 @@
-export { }
 
-declare global {
-
-  interface JobInfo {
+export  interface JobInfo {
     job_name: string
     areaBusiness: string // 地区
     salary: string
@@ -19,4 +16,3 @@ declare global {
     boss_active_time: string
     detail: string
   }
-}
