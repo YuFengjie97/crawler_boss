@@ -2,6 +2,7 @@ import { By, Builder, Browser, WebElement, WebDriver, until } from "selenium-web
 import fs from 'fs'
 import { type JobInfo } from './types/index'
 import { type Params, areabussiness_map, degree_map, experience_map } from './params/index'
+import * as chrome from 'selenium-webdriver/chrome';
 
 class Crawler {
   base_url = 'https://www.zhipin.com/web/geek/job'
@@ -338,12 +339,11 @@ class Crawler {
 
   const options = new chrome.Options();
   options.addArguments("--ignore-certificate-errors");
-  const driver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();
-
 
 
   const driver = await new Builder()
     .forBrowser(Browser.CHROME)
+    .setChromeOptions(options)
     .build();
 
   const c = new Crawler(driver)
