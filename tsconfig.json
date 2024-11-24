@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@crawler/*": ["packages/crawler/*"] 
+      "@crawler/*": ["packages/crawler/*"]
     }
   },
 }

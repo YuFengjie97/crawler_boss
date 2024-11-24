@@ -1,5 +1,6 @@
 import * as echarts from 'echarts';
 import { type JobInfo } from '@crawler/types/index'
+import { areabussiness_map, degree_map, experience_map } from '@crawler/params/index'
 
 const a: JobInfo[] = []
 
@@ -19,9 +20,9 @@ const key_words = [...super_education, ...suck_blood_words, ...other_words];
 
 
 async function init_charts() {
-  // const res = await fetch('/data/data.json')
-  // const jobs = await res.json()
-  // console.log(jobs);
+  const res = await fetch('/test.json')
+  const jobs = await res.json()
+  console.log(jobs);
 
   // const total = jobs.length
   // 学历要求

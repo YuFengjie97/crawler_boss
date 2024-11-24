@@ -1,6 +1,4 @@
 
-
-
 interface M {
   key: string
   value: {
