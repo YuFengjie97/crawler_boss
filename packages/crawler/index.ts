@@ -125,6 +125,9 @@ class Crawler {
 
   async get_job_info_by_job_card(job_card: WebElement, job_info_list: JobInfo[]) {
     try {
+      // 滚动元素到视口内
+      await this.driver.executeScript("arguments[0].scrollIntoView(true);", job_card);
+
       // 获取卡片上的信息
       const job_name = await this.getTextOrDefault('span.job-name', job_card);
       const areaBusiness = await this.getTextOrDefault('span.job-area', job_card);
