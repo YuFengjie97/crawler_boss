@@ -1,6 +1,6 @@
 import { By, Builder, Browser, WebElement, WebDriver, until } from "selenium-webdriver";
 import fs from 'fs'
-import {type JobInfo} from './types/index'
+import { type JobInfo } from './types/index'
 import { type Params, areabussiness_map, degree_map, experience_map } from './params/index'
 
 class Crawler {
@@ -62,9 +62,9 @@ class Crawler {
     }
   }
 
-  async sleep(){
+  async sleep(time = 0) {
     const random_time = 5000 + Math.random() * 10000
-    await this.driver.sleep(random_time)
+    await this.driver.sleep(time === 0 ? random_time : time)
   }
 
   async random_scroll() {
@@ -300,8 +300,9 @@ class Crawler {
 
   async get_all_job() {
     this.create_log_file()
+    let first_login = true
 
-     for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
+    for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
       for (let [experience_key, experience_info] of Object.entries(experience_map.value)) {
         for (let [degree_key, degree_info] of Object.entries(degree_map.value)) {
           const current_params: Params = {
@@ -316,6 +317,11 @@ class Crawler {
           console.log('---new params-----', this.data_file_name);
 
           await this.driver.get(url);
+          if (first_login) {
+            // ip被ban,等你登录
+            await this.sleep(60000)
+            first_login = false
+          }
           await this.sleep()
           await this.hide_login_dialog()
 
