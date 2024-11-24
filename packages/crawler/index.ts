@@ -62,6 +62,18 @@ class Crawler {
     }
   }
 
+  async sleep(){
+    const random_time = 5000 + Math.random() * 10000
+    await this.driver.sleep(random_time)
+  }
+
+  async random_scroll() {
+    const random_y = Math.random() * 1000
+    await this.driver.executeScript(`
+      window.scrollTo(0,${random_y})
+    `)
+  }
+
 
   save_data(data: {
     experience: string
@@ -159,7 +171,7 @@ class Crawler {
       await job_card.click();
       const handles = await this.driver.getAllWindowHandles();
       await this.driver.switchTo().window(handles[1]); // 切换详情页标签
-      await this.driver.sleep(5000)
+      await this.sleep()
 
       // console.log('--------------', await this.driver.getCurrentUrl());
 
@@ -187,7 +199,7 @@ class Crawler {
       // 切回列表页
       await this.driver.close();
       await this.driver.switchTo().window(handles[0]);
-      await this.driver.sleep(2000)
+      await this.sleep()
 
       job_info_list.push(job_info)
       console.log('------current params get job: ', job_info_list.length);
@@ -213,7 +225,7 @@ class Crawler {
 
 
   // async sleep(timeout: number) {
-  //   await this.driver.sleep(timeout)
+  //   await this.sleep(timeout)
   //   // return new Promise((resolve, reject) => {
   //   // setTimeout(resolve, timeout);
   //   // })
@@ -237,7 +249,7 @@ class Crawler {
       } else {
         await next_page_bt.click()
         await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
-        await this.driver.sleep(5000)
+        await this.sleep()
         await this.hide_login_dialog()
         return false
       }
@@ -295,7 +307,7 @@ class Crawler {
           console.log('---new params-----', this.data_file_name);
 
           await this.driver.get(url);
-          await this.driver.sleep(5000)
+          await this.sleep()
           await this.hide_login_dialog()
 
           // 空页判断
