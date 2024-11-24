@@ -90,8 +90,8 @@ class Crawler {
       await this.driver.wait(el_visable, timeout);
       return el
     } catch (err) {
-      console.error(`---Element "${selector}" not found or timeout`, err);
-      if (!save_error) {
+      if (save_error) {
+        console.error(`---元素每找到 "${selector}"`, err);
         await this.save_err_log(`selector not found ${selector}`)
       }
       return null
