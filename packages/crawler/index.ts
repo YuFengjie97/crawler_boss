@@ -42,7 +42,7 @@ class Crawler {
     try {
       fs.writeFileSync(`log/${this.log_file_name}.txt`, '')
     } catch (e) {
-      console.error('create log fail', e);
+      console.error('创建日志失败', e);
     }
   }
 
@@ -57,7 +57,7 @@ class Crawler {
     try {
       fs.appendFileSync(`log/${this.log_file_name}.txt`, info)
     } catch (e) {
-      console.error('----write log fail', e);
+      console.error('写入日志失败', e);
     }
   }
 
@@ -72,7 +72,7 @@ class Crawler {
     try {
       fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
     } catch (e) {
-      console.error('save data fail error', e);
+      console.error('保存data失败', e);
     }
   }
 
@@ -91,7 +91,7 @@ class Crawler {
       return el
     } catch (err) {
       if (save_error) {
-        console.error(`---元素每找到 "${selector}"`, err);
+        console.error(`---元素没找到 "${selector}"`, err);
         await this.save_err_log(`selector not found ${selector}`)
       }
       return null
@@ -291,7 +291,7 @@ class Crawler {
           this.data_file_name = `${areaBusiness_info}-${experience_info}-${degree_info}`
 
           const url = this.generate_url_by_params()
-          console.log('---------new params-----------');
+          console.log('---new params-----', this.data_file_name);
 
           await this.driver.get(url);
           await this.driver.sleep(5000)
@@ -304,7 +304,7 @@ class Crawler {
 
             await this.get_jobs_by_current_params()
           } catch (e) {
-            console.error('--------------get_all_job', e);
+            console.error('----------get_all_job', e);
           }
         }
       }
