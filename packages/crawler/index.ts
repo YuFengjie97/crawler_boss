@@ -82,6 +82,7 @@ class Crawler {
   }
 
 
+
   save_data(data: {
     experience: string
     degree: string
@@ -253,7 +254,7 @@ class Crawler {
         await next_page_bt.click()
         await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
         await this.sleep()
-        await this.hide_login_dialog()
+        await this.hide_annoy_doom()
         return false
       }
     } catch (e) {
@@ -281,7 +282,8 @@ class Crawler {
     })
   }
 
-  async hide_login_dialog() {
+  async hide_annoy_doom() {
+    // 隐藏在未登录状态下,不定时弹出来的登录弹框
     await this.wait_el_visable('div.boss-login-dialog', this.driver, false)
     await this.driver.executeScript(`
         const dialog = document.querySelector('div.boss-login-dialog');
@@ -289,6 +291,13 @@ class Crawler {
           dialog.style.display = 'none';
         }
       `);
+
+    // 隐藏列表页的搜索浮框和header
+    const el_search = await this.wait_el_visable('.job-search-wrapper.fix-top')
+    await this.driver.executeScript(`arguments[0].style.display = none;`, el_search)
+    const el_header = await this.wait_el_visable('#header')
+    await this.driver.executeScript(`arguments[0].style.display = none;`, el_header)
+
   }
 
 
@@ -319,7 +328,7 @@ class Crawler {
             await this.driver.get(url);
           }
           await this.sleep()
-          await this.hide_login_dialog()
+          await this.hide_annoy_doom()
 
           // 空页判断
           const res = await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
@@ -337,8 +346,6 @@ class Crawler {
 
 
 (async function main() {
-  // const options = new Chrome.Options();
-  // options.addArguments('--user-agent=CustomUserAgent/1.0');
 
 
   const driver = await new Builder()
