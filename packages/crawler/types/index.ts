@@ -5,7 +5,7 @@ export  interface JobInfo {
     salary: string
     experience: string // 工作时间
     degree: string // 学历
-    boss_name: string
+    // boss_name: string
     boss_job: string
     company_name: string
     company_logo: string

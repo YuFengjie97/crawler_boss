@@ -119,7 +119,7 @@ class Crawler {
     try {
       console.log('----获取卡片信息');
       // 滚动元素到视口内
-      await this.driver.executeScript("arguments[0].scrollIntoView(true);", job_card);
+      // await this.driver.executeScript("arguments[0].scrollIntoView(true);", job_card);
 
       // 获取卡片上的信息
       const job_name = await this.getTextOrDefault('span.job-name', job_card);
@@ -128,8 +128,8 @@ class Crawler {
       const experience = await this.getTextOrDefault('ul.tag-list li:nth-child(1)', job_card);
       const degree = await this.getTextOrDefault('ul.tag-list li:nth-child(2)', job_card);
       const boss_job = await this.getTextOrDefault('div.info-public em', job_card);
-      const boss_info = (await this.getTextOrDefault('div.info-public', job_card)).split('\n')[0];
-      const boss_name = boss_info.split(boss_job)[0]
+      // const boss_info = (await this.getTextOrDefault('div.info-public', job_card)).split('\n')[0];
+      // const boss_name = boss_info.split(boss_job)[0]
       const company_name = await this.getTextOrDefault('h3.company-name a', job_card);
       const company_logo = await (await job_card.findElement(By.css('div.company-logo img'))).getAttribute('src');
 
@@ -155,7 +155,7 @@ class Crawler {
         salary,
         experience,
         degree,
-        boss_name,
+        // boss_name,
         boss_job,
         company_name,
         company_logo,
@@ -278,10 +278,16 @@ class Crawler {
     //     }
     //   `);
 
+    //隐藏二维码
+    const el_weixincode = await this.wait_el_visable('div.subscribe-weixin-wrapper', this.driver, false)
+    if (el_weixincode !== null) {
+      await this.driver.executeScript(`arguments[0].style.display = 'none';`, el_weixincode)
+    }
+
     // 隐藏列表页的搜索浮框和header
-    const el_search = await this.wait_el_visable('.job-search-wrapper', this.driver, false)
+    const el_search = await this.wait_el_visable('div.job-search-wrapper', this.driver, false)
     if (el_search !== null) {
-      await this.driver.executeScript(`arguments[0].style.width = '0px !important';`, el_search)
+      await this.driver.executeScript(`arguments[0].style.display = 'none';`, el_search)
     }
     const el_header = await this.wait_el_visable('#header', this.driver, false)
     if (el_header !== null) {
