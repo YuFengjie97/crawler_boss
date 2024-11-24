@@ -2,7 +2,6 @@ import { By, Builder, Browser, WebElement, WebDriver, until } from "selenium-web
 import fs from 'fs'
 import {type JobInfo} from './types/index'
 import { type Params, areabussiness_map, degree_map, experience_map } from './params/index'
-// import Chrome from 'selenium-webdriver/chrome'
 
 class Crawler {
   base_url = 'https://www.zhipin.com/web/geek/job'
@@ -28,6 +27,53 @@ class Crawler {
     // 关键字前端,地区北京
     const query = new URLSearchParams({ ...this.params, query: '前端', city: '101010100' }).toString()
     return `${this.base_url}?${query}`
+  }
+
+  create_log_file() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear()
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0')
+    const day = currentDate.getDate().toString().padStart(2, '0')
+    const hour = currentDate.getHours().toString().padStart(2, '0')
+    const min = currentDate.getMinutes().toString().padStart(2, '0')
+    const sec = currentDate.getSeconds().toString().padStart(2, '0')
+    this.log_file_name = `${year}_${month}_${day}____${hour}_${min}_${sec}`;
+
+    try {
+      fs.writeFileSync(`log/${this.log_file_name}.txt`, '')
+    } catch (e) {
+      console.error('create log fail', e);
+    }
+  }
+
+
+  async save_err_log(info_ex: string = '') {
+    const url = await this.driver.getCurrentUrl()
+    const info = `
+      ${url}
+      ${areabussiness_map.value[this.params.areaBusiness]}-${experience_map.value[this.params.experience]}-${degree_map.value[this.params.degree]}
+      ${info_ex}
+      `
+    try {
+      fs.appendFileSync(`log/${this.log_file_name}.txt`, info)
+    } catch (e) {
+      console.error('----write log fail', e);
+    }
+  }
+
+
+  save_data(data: {
+    experience: string
+    degree: string
+    areaBusiness: string
+    total: number
+    jobs: JobInfo[]
+  }) {
+    try {
+      fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
+    } catch (e) {
+      console.error('save data fail error', e);
+    }
   }
 
 
@@ -112,7 +158,7 @@ class Crawler {
       await job_card.click();
       const handles = await this.driver.getAllWindowHandles();
       await this.driver.switchTo().window(handles[1]); // 切换详情页标签
-      await this.driver.sleep(3000)
+      await this.driver.sleep(5000)
 
       // console.log('--------------', await this.driver.getCurrentUrl());
 
@@ -140,7 +186,7 @@ class Crawler {
       // 切回列表页
       await this.driver.close();
       await this.driver.switchTo().window(handles[0]);
-      await this.driver.sleep(1000)
+      await this.driver.sleep(2000)
 
       job_info_list.push(job_info)
       console.log('------current params get job: ', job_info_list.length);
@@ -161,53 +207,6 @@ class Crawler {
       }
     } catch (e) {
       console.error('-----------get_jobs_from_page', e);
-    }
-  }
-
-  create_log_file() {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear()
-    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0')
-    const day = currentDate.getDate().toString().padStart(2, '0')
-    const hour = currentDate.getHours().toString().padStart(2, '0')
-    const min = currentDate.getMinutes().toString().padStart(2, '0')
-    const sec = currentDate.getSeconds().toString().padStart(2, '0')
-    this.log_file_name = `${year}_${month}_${day}____${hour}_${min}_${sec}`;
-
-    try {
-      fs.writeFileSync(`log/${this.log_file_name}.txt`, '')
-    } catch (e) {
-      console.error('create log fail', e);
-    }
-  }
-
-
-  async save_err_log(info_ex: string = '') {
-    const url = await this.driver.getCurrentUrl()
-    const info = `
-      ${url}
-      ${areabussiness_map.value[this.params.areaBusiness]}-${experience_map.value[this.params.experience]}-${degree_map.value[this.params.degree]}
-      ${info_ex}
-      `
-    try {
-      fs.appendFileSync(`log/${this.log_file_name}.txt`, info)
-    } catch (e) {
-      console.error('----write log fail', e);
-    }
-  }
-
-
-  save_data(data: {
-    experience: string
-    degree: string
-    areaBusiness: string
-    total: number
-    jobs: JobInfo[]
-  }) {
-    try {
-      fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
-    } catch (e) {
-      console.error('save data fail error', e);
     }
   }
 
@@ -238,7 +237,7 @@ class Crawler {
       } else {
         await next_page_bt.click()
         await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
-        await this.driver.sleep(3000)
+        await this.driver.sleep(5000)
         return false
       }
     } catch (e) {
@@ -295,7 +294,7 @@ class Crawler {
           console.log('---------new params-----------');
 
           await this.driver.get(url);
-          await this.driver.sleep(3000)
+          await this.driver.sleep(5000)
           await this.hide_login_dialog()
 
           // 空页判断
