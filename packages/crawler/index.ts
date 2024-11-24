@@ -63,7 +63,7 @@ class Crawler {
   }
 
   async sleep(time = 0) {
-    const random_time = 5000 + Math.random() * 10000
+    const random_time = 500 + Math.random() * 3000
     await this.driver.sleep(time === 0 ? random_time : time)
   }
 
@@ -231,14 +231,6 @@ class Crawler {
   }
 
 
-  // async sleep(timeout: number) {
-  //   await this.sleep(timeout)
-  //   // return new Promise((resolve, reject) => {
-  //   // setTimeout(resolve, timeout);
-  //   // })
-  // }
-
-
   // 返回值为是否已到达最后一页
   async go_next_page(): Promise<boolean> {
     try {
@@ -317,7 +309,7 @@ class Crawler {
           await this.driver.get(url);
           if (first_login) {
             // ip被ban,等你登录
-            await this.sleep(60000)
+            await this.sleep(30000)
             first_login = false
             // 重新跳转起始爬取页面
             await this.driver.get(url);
@@ -326,14 +318,10 @@ class Crawler {
           await this.hide_login_dialog()
 
           // 空页判断
-          try {
-            const res = await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
-            if (res === null) continue
+          const res = await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
+          if (res === null) continue
 
-            await this.get_jobs_by_current_params()
-          } catch (e) {
-            console.error('----------get_all_job', e);
-          }
+          await this.get_jobs_by_current_params()
         }
       }
     }
