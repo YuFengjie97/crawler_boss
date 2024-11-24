@@ -117,6 +117,7 @@ class Crawler {
 
   async get_job_info_by_job_card(job_card: WebElement, job_info_list: JobInfo[]) {
     try {
+      console.log('----获取卡片信息');
       // 滚动元素到视口内
       await this.driver.executeScript("arguments[0].scrollIntoView(true);", job_card);
 
@@ -171,6 +172,8 @@ class Crawler {
       await job_card.click();
       const handles = await this.driver.getAllWindowHandles();
       await this.driver.switchTo().window(handles[1]); // 切换详情页标签
+      console.log('----切换详情页标签');
+      
       await this.sleep()
 
       // console.log('--------------', await this.driver.getCurrentUrl());
@@ -250,7 +253,6 @@ class Crawler {
       await this.get_jobs_from_page(job_info_list);
       is_finished = await this.go_next_page()
       await this.sleep()
-      await this.hide_annoy_el()
       page_num += 1
     } while (!is_finished)
 
@@ -277,7 +279,7 @@ class Crawler {
     //   `);
 
     // 隐藏列表页的搜索浮框和header
-    const el_search = await this.wait_el_visable('.job-search-wrapper.fix-top', this.driver, false)
+    const el_search = await this.wait_el_visable('.job-search-wrapper', this.driver, false)
     if (el_search !== null) {
       await this.driver.executeScript(`arguments[0].style.width = '0px !important';`, el_search)
     }
