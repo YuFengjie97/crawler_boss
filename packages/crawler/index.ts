@@ -39,11 +39,7 @@ class Crawler {
     const sec = currentDate.getSeconds().toString().padStart(2, '0')
     this.log_file_name = `${year}_${month}_${day}____${hour}_${min}_${sec}`;
 
-    try {
-      fs.writeFileSync(`log/${this.log_file_name}.txt`, '')
-    } catch (e) {
-      console.error('创建日志失败', e);
-    }
+    fs.writeFileSync(`log/${this.log_file_name}.txt`, '')
   }
 
 
@@ -55,11 +51,7 @@ class Crawler {
       ${info_ex}
       \n
       `
-    try {
-      fs.appendFileSync(`log/${this.log_file_name}.txt`, info)
-    } catch (e) {
-      console.error('写入日志失败', e);
-    }
+    fs.appendFileSync(`log/${this.log_file_name}.txt`, info)
   }
 
   async sleep(time = 0) {
@@ -91,11 +83,7 @@ class Crawler {
     total: number
     jobs: JobInfo[]
   }) {
-    try {
-      fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
-    } catch (e) {
-      console.error('保存data失败', e);
-    }
+    fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
   }
 
 
@@ -178,8 +166,6 @@ class Crawler {
       };
 
 
-
-
       // 获取详情页上的信息
       await job_card.click();
       const handles = await this.driver.getAllWindowHandles();
@@ -256,11 +242,15 @@ class Crawler {
   async get_jobs_by_current_params() {
     let is_finished = false
     const job_info_list: JobInfo[] = []
+    let page_num = 1
     do {
+      console.log('----page ', page_num);
+
       await this.get_jobs_from_page(job_info_list);
       is_finished = await this.go_next_page()
       await this.sleep()
       await this.hide_annoy_el()
+      page_num += 1
     } while (!is_finished)
 
     this.save_data({
@@ -275,7 +265,9 @@ class Crawler {
   async hide_annoy_el() {
     // 隐藏在未登录状态下,不定时弹出来的登录弹框
     const el_login_pop = await this.wait_el_visable('div.boss-login-dialog', this.driver, false)
-    await this.driver.executeScript(`arguments[0].style.display = none;`, el_login_pop)
+    if (el_login_pop !== null) {
+      await this.driver.executeScript(`arguments[0].style.display = 'none';`, el_login_pop)
+    }
     // await this.driver.executeScript(`
     //     const dialog = document.querySelector('div.boss-login-dialog');
     //     if(dialog !== null) {
@@ -285,10 +277,13 @@ class Crawler {
 
     // 隐藏列表页的搜索浮框和header
     const el_search = await this.wait_el_visable('.job-search-wrapper.fix-top', this.driver, false)
-    await this.driver.executeScript(`arguments[0].style.display = none;`, el_search)
+    if (el_search !== null) {
+      await this.driver.executeScript(`arguments[0].style.width = '0px !important';`, el_search)
+    }
     const el_header = await this.wait_el_visable('#header', this.driver, false)
-    await this.driver.executeScript(`arguments[0].style.display = none;`, el_header)
-
+    if (el_header !== null) {
+      await this.driver.executeScript(`arguments[0].style.display = 'none';`, el_header)
+    }
   }
 
 
@@ -340,6 +335,10 @@ class Crawler {
 
 
 (async function main() {
+
+  const options = new chrome.Options();
+  options.addArguments("--ignore-certificate-errors");
+  const driver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();
 
 
 
