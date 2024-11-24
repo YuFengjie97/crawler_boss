@@ -226,7 +226,6 @@ class Crawler {
       if (next_page_bt === null) {
         return true
       }
-      await this.hide_login_dialog()
 
       const bt_class_name = await next_page_bt.getAttribute('class')
       const is_disabled = bt_class_name.includes('disabled');
@@ -238,6 +237,7 @@ class Crawler {
         await next_page_bt.click()
         await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
         await this.driver.sleep(5000)
+        await this.hide_login_dialog()
         return false
       }
     } catch (e) {
