@@ -124,8 +124,6 @@ class Crawler {
   }
 
   async get_job_info_by_job_card(job_card: WebElement, job_info_list: JobInfo[]) {
-    await this.valid_ip_ban()
-
     try {
       // 获取卡片上的信息
       const job_name = await this.getTextOrDefault('span.job-name', job_card);
@@ -321,12 +319,11 @@ class Crawler {
             // ip被ban,等你登录
             await this.sleep(60000)
             first_login = false
+            // 重新跳转起始爬取页面
+            await this.driver.get(url);
           }
           await this.sleep()
           await this.hide_login_dialog()
-
-          // ip被封,抛出异常,全部停止
-          await this.valid_ip_ban()
 
           // 空页判断
           try {
