@@ -1,0 +1,13 @@
+{
+  "name": "crawler_boss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [],
+  "scripts": {
+    "crawler": "npx tsx packages/crawler/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
