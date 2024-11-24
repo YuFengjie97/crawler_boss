@@ -284,18 +284,19 @@ class Crawler {
 
   async hide_annoy_doom() {
     // 隐藏在未登录状态下,不定时弹出来的登录弹框
-    await this.wait_el_visable('div.boss-login-dialog', this.driver, false)
-    await this.driver.executeScript(`
-        const dialog = document.querySelector('div.boss-login-dialog');
-        if(dialog !== null) {
-          dialog.style.display = 'none';
-        }
-      `);
+    const el_login_pop = await this.wait_el_visable('div.boss-login-dialog', this.driver, false)
+    await this.driver.executeScript(`arguments[0].style.display = none;`, el_login_pop)
+    // await this.driver.executeScript(`
+    //     const dialog = document.querySelector('div.boss-login-dialog');
+    //     if(dialog !== null) {
+    //       dialog.style.display = 'none';
+    //     }
+    //   `);
 
     // 隐藏列表页的搜索浮框和header
-    const el_search = await this.wait_el_visable('.job-search-wrapper.fix-top')
+    const el_search = await this.wait_el_visable('.job-search-wrapper.fix-top', this.driver, false)
     await this.driver.executeScript(`arguments[0].style.display = none;`, el_search)
-    const el_header = await this.wait_el_visable('#header')
+    const el_header = await this.wait_el_visable('#header', this.driver, false)
     await this.driver.executeScript(`arguments[0].style.display = none;`, el_header)
 
   }
