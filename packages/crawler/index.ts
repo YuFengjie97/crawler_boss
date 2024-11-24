@@ -63,7 +63,7 @@ class Crawler {
   }
 
   async sleep(time = 0) {
-    const random_time = 500 + Math.random() * 3000
+    const random_time = 3000 + Math.random() * 3000
     await this.driver.sleep(time === 0 ? random_time : time)
   }
 
@@ -219,6 +219,7 @@ class Crawler {
 
   async get_jobs_from_page(job_info_list: JobInfo[]) {
     try {
+      await this.sleep()
       await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
 
       const job_cards = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'));
@@ -309,7 +310,7 @@ class Crawler {
           await this.driver.get(url);
           if (first_login) {
             // ip被ban,等你登录
-            await this.sleep(30000)
+            await this.sleep(20000)
             first_login = false
             // 重新跳转起始爬取页面
             await this.driver.get(url);
