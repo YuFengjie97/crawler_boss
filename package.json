@@ -5,7 +5,7 @@
   "main": "index.js",
   "workspaces": [],
   "scripts": {
-    "crawler": "npx tsx packages/crawler/index.ts"
+    "crawler": "pnpm -r run crawler"
   },
   "keywords": [],
   "author": "",
