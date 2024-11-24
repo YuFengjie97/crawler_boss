@@ -74,6 +74,13 @@ class Crawler {
     `)
   }
 
+  async valid_ip_ban() {
+    const res = await this.wait_el_visable('#wrap #code31')
+    if (res !== null) {
+      throw Error('IP被ban了')
+    }
+  }
+
 
   save_data(data: {
     experience: string
@@ -117,6 +124,8 @@ class Crawler {
   }
 
   async get_job_info_by_job_card(job_card: WebElement, job_info_list: JobInfo[]) {
+    await this.valid_ip_ban()
+
     try {
       // 获取卡片上的信息
       const job_name = await this.getTextOrDefault('span.job-name', job_card);
@@ -292,7 +301,7 @@ class Crawler {
   async get_all_job() {
     this.create_log_file()
 
-    for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
+     for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
       for (let [experience_key, experience_info] of Object.entries(experience_map.value)) {
         for (let [degree_key, degree_info] of Object.entries(degree_map.value)) {
           const current_params: Params = {
@@ -309,6 +318,9 @@ class Crawler {
           await this.driver.get(url);
           await this.sleep()
           await this.hide_login_dialog()
+
+          // ip被封,抛出异常,全部停止
+          await this.valid_ip_ban()
 
           // 空页判断
           try {
