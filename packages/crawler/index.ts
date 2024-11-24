@@ -53,6 +53,7 @@ class Crawler {
       ${url}
       ${areabussiness_map.value[this.params.areaBusiness]}-${experience_map.value[this.params.experience]}-${degree_map.value[this.params.degree]}
       ${info_ex}
+      \n
       `
     try {
       fs.appendFileSync(`log/${this.log_file_name}.txt`, info)
@@ -192,7 +193,7 @@ class Crawler {
       console.log('------current params get job: ', job_info_list.length);
 
     } catch (e) {
-      await this.save_err_log()
+      await this.save_err_log(`get_job_info\n${JSON.stringify(e)}`)
       console.error('---get_job_info', e);
     }
   }
@@ -241,7 +242,7 @@ class Crawler {
         return false
       }
     } catch (e) {
-      await this.save_err_log()
+      await this.save_err_log(`go_next_page\n${JSON.stringify(e)}`)
       console.error('-----------go_next_page', e);
       return true
     }
