@@ -74,11 +74,12 @@ class Crawler {
     `)
   }
 
-  async valid_ip_ban() {
+  async check_ip_ban(): Promise<boolean> {
     const res = await this.wait_el_visable('#wrap #code31')
     if (res !== null) {
-      throw Error('IP被ban了')
+      return true
     }
+    return false
   }
 
 
@@ -101,21 +102,22 @@ class Crawler {
   async wait_el_visable(selector: string, el_father: WebDriver | WebElement = this.driver, save_error = true): Promise<WebElement | null> {
     const timeout = 5000
 
+    let el: WebElement | null = null
+
     try {
       const el_located = until.elementLocated(By.css(selector))
       await this.driver.wait(el_located, timeout);
 
-      const el = await el_father.findElement(By.css(selector))
-
+      el = await el_father.findElement(By.css(selector))
       const el_visable = until.elementIsVisible(el)
       await this.driver.wait(el_visable, timeout);
-      return el
     } catch (err) {
       if (save_error) {
         console.error(`---元素没找到 "${selector}"`, err);
         await this.save_err_log(`selector not found ${selector}`)
       }
-      return null
+    } finally {
+      return el
     }
   }
 
@@ -139,7 +141,7 @@ class Crawler {
       const boss_info = (await this.getTextOrDefault('div.info-public', job_card)).split('\n')[0];
       const boss_name = boss_info.split(boss_job)[0]
       const company_name = await this.getTextOrDefault('h3.company-name a', job_card);
-      const company_logo = await job_card.findElement(By.css('div.company-logo img')).getAttribute('src');
+      const company_logo = await (await job_card.findElement(By.css('div.company-logo img'))).getAttribute('src');
 
 
       let company_kind = ''
@@ -222,45 +224,31 @@ class Crawler {
   }
 
   async get_jobs_from_page(job_info_list: JobInfo[]) {
-    try {
-      await this.sleep()
-      await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
+    await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
 
-      const job_cards = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'));
-      for (let job_card of job_cards) {
-        await this.get_job_info_by_job_card(job_card, job_info_list);
-      }
-    } catch (e) {
-      console.error('-----------get_jobs_from_page', e);
+    const job_cards = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'));
+    for (let job_card of job_cards) {
+      await this.get_job_info_by_job_card(job_card, job_info_list);
     }
   }
 
 
   // 返回值为是否已到达最后一页
   async go_next_page(): Promise<boolean> {
-    try {
-      const next_page_bt = await this.wait_el_visable('div.options-pages a:last-of-type')
-      if (next_page_bt === null) {
-        return true
-      }
-
-      const bt_class_name = await next_page_bt.getAttribute('class')
-      const is_disabled = bt_class_name.includes('disabled');
-
-
-      if (is_disabled) {
-        return true
-      } else {
-        await next_page_bt.click()
-        await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
-        await this.sleep()
-        await this.hide_annoy_doom()
-        return false
-      }
-    } catch (e) {
-      await this.save_err_log(`go_next_page\n${JSON.stringify(e)}`)
-      console.error('-----------go_next_page', e);
+    const next_page_bt = await this.wait_el_visable('div.options-pages a:last-of-type')
+    if (next_page_bt === null) {
       return true
+    }
+
+    const bt_class_name = await next_page_bt.getAttribute('class')
+    const is_disabled = bt_class_name.includes('disabled');
+
+
+    if (is_disabled) {
+      return true
+    } else {
+      await next_page_bt.click()
+      return false
     }
   }
 
@@ -271,6 +259,8 @@ class Crawler {
     do {
       await this.get_jobs_from_page(job_info_list);
       is_finished = await this.go_next_page()
+      await this.sleep()
+      await this.hide_annoy_el()
     } while (!is_finished)
 
     this.save_data({
@@ -282,7 +272,7 @@ class Crawler {
     })
   }
 
-  async hide_annoy_doom() {
+  async hide_annoy_el() {
     // 隐藏在未登录状态下,不定时弹出来的登录弹框
     const el_login_pop = await this.wait_el_visable('div.boss-login-dialog', this.driver, false)
     await this.driver.executeScript(`arguments[0].style.display = none;`, el_login_pop)
@@ -304,7 +294,7 @@ class Crawler {
 
   async get_all_job() {
     this.create_log_file()
-    let first_login = true
+    let need_login = false
 
     for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
       for (let [experience_key, experience_info] of Object.entries(experience_map.value)) {
@@ -321,15 +311,18 @@ class Crawler {
           console.log('---new params-----', this.data_file_name);
 
           await this.driver.get(url);
-          if (first_login) {
-            // ip被ban,等你登录
+
+          need_login = await this.check_ip_ban()
+          // ip被ban,等你登录
+          if (need_login) {
+            console.log('------ip被ban的话,这里等你扫码登录,计时器20s结束后,默认你登录完毕----');
             await this.sleep(20000)
-            first_login = false
+            need_login = false
             // 重新跳转起始爬取页面
             await this.driver.get(url);
           }
           await this.sleep()
-          await this.hide_annoy_doom()
+          await this.hide_annoy_el()
 
           // 空页判断
           const res = await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
@@ -347,6 +340,7 @@ class Crawler {
 
 
 (async function main() {
+
 
 
   const driver = await new Builder()
