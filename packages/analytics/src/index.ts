@@ -1,6 +1,6 @@
 import * as echarts from 'echarts';
 
-
+const a: JobInfo[] = []
 
 // 学历歧视关键字
 const super_education = ['985', '211']
@@ -21,7 +21,7 @@ async function init_charts() {
   // const res = await fetch('/data/data.json')
   // const jobs = await res.json()
   // console.log(jobs);
-  
+
   // const total = jobs.length
   // 学历要求
   let zhuanke = 0
@@ -63,13 +63,13 @@ async function init_charts() {
     ]
   };
 
-  
+
   const chart1 = echarts.init(document.querySelector('.chart1') as HTMLElement);
   const option = JSON.parse(JSON.stringify(pie_option))
   option.title.text = '学历要求与歧视'
   chart1.setOption(option)
 
-  const chart12= echarts.init(document.querySelector('.chart1') as HTMLElement);
+  const chart12 = echarts.init(document.querySelector('.chart1') as HTMLElement);
 
 }
 
