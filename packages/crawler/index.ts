@@ -55,9 +55,9 @@ class Crawler {
     fs.appendFileSync(`log/${this.log_file_name}.txt`, info)
   }
 
-  async sleep(time = 0) {
-    const random_time = 3000 + Math.random() * 3000
-    await this.driver.sleep(time === 0 ? random_time : time)
+  async sleep(time_min: number = 1000, time_max = time_min) {
+    const random_time = time_min + (time_max - time_min) * Math.random()
+    await this.driver.sleep(random_time)
   }
 
   async random_scroll() {
@@ -67,12 +67,25 @@ class Crawler {
     `)
   }
 
+  // 在未登录时,连续爬取,ip会被封禁一天,登录后继续爬取
   async check_ip_ban(): Promise<boolean> {
-    const res = await this.wait_el_visable('#wrap #code31')
+    const res = await this.wait_el_visable('#wrap #code31', this.driver, false)
     if (res !== null) {
+      console.log('有20秒的时间,扫码登录, 20s后默认登录成功');
+      await this.sleep(20000)
       return true
     }
     return false
+  }
+
+  // 在登录时,连续爬取,检测到异常访问,需要验证
+  async check_need_verify() {
+    const res = await this.wait_el_visable('.page-verify-slider', this.driver, false)
+    if (res !== null) {
+      console.log('需要在20秒内完成人工认证');
+      await this.sleep(20000)
+      await this.check_need_verify()
+    }
   }
 
 
@@ -88,8 +101,7 @@ class Crawler {
   }
 
 
-  async wait_el_visable(selector: string, el_father: WebDriver | WebElement = this.driver, save_error = true): Promise<WebElement | null> {
-    const timeout = 5000
+  async wait_el_visable(selector: string, el_father: WebDriver | WebElement = this.driver, save_error = true, timeout: number = 1000): Promise<WebElement | null> {
 
     let el: WebElement | null = null
 
@@ -109,6 +121,7 @@ class Crawler {
       return el
     }
   }
+
 
   async getTextOrDefault(selector: string, el_father: WebElement | WebDriver = this.driver): Promise<string> {
     const el = await this.wait_el_visable(selector, el_father)
@@ -173,8 +186,8 @@ class Crawler {
       const handles = await this.driver.getAllWindowHandles();
       await this.driver.switchTo().window(handles[1]); // 切换详情页标签
       console.log('----切换详情页标签');
-      
-      await this.sleep()
+
+      await this.sleep(5000, 10000)
 
       // console.log('--------------', await this.driver.getCurrentUrl());
 
@@ -202,7 +215,8 @@ class Crawler {
       // 切回列表页
       await this.driver.close();
       await this.driver.switchTo().window(handles[0]);
-      await this.sleep()
+      await this.check_need_verify()
+      await this.sleep(3000, 5000)
 
       job_info_list.push(job_info)
       console.log('------current params get job: ', job_info_list.length);
@@ -238,6 +252,7 @@ class Crawler {
       return true
     } else {
       await next_page_bt.click()
+      await this.check_need_verify()
       return false
     }
   }
@@ -252,7 +267,7 @@ class Crawler {
 
       await this.get_jobs_from_page(job_info_list);
       is_finished = await this.go_next_page()
-      await this.sleep()
+      await this.sleep(3000, 5000)
       page_num += 1
     } while (!is_finished)
 
@@ -298,7 +313,6 @@ class Crawler {
 
   async get_all_job() {
     this.create_log_file()
-    let need_login = false
 
     for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
       for (let [experience_key, experience_info] of Object.entries(experience_map.value)) {
@@ -315,17 +329,15 @@ class Crawler {
           console.log('---new params-----', this.data_file_name);
 
           await this.driver.get(url);
+          await this.check_need_verify()
 
-          need_login = await this.check_ip_ban()
-          // ip被ban,等你登录
-          if (need_login) {
-            console.log('------ip被ban的话,这里等你扫码登录,计时器20s结束后,默认你登录完毕----');
-            await this.sleep(20000)
-            need_login = false
-            // 重新跳转起始爬取页面
+          const login_after_ban = await this.check_ip_ban()
+          if (login_after_ban) {
+            // 因为登录后,会重定向页面,所以重新请求
             await this.driver.get(url);
           }
-          await this.sleep()
+
+          await this.sleep(5000, 10000)
           await this.hide_annoy_el()
 
           // 空页判断
