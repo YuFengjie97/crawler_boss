@@ -229,7 +229,7 @@ class Crawler {
 
       const boss_info_el = await this.wait_el_visable('.boss-info-attr')
       const boss_info_text = await (boss_info_el as WebElement).getText()
-      job_info.boss_job = boss_info_text.split('·')[1]
+      job_info.boss_job = boss_info_text.split('·\n')[1]
       
       const key_words_text = await this.getTextOrDefault('ul.job-keyword-list')
       const key_words = key_words_text.split('\n')
