@@ -163,7 +163,8 @@ class Crawler {
       const salary = await this.getTextOrDefault('span.salary', job_card);
       const experience = await this.getTextOrDefault('ul.tag-list li:nth-child(1)', job_card);
       const degree = await this.getTextOrDefault('ul.tag-list li:nth-child(2)', job_card);
-      const boss_job = await this.getTextOrDefault('div.info-public em', job_card);
+      // 这个标签很容易报错,改在详情页获取
+      // const boss_job = await this.getTextOrDefault('div.info-public em', job_card);
       // const boss_info = (await this.getTextOrDefault('div.info-public', job_card)).split('\n')[0];
       // const boss_name = boss_info.split(boss_job)[0]
       const company_name = await this.getTextOrDefault('h3.company-name a', job_card);
@@ -192,12 +193,12 @@ class Crawler {
         experience,
         degree,
         // boss_name,
-        boss_job,
         company_name,
         company_logo,
         company_kind,
         company_listing,
         company_size,
+        boss_job:'',
         key_words: [],
         boss_active_time: '',
         detail: ''
@@ -218,6 +219,10 @@ class Crawler {
       await this.wait_el_visable('ul.job-keyword-list') // 关键字el
       await this.wait_el_visable('div.job-detail-section div.job-sec-text:nth-child(4)') // 详情el
 
+      const boss_info_el = await this.wait_el_visable('.boss-info-attr')
+      const boss_info_text = await (boss_info_el as WebElement).getText()
+      job_info.boss_job = boss_info_text.split('·')[1]
+      
       const key_words_text = await this.getTextOrDefault('ul.job-keyword-list')
       const key_words = key_words_text.split('\n')
 
