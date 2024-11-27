@@ -326,7 +326,7 @@ class Crawler {
     //     }
     //   `);
 
-    //隐藏二维码
+    //隐藏列表页,中间的二维码横条
     const el_weixincode = await this.wait_el_visable('div.subscribe-weixin-wrapper', this.driver, false)
     if (el_weixincode !== null) {
       await this.driver.executeScript(`arguments[0].style.display = 'none';`, el_weixincode)
