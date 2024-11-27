@@ -57,6 +57,8 @@ class Crawler {
 
   async sleep(time_min: number = 1000, time_max = time_min) {
     const random_time = time_min + (time_max - time_min) * Math.random()
+    console.log(`sleep ${random_time}ms`);
+    
     await this.driver.sleep(random_time)
   }
 
@@ -101,6 +103,7 @@ class Crawler {
   }
 
   // 在登录时,连续爬取,检测到异常访问,需要验证
+  // 来自未来:不要登录,有封号的风险
   async check_need_verify() {
     const res = await this.wait_el_visable('.page-verify-slider', this.driver, false)
     if (res !== null) {
@@ -119,7 +122,12 @@ class Crawler {
     total: number
     jobs: JobInfo[]
   }) {
-    fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
+    try{
+      fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
+      console.log(`写入数据success,${this.data_file_name}`);
+    }catch(e) {
+      console.log(`写入数据fail,${this.data_file_name}`);
+    }
   }
 
 
@@ -247,12 +255,12 @@ class Crawler {
       // 切回列表页
       await this.driver.close();
       await this.driver.switchTo().window(handles[0]);
-      await this.check_need_verify()
-      await this.sleep(3000, 5000)
+      // await this.check_need_verify()
 
       job_info_list.push(job_info)
       console.log('------current params get job: ', job_info_list.length);
 
+      await this.sleep(3000, 5000)
     } catch (e) {
       await this.save_err_log(`get_job_info\n${JSON.stringify(e)}`)
       console.error('---get_job_info', e);
@@ -285,7 +293,7 @@ class Crawler {
     } else {
       await this.simulate_human_scroll(next_page_bt)
       await next_page_bt.click()
-      await this.check_need_verify()
+      // await this.check_need_verify()
       return false
     }
   }
@@ -371,7 +379,7 @@ class Crawler {
           console.log('---new params-----', this.data_file_name);
 
           await this.driver.get(url);
-          await this.check_need_verify()
+          // await this.check_need_verify()
 
           // const login_after_ban = await this.check_ip_ban()
           // if (login_after_ban) {
