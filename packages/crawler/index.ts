@@ -66,7 +66,7 @@ class Crawler {
 
     const { y } = await target_el.getRect()
     const view_height = Number(await this.driver.executeScript('return innerHeight'))
-    const target_scroll_min = y - 200 // 200是遮挡搜索框的高度
+    const target_scroll_min = y - 300 // 200是遮挡搜索框的高度 + 100微信码横条高度
     const target_scroll_max = y + view_height * 0.7 * Math.random()
     let current_scroll_y = Number(await this.driver.executeScript('return window.scrollY'))
 
