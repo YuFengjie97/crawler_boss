@@ -60,14 +60,36 @@ class Crawler {
     await this.driver.sleep(random_time)
   }
 
-  async random_scroll() {
-    const random_y = Math.random() * 1000
-    await this.driver.executeScript(`
-      window.scrollTo(0,${random_y})
-    `)
+  async simulate_human_scroll(target_el: WebElement) {
+
+    const { y } = await target_el.getRect()
+    const view_height = Number(await this.driver.executeScript('return innerHeight'))
+    const target_scroll_min = y - 200 // 200是遮挡搜索框的高度
+    const target_scroll_max = y + view_height * 0.7 * Math.random()
+    let current_scroll_y = Number(await this.driver.executeScript('return window.scrollY'))
+
+
+    while (current_scroll_y < target_scroll_min || current_scroll_y > target_scroll_max) {
+      const step = 100 + Math.random()
+
+      if (current_scroll_y <= target_scroll_min) {
+        current_scroll_y += step
+      }
+      if (current_scroll_y >= target_scroll_max) {
+        current_scroll_y -= step
+      }
+      await this.driver.executeScript(`
+        window.scrollTo(0,${current_scroll_y})
+      `)
+      await this.sleep(200, 500)
+    }
+
+    console.log('人工滚动完毕');
+    await this.sleep(1200, 2100)
   }
 
   // 在未登录时,连续爬取,ip会被封禁一天,登录后继续爬取
+  // 来自未来的告示: 不要登录,如果被检测出爬虫,会封一天账号
   async check_ip_ban(): Promise<boolean> {
     const res = await this.wait_el_visable('#wrap #code31', this.driver, false)
     if (res !== null) {
@@ -314,6 +336,16 @@ class Crawler {
   async get_all_job() {
     this.create_log_file()
 
+
+    const url = 'http://www.zhipin.com/web/geek/job?query=&page=1'
+    // const url = 'http://www.bilibili.com'
+    await this.driver.get(url)
+    await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
+    await this.sleep(5000, 10000)
+
+    return
+
+
     for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
       for (let [experience_key, experience_info] of Object.entries(experience_map.value)) {
         for (let [degree_key, degree_info] of Object.entries(degree_map.value)) {
@@ -331,11 +363,11 @@ class Crawler {
           await this.driver.get(url);
           await this.check_need_verify()
 
-          const login_after_ban = await this.check_ip_ban()
-          if (login_after_ban) {
-            // 因为登录后,会重定向页面,所以重新请求
-            await this.driver.get(url);
-          }
+          // const login_after_ban = await this.check_ip_ban()
+          // if (login_after_ban) {
+          //   // 因为登录后,会重定向页面,所以重新请求
+          //   await this.driver.get(url);
+          // }
 
           await this.sleep(5000, 10000)
           await this.hide_annoy_el()
