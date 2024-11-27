@@ -380,7 +380,7 @@ class Crawler {
           // }
 
           await this.sleep(5000, 10000)
-          await this.hide_annoy_el()
+          // await this.hide_annoy_el()
 
           // 空页判断
           const res = await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
