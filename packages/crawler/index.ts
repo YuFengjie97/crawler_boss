@@ -153,6 +153,7 @@ class Crawler {
   async get_job_info_by_job_card(job_card: WebElement, job_info_list: JobInfo[]) {
     try {
       console.log('----获取卡片信息');
+      await this.simulate_human_scroll(job_card)
       // 滚动元素到视口内
       // await this.driver.executeScript("arguments[0].scrollIntoView(true);", job_card);
 
@@ -222,11 +223,15 @@ class Crawler {
 
       job_info.key_words.push(...key_words)
 
+      const boss_avatar = await this.wait_el_visable('.detail-figure')
+      await this.simulate_human_scroll(boss_avatar as WebElement)
+
       const boss_active_time = await this.driver.findElements(By.css('span.boss-active-time'))
       if (boss_active_time.length > 0) {
         job_info.boss_active_time = await boss_active_time[0].getText()
       }
       const boss_online = await this.driver.findElements(By.css('span.boss-online-tag'))
+
       if (boss_online.length > 0) {
         job_info.boss_active_time = '刚刚活跃'
       }
@@ -273,6 +278,7 @@ class Crawler {
     if (is_disabled) {
       return true
     } else {
+      await this.simulate_human_scroll(next_page_bt)
       await next_page_bt.click()
       await this.check_need_verify()
       return false
@@ -343,7 +349,6 @@ class Crawler {
     await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
     await this.sleep(5000, 10000)
 
-    return
 
 
     for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
