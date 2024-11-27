@@ -16,7 +16,7 @@ export interface Params {
 export const experience_map: M = {
   key: 'experience',
   value: {
-    103: '1年以内',
+    // 103: '1年以内',
     104: '1-3年',
     105: '3-5年',
   }
