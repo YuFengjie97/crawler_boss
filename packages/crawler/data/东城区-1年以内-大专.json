@@ -3,28 +3,26 @@
   "degree": "202",
   "areaBusiness": "110101",
   "total": 5,
+  "catch_total": 5,
   "jobs": [
     {
-      "job_name": "医学内容运营",
-      "areaBusiness": "北京·东城区·雍和宫",
-      "salary": "7-11K",
+      "job_name": "HTML5",
+      "areaBusiness": "北京·东城区·朝阳门",
+      "salary": "5-10K",
       "experience": "1年以内",
       "degree": "大专",
-      "boss_job": "招聘者",
-      "company_name": "轻松集团",
-      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20200325/da64cb13a856391cc7fa5d4bbbfa4c1d6cdbc583bb15d36a94849e61b1ad0140_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_name": "深圳市海行技术有...",
+      "company_logo": "https://img.bosszhipin.com/beijin/app/mobile/normal-0e3f1e4441a21d4874cece3a3d81f0fe.png?x-oss-process=image/resize,w_100,limit_0",
       "company_kind": "互联网",
-      "company_listing": "C轮",
-      "company_size": "100-499人",
+      "company_listing": "无阶段",
+      "company_size": "0-20人",
+      "boss_job": "CEO",
       "key_words": [
-        "医药信息化服务提供商",
-        "医疗媒体/社区",
-        "护理相关专业",
-        "临床医学相关专业",
-        "全职"
+        "HTML5",
+        "游戏开发"
       ],
-      "boss_active_time": "刚刚活跃",
-      "detail": "岗位职责：\n1、主要负责医学内容编辑；\n2、针对平台专科频道输出内容解决方案；\n3、针对合作医生的医学内容进行加工；\n4、负责医学报告的书写和润色，包含但不限于方案文档、项目报告等；\n5、配合医学经理进行医学表单设计、以及数据内容校对、统计和绘图工作；\n6、配合医学经理完成公司前端团队的医学支持工作及其它医学编辑工作；\n7、领导交代的其它事务。\n任职要求：\n1、大专及以上学历，护理、临床等专业优先考虑；\n2、有广告公司、医学期刊杂志医学编辑经验者优先；\n3、具备良好的文字表达和编辑能力，良好的英语阅读和写作技能；\n4、良好的团队协作和沟通能力，工作认真、细致、责任心强，能承受一定的工作压力；\n5、具备独立思考能力，保持持续学习的热情，关注医药领域的热点，及时提供有价值的医学建议。"
+      "boss_active_time": "半年前活跃",
+      "detail": "开发微信小游戏\n熟悉微信小程序开发，有小游戏开发经验，能快速高质量完成开发任务"
     },
     {
       "job_name": "java软件开发工程师",
@@ -32,12 +30,12 @@
       "salary": "4-5K",
       "experience": "1年以内",
       "degree": "大专",
-      "boss_job": "总裁助理、人力资源总监",
       "company_name": "国创中博",
       "company_logo": "https://img.bosszhipin.com/beijin/app/mobile/normal-0e3f1e4441a21d4874cece3a3d81f0fe.png?x-oss-process=image/resize,w_100,limit_0",
       "company_kind": "企业服务",
       "company_listing": "无阶段",
       "company_size": "20-99人",
+      "boss_job": "总裁助理、人力资源总监",
       "key_words": [
         "Java",
         "大数据经验",
@@ -49,27 +47,30 @@
         "有前端经验/技能",
         "Python"
       ],
-      "boss_active_time": "2周内活跃",
+      "boss_active_time": "今日活跃",
       "detail": "1、有报表开发经验优先。\n2、熟练使用Java编程语言，熟练SpringBoot、SpringCloud、Mybatis等主流开源框架。\n3、熟悉MySQL、redis等数据库开发、熟练掌握SQL语句，有较好的数据库设计能力。\n4、熟练掌握JQuery、JavaScript、Ajax、layui、HTML5等Web前端技术。\n5、熟悉python脚本语言。\n6、熟悉idea,maven,git等开发管理工具。\n7、具备较强沟通能力，较强的学习能力和领悟能力，具有责任心和一定的抗压能力，具有较强的独立工作能力。"
     },
     {
-      "job_name": "HTML5",
-      "areaBusiness": "北京·东城区·朝阳门",
-      "salary": "5-10K",
+      "job_name": "医学内容运营",
+      "areaBusiness": "北京·东城区·雍和宫",
+      "salary": "7-11K",
       "experience": "1年以内",
       "degree": "大专",
-      "boss_job": "CEO",
-      "company_name": "深圳市海行技术有...",
-      "company_logo": "https://img.bosszhipin.com/beijin/app/mobile/normal-0e3f1e4441a21d4874cece3a3d81f0fe.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_name": "轻松集团",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20200325/da64cb13a856391cc7fa5d4bbbfa4c1d6cdbc583bb15d36a94849e61b1ad0140_s.jpg?x-oss-process=image/resize,w_100,limit_0",
       "company_kind": "互联网",
-      "company_listing": "无阶段",
-      "company_size": "0-20人",
+      "company_listing": "C轮",
+      "company_size": "100-499人",
+      "boss_job": "招聘者",
       "key_words": [
-        "HTML5",
-        "游戏开发"
+        "医药信息化服务提供商",
+        "医疗媒体/社区",
+        "护理相关专业",
+        "临床医学相关专业",
+        "全职"
       ],
-      "boss_active_time": "半年前活跃",
-      "detail": "开发微信小游戏\n熟悉微信小程序开发，有小游戏开发经验，能快速高质量完成开发任务"
+      "boss_active_time": "刚刚活跃",
+      "detail": "岗位职责：\n1、主要负责医学内容编辑；\n2、针对平台专科频道输出内容解决方案；\n3、针对合作医生的医学内容进行加工；\n4、负责医学报告的书写和润色，包含但不限于方案文档、项目报告等；\n5、配合医学经理进行医学表单设计、以及数据内容校对、统计和绘图工作；\n6、配合医学经理完成公司前端团队的医学支持工作及其它医学编辑工作；\n7、领导交代的其它事务。\n任职要求：\n1、大专及以上学历，护理、临床等专业优先考虑；\n2、有广告公司、医学期刊杂志医学编辑经验者优先；\n3、具备良好的文字表达和编辑能力，良好的英语阅读和写作技能；\n4、良好的团队协作和沟通能力，工作认真、细致、责任心强，能承受一定的工作压力；\n5、具备独立思考能力，保持持续学习的热情，关注医药领域的热点，及时提供有价值的医学建议。"
     },
     {
       "job_name": "应用系统运维工程师",
@@ -77,12 +78,12 @@
       "salary": "6-11K·13薪",
       "experience": "1年以内",
       "degree": "大专",
-      "boss_job": "招聘者",
       "company_name": "梦创双杨",
       "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20201209/918d8860ca211d4cf66280392cf8025a038b65569789deb230b0909751537960_s.jpg?x-oss-process=image/resize,w_100,limit_0",
       "company_kind": "计算机软件",
       "company_listing": "未融资",
       "company_size": "1000-9999人",
+      "boss_job": "招聘者",
       "key_words": [
         "MySQL",
         "SQL",
@@ -98,12 +99,12 @@
       "salary": "5-10K",
       "experience": "1年以内",
       "degree": "大专",
-      "boss_job": "CEO",
       "company_name": "深圳市海行技术有...",
       "company_logo": "https://img.bosszhipin.com/beijin/app/mobile/normal-0e3f1e4441a21d4874cece3a3d81f0fe.png?x-oss-process=image/resize,w_100,limit_0",
       "company_kind": "互联网",
       "company_listing": "无阶段",
       "company_size": "0-20人",
+      "boss_job": "CEO",
       "key_words": [
         "Android",
         "HTML5",
