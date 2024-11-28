@@ -102,8 +102,7 @@ class Crawler {
     return false
   }
 
-  // 在登录时,连续爬取,检测到异常访问,需要验证
-  // 来自未来:不要登录,有封号的风险
+  // 未登录/登录状态,都有可能被检测出异常请求的ip
   async check_need_verify() {
     const res = await this.wait_el_visable('.page-verify-slider', this.driver, false)
     if (res !== null) {
@@ -120,6 +119,7 @@ class Crawler {
     degree: string
     areaBusiness: string
     total: number
+    catch_total: number
     jobs: JobInfo[]
   }) {
     try{
@@ -145,7 +145,7 @@ class Crawler {
     } catch (err) {
       if (save_error) {
         console.error(`---元素没找到 "${selector}"`, err);
-        await this.save_err_log(`selector not found ${selector}`)
+        await this.save_err_log(`---元素没找到  ${selector}`)
       }
     } finally {
       return el
@@ -218,14 +218,8 @@ class Crawler {
       const handles = await this.driver.getAllWindowHandles();
       await this.driver.switchTo().window(handles[1]); // 切换详情页标签
       console.log('----切换详情页标签');
+      await this.before_page()
 
-      await this.sleep(5000, 10000)
-
-      // console.log('--------------', await this.driver.getCurrentUrl());
-
-
-      await this.wait_el_visable('ul.job-keyword-list') // 关键字el
-      await this.wait_el_visable('div.job-detail-section div.job-sec-text:nth-child(4)') // 详情el
 
       const boss_info_el = await this.wait_el_visable('.boss-info-attr')
       const boss_info_text = await (boss_info_el as WebElement).getText()
@@ -252,28 +246,27 @@ class Crawler {
       job_info.detail = await this.getTextOrDefault('div.job-detail-section div.job-sec-text:nth-child(4)');
 
 
-      // 切回列表页
-      await this.driver.close();
-      await this.driver.switchTo().window(handles[0]);
-      // await this.check_need_verify()
-
       job_info_list.push(job_info)
       console.log('------current params get job: ', job_info_list.length);
 
-      await this.sleep(3000, 5000)
+
+      // 切回列表页
+      await this.driver.close();
+      await this.driver.switchTo().window(handles[0]);
+      await this.before_page()
+
     } catch (e) {
       await this.save_err_log(`get_job_info\n${JSON.stringify(e)}`)
       console.error('---get_job_info', e);
     }
   }
 
-  async get_jobs_from_page(job_info_list: JobInfo[]) {
+  async get_jobs_from_page(job_info_list: JobInfo[]): Promise<WebElement[]> {
     await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
 
     const job_cards = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'));
-    for (let job_card of job_cards) {
-      await this.get_job_info_by_job_card(job_card, job_info_list);
-    }
+    return job_cards
+    
   }
 
 
@@ -298,17 +291,52 @@ class Crawler {
     }
   }
 
+  // // 当前参数下,一共多少job
+  // async get_total(): Promise<number> {
+  //   let total = 0
+  //   const page_bts = await this.driver.findElements(By.css('.options-pages a'))
+  //   // 空页
+  //   if(page_bts.length === 0) {
+  //     total = 0
+  //   }
+  //   // 只有1页数据,按钮分别是<, 1, >,
+  //   else if (page_bts.length === 3) {
+  //     const jobs = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'))
+  //     total = jobs.length
+  //   }
+  //   // 多页
+  //   else {
+  //     const first_page_bt= page_bts[2]
+  //     const last_page_bt = page_bts[page_bts.length - 2]
+  //     const last_page_num = Number(await last_page_bt.getText())
+  //     await last_page_bt.click()
+  //     await this.before_page()
+  //     const last_page_jobs = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'))
+  //     total = last_page_num * 30 + await last_page_jobs.length
+  //     await first_page_bt.click()
+  //     await this.before_page()
+  //   }
+  //   return total
+  // }
+
   // 获取当前参数下的所有页的job
   async get_jobs_by_current_params() {
     let is_finished = false
     const job_info_list: JobInfo[] = []
+    let total = 0
     let page_num = 1
     do {
       console.log('----page ', page_num);
 
-      await this.get_jobs_from_page(job_info_list);
+      const job_cards = await this.get_jobs_from_page(job_info_list);
+      total += job_cards.length
+      for (let job_card of job_cards) {
+        await this.get_job_info_by_job_card(job_card, job_info_list);
+      }
+
       is_finished = await this.go_next_page()
-      await this.sleep(3000, 5000)
+      await this.before_page()
+
       page_num += 1
     } while (!is_finished)
 
@@ -316,7 +344,8 @@ class Crawler {
       experience: this.params.experience,
       degree: this.params.degree,
       areaBusiness: this.params.areaBusiness,
-      total: job_info_list.length,
+      total,
+      catch_total: job_info_list.length,
       jobs: job_info_list
     })
   }
@@ -351,16 +380,20 @@ class Crawler {
     }
   }
 
+  async before_page() {
+    await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
+    await this.check_need_verify()
+    await this.sleep(5000, 10000)
+  }
+
 
   async get_all_job() {
     this.create_log_file()
 
 
     const url = 'http://www.zhipin.com/web/geek/job?query=&page=1'
-    // const url = 'http://www.bilibili.com'
     await this.driver.get(url)
-    await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
-    await this.sleep(5000, 10000)
+    await this.before_page()
 
 
 
@@ -376,23 +409,11 @@ class Crawler {
           this.data_file_name = `${areaBusiness_info}-${experience_info}-${degree_info}`
 
           const url = this.generate_url_by_params()
-          console.log('---new params-----', this.data_file_name);
+          console.log('---new params-----', this.data_file_name, '\n');
 
           await this.driver.get(url);
-          // await this.check_need_verify()
+          await this.before_page()
 
-          // const login_after_ban = await this.check_ip_ban()
-          // if (login_after_ban) {
-          //   // 因为登录后,会重定向页面,所以重新请求
-          //   await this.driver.get(url);
-          // }
-
-          await this.sleep(5000, 10000)
-          // await this.hide_annoy_el()
-
-          // 空页判断
-          const res = await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
-          if (res === null) continue
 
           await this.get_jobs_by_current_params()
         }
@@ -409,6 +430,8 @@ class Crawler {
 
   const options = new chrome.Options();
   options.addArguments("--ignore-certificate-errors");
+  options.addArguments("--disable-blink-features=AutomationControlled");
+
 
 
   const driver = await new Builder()
