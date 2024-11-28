@@ -58,7 +58,7 @@ class Crawler {
   async sleep(time_min: number = 1000, time_max = time_min) {
     const random_time = time_min + (time_max - time_min) * Math.random()
     console.log(`sleep ${random_time}ms`);
-    
+
     await this.driver.sleep(random_time)
   }
 
@@ -83,7 +83,7 @@ class Crawler {
       await this.driver.executeScript(`
         window.scrollTo(0,${current_scroll_y})
       `)
-      await this.sleep(200, 500)
+      await this.sleep(100, 300)
     }
 
     console.log('人工滚动完毕');
@@ -122,10 +122,10 @@ class Crawler {
     catch_total: number
     jobs: JobInfo[]
   }) {
-    try{
+    try {
       fs.writeFileSync(`data_without_detail/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
       console.log(`写入数据success,${this.data_file_name}`);
-    }catch(e) {
+    } catch (e) {
       console.log(`写入数据fail,${this.data_file_name}`);
     }
   }
@@ -206,7 +206,7 @@ class Crawler {
         company_kind,
         company_listing,
         company_size,
-        boss_job:'',
+        boss_job: '',
         key_words: [],
         boss_active_time: '',
         detail: ''
@@ -228,7 +228,7 @@ class Crawler {
       const boss_info_el = await this.wait_el_visable('.boss-info-attr')
       const boss_info_text = await (boss_info_el as WebElement).getText()
       job_info.boss_job = boss_info_text.split('·\n')[1]
-      
+
       const key_words_text = await this.getTextOrDefault('ul.job-keyword-list')
       const key_words = key_words_text.split('\n')
 
@@ -266,11 +266,8 @@ class Crawler {
   }
 
   async get_jobs_from_page(job_info_list: JobInfo[]): Promise<WebElement[]> {
-    await this.wait_el_visable('ul.job-list-box li.job-card-wrapper:nth-child(1)')
-
     const job_cards = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'));
     return job_cards
-    
   }
 
 
@@ -288,9 +285,8 @@ class Crawler {
     if (is_disabled) {
       return true
     } else {
-      await this.simulate_human_scroll(next_page_bt)
+      // await this.simulate_human_scroll(next_page_bt)
       await next_page_bt.click()
-      // await this.check_need_verify()
       return false
     }
   }
@@ -333,14 +329,21 @@ class Crawler {
       console.log('----page ', page_num);
 
       const job_cards = await this.get_jobs_from_page(job_info_list);
+      // 第一页判空
+      if (job_cards.length === 0) {
+        is_finished = true
+        break
+      }
+
       total += job_cards.length
       for (let job_card of job_cards) {
         await this.get_job_info_by_job_card(job_card, job_info_list);
       }
 
       is_finished = await this.go_next_page()
-      await this.before_page()
+      if(is_finished) break
 
+      await this.before_page()
       page_num += 1
     } while (!is_finished)
 
@@ -385,9 +388,19 @@ class Crawler {
   }
 
   async before_page() {
-    await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
-    await this.check_need_verify()
     await this.sleep(5000, 10000)
+    // await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
+    await this.check_need_verify()
+    await this.close_dialog()
+  }
+  async close_dialog() {
+    const dialog = await this.wait_el_visable('.boss-login-dialog', this.driver, false)
+    if (dialog !== null) {
+      const close_bt = await this.wait_el_visable('.boss-login-close', dialog, false)
+      close_bt?.click()
+      console.log('------------------关闭登录弹框');
+      await this.sleep(500, 1400)
+    }
   }
 
 
@@ -440,7 +453,7 @@ class Crawler {
 
   const driver = await new Builder()
     .forBrowser(Browser.CHROME)
-    .setChromeOptions(options)
+    // .setChromeOptions(options)
     .build();
 
   const c = new Crawler(driver)
