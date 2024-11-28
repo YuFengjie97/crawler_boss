@@ -1,0 +1,41 @@
+{
+  "experience": "105",
+  "degree": "204",
+  "areaBusiness": "110112",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "Java",
+      "areaBusiness": "北京·通州区·马驹桥",
+      "salary": "15-16K·16薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "马克华菲餐饮",
+      "company_logo": "https://img.bosszhipin.com/beijin/app/mobile/normal-0e3f1e4441a21d4874cece3a3d81f0fe.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "餐饮",
+      "company_listing": "无阶段",
+      "company_size": "0-20人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "运筹优化算法工程师（数字孪生方向）",
+      "areaBusiness": "北京",
+      "salary": "25-50K·16薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "京东集团",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/bar/20191129/3cdf5ba2149e309b38868b62ae9c22cabe1bd4a3bd2a63f070bdbdada9aad826.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "电子商务",
+      "company_listing": "已上市",
+      "company_size": "10000人以上",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

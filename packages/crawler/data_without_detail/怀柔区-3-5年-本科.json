@@ -1,0 +1,57 @@
+{
+  "experience": "105",
+  "degree": "203",
+  "areaBusiness": "110116",
+  "total": 3,
+  "catch_total": 3,
+  "jobs": [
+    {
+      "job_name": "中级前端工程师",
+      "areaBusiness": "北京·怀柔区·雁栖",
+      "salary": "12-17K",
+      "experience": "3-5年",
+      "degree": "本科",
+      "company_name": "大微天成",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20201120/ce6249b80c7cafe1b40ad97b0c845f6d80854c408d3ee7181408d97066d568fc_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机硬件",
+      "company_listing": "未融资",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "gis软件开发",
+      "areaBusiness": "北京·怀柔区·泉河",
+      "salary": "15-25K",
+      "experience": "3-5年",
+      "degree": "本科",
+      "company_name": "众诚兴林",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20200910/c20a383f6e2a08a316cdce71adfa2062546d2241e193bfd1f7b8ecdc3c767dc9_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "未融资",
+      "company_size": "0-20人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "PHP",
+      "areaBusiness": "北京·怀柔区·庙城",
+      "salary": "13-26K",
+      "experience": "3-5年",
+      "degree": "本科",
+      "company_name": "中数云算",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "电子商务",
+      "company_listing": "不需要融资",
+      "company_size": "0-20人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

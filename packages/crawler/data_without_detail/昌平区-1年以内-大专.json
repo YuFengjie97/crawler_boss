@@ -1,0 +1,41 @@
+{
+  "experience": "103",
+  "degree": "202",
+  "areaBusiness": "110114",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "HTML5",
+      "areaBusiness": "北京·昌平区·天通苑",
+      "salary": "9-13K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "度海明光",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "移动互联网",
+      "company_listing": "未融资",
+      "company_size": "0-20人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "Android初级工程师",
+      "areaBusiness": "北京·昌平区·回龙观",
+      "salary": "7-12K·13薪",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "栎樾时代",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "游戏",
+      "company_listing": "不需要融资",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

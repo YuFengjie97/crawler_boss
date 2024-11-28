@@ -1,0 +1,25 @@
+{
+  "experience": "103",
+  "degree": "203",
+  "areaBusiness": "110107",
+  "total": 1,
+  "catch_total": 1,
+  "jobs": [
+    {
+      "job_name": "前端开发初级工程师",
+      "areaBusiness": "北京·石景山区·苹果园",
+      "salary": "6-11K",
+      "experience": "1年以内",
+      "degree": "本科",
+      "company_name": "CEPO",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20210410/19f0e40d3ef4bf31923791b30f86f0a0faa5ef7750005d46e453f0bddd110863_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "信息安全",
+      "company_listing": "A轮",
+      "company_size": "100-499人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

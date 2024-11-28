@@ -1,0 +1,25 @@
+{
+  "experience": "104",
+  "degree": "204",
+  "areaBusiness": "110101",
+  "total": 1,
+  "catch_total": 1,
+  "jobs": [
+    {
+      "job_name": "后端开发工程师",
+      "areaBusiness": "北京·东城区·东直门",
+      "salary": "20-30K",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "中科微澜科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20190902/89de5d0b88851ae854e0bb6e50a87583715b56e9a9598432db1aa054803d3b10_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "信息安全",
+      "company_listing": "天使轮",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "experience": "103",
+  "degree": "204",
+  "areaBusiness": "110105",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "前端开发工程师（2024届优先）",
+      "areaBusiness": "北京·朝阳区·望京",
+      "salary": "20-25K·14薪",
+      "experience": "1年以内",
+      "degree": "硕士",
+      "company_name": "白龙马云行科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20211028/7bf6f160950405e9f1fbd03a466179c561a643590a3e538547bcb53df422ad78846f24b69525a8ea.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网",
+      "company_listing": "不需要融资",
+      "company_size": "100-499人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "Java开发",
+      "areaBusiness": "北京·朝阳区·常营",
+      "salary": "10-15K",
+      "experience": "1年以内",
+      "degree": "硕士",
+      "company_name": "昊恩星美",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20231012/7bf6f160950405e95088828ac33a57a0c525078030af58bbc3fb84f1faefe37034a1b0cd80d69b38.png.webp?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "未融资",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "experience": "105",
+  "degree": "203",
+  "areaBusiness": "110119",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "前端工程师",
+      "areaBusiness": "北京·延庆区·康庄",
+      "salary": "25-30K",
+      "experience": "3-5年",
+      "degree": "本科",
+      "company_name": "助梦空间",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20230609/7bf6f160950405e977212efead0204cfda67e20312f6743d6a33dea47f6fa75dce2b54ec144ea0cb.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "培训/辅导机构",
+      "company_listing": "天使轮",
+      "company_size": "0-20人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "Java",
+      "areaBusiness": "北京·延庆区·延庆城区",
+      "salary": "12-20K",
+      "experience": "3-5年",
+      "degree": "本科",
+      "company_name": "三栈科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20220309/7bf6f160950405e900e277e6859d797573f673a4acc8a2d50c1d65e5c03ba76cc49dcd4378ce8a7b.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "天使轮",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

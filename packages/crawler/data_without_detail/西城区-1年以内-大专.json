@@ -1,0 +1,41 @@
+{
+  "experience": "103",
+  "degree": "202",
+  "areaBusiness": "110102",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "net初级开发工程师",
+      "areaBusiness": "北京·西城区·车公庄",
+      "salary": "7-12K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "北京理正",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20180306/fe7909e45ff1f76015c027dc3f03708dcfcd208495d565ef66e7dff9f98764da.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "未融资",
+      "company_size": "500-999人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "Java",
+      "areaBusiness": "北京·西城区·复兴门",
+      "salary": "6-8K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "北京康达惠",
+      "company_logo": "https://img.bosszhipin.com/beijin/app/mobile/normal-0e3f1e4441a21d4874cece3a3d81f0fe.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "其他行业",
+      "company_listing": "无阶段",
+      "company_size": "0-20人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

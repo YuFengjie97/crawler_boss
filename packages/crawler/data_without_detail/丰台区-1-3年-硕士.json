@@ -1,0 +1,73 @@
+{
+  "experience": "104",
+  "degree": "204",
+  "areaBusiness": "110106",
+  "total": 4,
+  "catch_total": 4,
+  "jobs": [
+    {
+      "job_name": "前端开发工程师",
+      "areaBusiness": "北京·丰台区·七里庄",
+      "salary": "12-15K",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "辰创科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20190226/f41ab30c8a8c93f5ac5a1b1fe477fab83706848a0904c5b4bb1f0f87cd5de3e4.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "通信/网络设备",
+      "company_listing": "D轮及以上",
+      "company_size": "100-499人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "web前端开发工程师",
+      "areaBusiness": "北京·丰台区·六里桥",
+      "salary": "35-50K·13薪",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "银河证券",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20160616/390aced3f2c796c5b2b4266a0a2dc4ff6e4d7bdfa6d3d7d9ea2fee18e9213f22.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网金融",
+      "company_listing": "已上市",
+      "company_size": "1000-9999人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "前端开发工程师",
+      "areaBusiness": "北京·丰台区·右安门",
+      "salary": "10-11K",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "北京瑞采国际贸易",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "进出口贸易",
+      "company_listing": "无阶段",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "人机交互工程师",
+      "areaBusiness": "北京·丰台区·长辛店",
+      "salary": "20-30K",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "中兵智能创新研究院",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20231012/7bf6f160950405e931b5ef5b073f820a52cda5e8b296ea4c9acbca5222ebad660f50d854747c33cf.png.webp?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网",
+      "company_listing": "未融资",
+      "company_size": "100-499人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

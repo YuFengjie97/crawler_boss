@@ -1,0 +1,41 @@
+{
+  "experience": "105",
+  "degree": "202",
+  "areaBusiness": "110109",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "前端开发高级工程师",
+      "areaBusiness": "北京·门头沟区·石门营",
+      "salary": "12-20K",
+      "experience": "3-5年",
+      "degree": "大专",
+      "company_name": "华夏迅联",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20171221/70a68e37091565970c95be521b659a7dc139400e05599acbf67a042e9c36c1aa.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "未融资",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "数据中台产品经理",
+      "areaBusiness": "北京·门头沟区·龙泉",
+      "salary": "18-22K",
+      "experience": "3-5年",
+      "degree": "大专",
+      "company_name": "创信兴鹏",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "通信/网络设备",
+      "company_listing": "未融资",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "experience": "104",
+  "degree": "203",
+  "areaBusiness": "110116",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "前端开发工程师",
+      "areaBusiness": "北京·怀柔区·雁栖",
+      "salary": "10-15K",
+      "experience": "1-3年",
+      "degree": "本科",
+      "company_name": "中科赛凌",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20200411/645f61281bf8ed26d4e4f707295e7bbc48027676ba114002c45835c582183320_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "仪器仪表/工业自动化",
+      "company_listing": "天使轮",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "后端开发工程师（Node.js方向）",
+      "areaBusiness": "北京·怀柔区·雁栖",
+      "salary": "15-28K",
+      "experience": "1-3年",
+      "degree": "本科",
+      "company_name": "携云启源",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20220401/7bf6f160950405e98d64f74b98ee85ae51ecd5a3149ce503e38443bde804da63e26d08520c6ee16e.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网",
+      "company_listing": "A轮",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

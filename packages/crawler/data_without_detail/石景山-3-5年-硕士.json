@@ -1,0 +1,73 @@
+{
+  "experience": "105",
+  "degree": "204",
+  "areaBusiness": "110107",
+  "total": 4,
+  "catch_total": 4,
+  "jobs": [
+    {
+      "job_name": "前端声学算法工程师",
+      "areaBusiness": "北京·石景山区·古城",
+      "salary": "28-45K",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "北京全景声信息科...",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20201127/40e2bd3a32db297f00eaf79f2026ec8d124214acee2d3d4da242871b041e086a_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "B轮",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "资深后端开发工程师",
+      "areaBusiness": "北京·石景山区·苹果园",
+      "salary": "12-20K·15薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "灵动天地",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/logo/20210223/b8599fe9ba91fa301dd789fd635960b5152d7c77fb90764488863fcfca6bfa11.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "广告/公关/会展",
+      "company_listing": "未融资",
+      "company_size": "0-20人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "资深数字IC设计工程师",
+      "areaBusiness": "北京·石景山区·古城",
+      "salary": "30-50K·15薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "首亨",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "人工智能",
+      "company_listing": "无阶段",
+      "company_size": "0-20人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "高级产品经理",
+      "areaBusiness": "北京·石景山区·八角",
+      "salary": "20-40K",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "江苏智能无人装备...",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "机械设备/机电/重工",
+      "company_listing": "无阶段",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

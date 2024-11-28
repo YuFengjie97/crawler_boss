@@ -1,0 +1,25 @@
+{
+  "experience": "103",
+  "degree": "202",
+  "areaBusiness": "110115",
+  "total": 1,
+  "catch_total": 1,
+  "jobs": [
+    {
+      "job_name": "前端开发工程师",
+      "areaBusiness": "北京·大兴区·西红门",
+      "salary": "5-8K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "北京日月新著",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "企业服务",
+      "company_listing": "无阶段",
+      "company_size": "0-20人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

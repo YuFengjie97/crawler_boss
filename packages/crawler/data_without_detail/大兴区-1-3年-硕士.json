@@ -1,0 +1,41 @@
+{
+  "experience": "104",
+  "degree": "204",
+  "areaBusiness": "110115",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "资深数字设计工程师",
+      "areaBusiness": "北京·大兴区·亦庄",
+      "salary": "22-40K·14薪",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "集创北方",
+      "company_logo": "https://c-res.zhipin.com/jrs/6111504b6159f3a65487628cc1b06691.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "半导体/芯片",
+      "company_listing": "D轮及以上",
+      "company_size": "1000-9999人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "java开发工程师",
+      "areaBusiness": "北京·大兴区·黄村",
+      "salary": "25-30K·13薪",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "中船海丰",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20230511/7bf6f160950405e903be23dc000687e140f67bf2cda9a653e1c1864b7293e51b9d2be8449ac5d753.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "不需要融资",
+      "company_size": "100-499人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

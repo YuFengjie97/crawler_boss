@@ -1,0 +1,41 @@
+{
+  "experience": "105",
+  "degree": "204",
+  "areaBusiness": "110109",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "数字IC设计工程师",
+      "areaBusiness": "北京·门头沟区·永定",
+      "salary": "30-60K·14薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "泽声科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20230308/7bf6f160950405e915b1d556bbc8212bbdbc7dfac2f24279d803d725508a091f59ea3cf8dd14fc68.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "电子/半导体/集成电路",
+      "company_listing": "A轮",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "高级数字电路设计工程师",
+      "areaBusiness": "北京·门头沟区·永定",
+      "salary": "30-60K·14薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "泽声科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20230308/7bf6f160950405e915b1d556bbc8212bbdbc7dfac2f24279d803d725508a091f59ea3cf8dd14fc68.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "电子/半导体/集成电路",
+      "company_listing": "A轮",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

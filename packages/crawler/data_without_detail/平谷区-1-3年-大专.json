@@ -1,0 +1,41 @@
+{
+  "experience": "104",
+  "degree": "202",
+  "areaBusiness": "110117",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "高级web前端开发",
+      "areaBusiness": "北京·平谷区·兴谷",
+      "salary": "10-11K",
+      "experience": "1-3年",
+      "degree": "大专",
+      "company_name": "蓝姗科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网",
+      "company_listing": "无阶段",
+      "company_size": "0-20人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "无人机软件工程师",
+      "areaBusiness": "北京·平谷区·王辛庄村",
+      "salary": "10-15K",
+      "experience": "1-3年",
+      "degree": "大专",
+      "company_name": "洲际联合超伦科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20210612/0bb01e2bf36872a67fa3ef6cd8eda72fab71c28d3e6e377b13d05d11561e6a4f.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "铁路/船舶/航空/航天制造",
+      "company_listing": "未融资",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

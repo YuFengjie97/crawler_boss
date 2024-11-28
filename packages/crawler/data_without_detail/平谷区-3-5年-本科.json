@@ -1,0 +1,41 @@
+{
+  "experience": "105",
+  "degree": "203",
+  "areaBusiness": "110117",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "Web",
+      "areaBusiness": "北京·平谷区·平谷城区",
+      "salary": "10-12K",
+      "experience": "3-5年",
+      "degree": "本科",
+      "company_name": "沃德博创",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20181115/31718bd0cdebb3fe3d84161898b049bbcfcd208495d565ef66e7dff9f98764da.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网",
+      "company_listing": "未融资",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "Web 工程师-中级",
+      "areaBusiness": "北京·平谷区·平谷城区",
+      "salary": "10-12K",
+      "experience": "3-5年",
+      "degree": "本科",
+      "company_name": "沃德博创",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20181115/31718bd0cdebb3fe3d84161898b049bbcfcd208495d565ef66e7dff9f98764da.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网",
+      "company_listing": "未融资",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "experience": "105",
+  "degree": "204",
+  "areaBusiness": "110101",
+  "total": 4,
+  "catch_total": 4,
+  "jobs": [
+    {
+      "job_name": "前端开发工程师",
+      "areaBusiness": "北京·东城区·和平里",
+      "salary": "15-25K·16薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "联通数字科技有限公司",
+      "company_logo": "https://c-res.zhipin.com/jrs/43db4068575fe8e140b85a764dc25850.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "不需要融资",
+      "company_size": "1000-9999人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "web前端开发工程师",
+      "areaBusiness": "北京·东城区·安定门",
+      "salary": "20-40K",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "民生科技有限责任公司",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "银行",
+      "company_listing": "无阶段",
+      "company_size": "1000-9999人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "互联网金融产品经理",
+      "areaBusiness": "北京",
+      "salary": "20-40K",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "中信建投证券",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/logo/20200723/aac1dc249f165c6c4811131738e9e4b27f30dea114ce7206ca1c9044f8d9c45e.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网金融",
+      "company_listing": "已上市",
+      "company_size": "10000人以上",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "视频图像算法工程师",
+      "areaBusiness": "北京·东城区·交道口",
+      "salary": "15-25K·13薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "博数智源",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/logo/20201130/499269c12ede75a66773b2695e5ce05d06d0aa73aa8fc5e67fcd30028f3916e8.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "未融资",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "experience": "104",
+  "degree": "204",
+  "areaBusiness": "110113",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "中级前端开发工程师",
+      "areaBusiness": "北京·顺义区·石园",
+      "salary": "15-25K",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "天玛智控",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20220824/7bf6f160950405e939edffca058243fdf73972f1bbf025a478af45af8fac4eff8315cf2cba06284c.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "通用设备",
+      "company_listing": "未融资",
+      "company_size": "500-999人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    },
+    {
+      "job_name": "微信小程序开发工程师",
+      "areaBusiness": "北京",
+      "salary": "5-8K",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "欧华天勤",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "医疗健康",
+      "company_listing": "不需要融资",
+      "company_size": "20-99人",
+      "boss_job": "",
+      "key_words": [],
+      "boss_active_time": "",
+      "detail": ""
+    }
+  ]
+}
