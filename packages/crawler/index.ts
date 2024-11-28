@@ -161,7 +161,7 @@ class Crawler {
   async get_job_info_by_job_card(job_card: WebElement, job_info_list: JobInfo[]) {
     try {
       console.log('----获取卡片信息');
-      await this.simulate_human_scroll(job_card)
+      // await this.simulate_human_scroll(job_card)
       // 滚动元素到视口内
       // await this.driver.executeScript("arguments[0].scrollIntoView(true);", job_card);
 
