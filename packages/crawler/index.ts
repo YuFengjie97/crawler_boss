@@ -123,7 +123,7 @@ class Crawler {
     jobs: JobInfo[]
   }) {
     try {
-      fs.writeFileSync(`data_without_detail/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
+      fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
       console.log(`写入数据success,${this.data_file_name}`);
     } catch (e) {
       console.log(`写入数据fail,${this.data_file_name}`);
@@ -212,17 +212,13 @@ class Crawler {
         detail: ''
       };
 
-      job_info_list.push(job_info)
-      console.log('------current params get job: ', job_info_list.length);
-      return
-
 
       // 获取详情页上的信息
       await job_card.click();
       const handles = await this.driver.getAllWindowHandles();
       await this.driver.switchTo().window(handles[1]); // 切换详情页标签
       console.log('----切换详情页标签');
-      await this.before_page()
+      // await this.before_page()
 
 
       const boss_info_el = await this.wait_el_visable('.boss-info-attr')
@@ -234,8 +230,8 @@ class Crawler {
 
       job_info.key_words.push(...key_words)
 
-      const boss_avatar = await this.wait_el_visable('.detail-figure')
-      await this.simulate_human_scroll(boss_avatar as WebElement)
+      // const boss_avatar = await this.wait_el_visable('.detail-figure')
+      // await this.simulate_human_scroll(boss_avatar as WebElement)
 
       const boss_active_time = await this.driver.findElements(By.css('span.boss-active-time'))
       if (boss_active_time.length > 0) {
