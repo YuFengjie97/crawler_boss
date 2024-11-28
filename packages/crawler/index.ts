@@ -253,7 +253,7 @@ class Crawler {
       // 切回列表页
       await this.driver.close();
       await this.driver.switchTo().window(handles[0]);
-      await this.before_page()
+      // await this.before_page()
 
     } catch (e) {
       await this.save_err_log(`get_job_info\n${JSON.stringify(e)}`)
