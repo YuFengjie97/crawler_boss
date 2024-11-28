@@ -218,7 +218,7 @@ class Crawler {
       const handles = await this.driver.getAllWindowHandles();
       await this.driver.switchTo().window(handles[1]); // 切换详情页标签
       console.log('----切换详情页标签');
-      // await this.before_page()
+      await this.before_page()
 
 
       const boss_info_el = await this.wait_el_visable('.boss-info-attr')
