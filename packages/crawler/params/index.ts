@@ -16,7 +16,7 @@ export interface Params {
 export const experience_map: M = {
   key: 'experience',
   value: {
-    // 103: '1年以内',
+    103: '1年以内',
     104: '1-3年',
     105: '3-5年',
   }
@@ -34,7 +34,7 @@ export const degree_map: M = {
 export const areabussiness_map: M = {
   key: 'areaBusiness',
   value: {
-    // 110101: '东城区',
+    110101: '东城区',
     110102: '西城区',
     110105: '朝阳区',
     110107: '石景山',

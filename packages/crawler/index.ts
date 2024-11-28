@@ -123,7 +123,7 @@ class Crawler {
     jobs: JobInfo[]
   }) {
     try{
-      fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
+      fs.writeFileSync(`data_without_detail/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
       console.log(`写入数据success,${this.data_file_name}`);
     }catch(e) {
       console.log(`写入数据fail,${this.data_file_name}`);
@@ -211,6 +211,10 @@ class Crawler {
         boss_active_time: '',
         detail: ''
       };
+
+      job_info_list.push(job_info)
+      console.log('------current params get job: ', job_info_list.length);
+      return
 
 
       // 获取详情页上的信息
