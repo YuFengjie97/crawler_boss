@@ -408,6 +408,7 @@ class Crawler {
       if (flag !== null) return true
       return false
     } catch (e) {
+      console.log('---------',e);
       return false
     }
   }
@@ -457,8 +458,7 @@ function sleep(timeout: number) {
 
 
 (async function main() {
-
-  let c: Crawler
+  ip_proxy.length = 0
 
   do {
     const proxy = ip_proxy.shift()
@@ -466,21 +466,23 @@ function sleep(timeout: number) {
     const options = new chrome.Options();
     // options.addArguments("--ignore-certificate-errors");
     // options.addArguments("--disable-blink-features=AutomationControlled");
-    options.addArguments(`--proxy-server=http://${proxy}`);
+    // options.addArguments(`--proxy-server=http://${proxy}`);
     const driver = await new Builder()
       .forBrowser(Browser.CHROME)
       .setChromeOptions(options)
       .build();
-    c = new Crawler(driver)
+    const c = new Crawler(driver)
 
     if (proxy) {
       const proxy_ok = await c.check_proxy_work()
+      console.log(proxy_ok);
+      
       if (proxy_ok) {
-        console.log(`------proxy${proxy} ok---------------\n`);
+        console.log(`------proxy  ${proxy}  ok---------------\n`);
         await c.get_all_job()
         break
       } else {
-        console.log(`-- proxy -${proxy}--- -- -fail- -- --\n`)
+        console.log(`-- proxy -  ${proxy}--- -- -fail- -- --\n`)
         await driver.quit()
         await sleep(1200)
       }
