@@ -6,7 +6,8 @@
   "workspaces": [],
   "scripts": {
     "crawler": "pnpm -r run crawler",
-    "dev": "pnpm -r run dev"
+    "dev": "pnpm -r run dev",
+    "axios_craw": "pnpm -r run axios_craw"
   },
   "keywords": [],
   "author": "",
