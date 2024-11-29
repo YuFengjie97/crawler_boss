@@ -444,12 +444,14 @@ class Crawler {
   const options = new chrome.Options();
   options.addArguments("--ignore-certificate-errors");
   options.addArguments("--disable-blink-features=AutomationControlled");
+  const proxy = '49.71.118.30:8089'
+  options.addArguments(`--proxy-server=http://${proxy}`);
 
 
 
   const driver = await new Builder()
     .forBrowser(Browser.CHROME)
-    // .setChromeOptions(options)
+    .setChromeOptions(options)
     .build();
 
   const c = new Crawler(driver)
