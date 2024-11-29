@@ -7,7 +7,7 @@
   "scripts": {
     "crawler": "pnpm -r run crawler",
     "dev": "pnpm -r run dev",
-    "axios_craw": "pnpm -r run axios_craw"
+    "crawler_ip": "pnpm -r run crawler_ip"
   },
   "keywords": [],
   "author": "",
