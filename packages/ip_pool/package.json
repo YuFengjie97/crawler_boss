@@ -1,19 +1,21 @@
 {
-  "name": "crawler_ip",
+  "name": "ip_pool",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "crawler_ip": "npx tsx index.ts"
+    "serve89": "npx tsx craw89.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.8",
-    "cheerio": "^1.0.0"
+    "cheerio": "^1.0.0",
+    "express": "^4.21.1"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }

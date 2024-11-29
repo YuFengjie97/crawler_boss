@@ -7,7 +7,7 @@
   "scripts": {
     "crawler": "pnpm -r run crawler",
     "dev": "pnpm -r run dev",
-    "crawler_ip": "pnpm -r run crawler_ip"
+    "serve89": "pnpm -r run serve89"
   },
   "keywords": [],
   "author": "",
