@@ -418,12 +418,6 @@ class Crawler {
     this.create_log_file()
 
 
-    const url = 'http://www.zhipin.com/web/geek/job?query=&page=1'
-    await this.driver.get(url)
-    await this.before_page()
-
-
-
     for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
       for (let [experience_key, experience_info] of Object.entries(experience_map.value)) {
         for (let [degree_key, degree_info] of Object.entries(degree_map.value)) {
@@ -458,7 +452,17 @@ function sleep(timeout: number) {
 
 
 (async function main() {
-  ip_proxy.length = 0
+  const options = new chrome.Options();
+  // options.addArguments("--ignore-certificate-errors");
+  // options.addArguments("--disable-blink-features=AutomationControlled");
+  // options.addArguments(`--proxy-server=http://${proxy}`);
+  const driver = await new Builder()
+    .forBrowser(Browser.CHROME)
+    .setChromeOptions(options)
+    .build();
+  const c = new Crawler(driver)
+  await c.get_all_job()
+  return
 
   do {
     const proxy = ip_proxy.shift()

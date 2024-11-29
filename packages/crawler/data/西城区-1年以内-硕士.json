@@ -1,0 +1,28 @@
+{
+  "experience": "103",
+  "degree": "204",
+  "areaBusiness": "110102",
+  "total": 1,
+  "catch_total": 1,
+  "jobs": [
+    {
+      "job_name": "数字前端工程师",
+      "areaBusiness": "北京·西城区·牡丹园",
+      "salary": "25-50K·13薪",
+      "experience": "1年以内",
+      "degree": "硕士",
+      "company_name": "安路科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/banner/b27b1bba39a5bf1af566a81648702f4ecfcd208495d565ef66e7dff9f98764da.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "电子/半导体/集成电路",
+      "company_listing": "已上市",
+      "company_size": "100-499人",
+      "boss_job": "Recruiter",
+      "key_words": [
+        "FPGA开发",
+        "Verilog"
+      ],
+      "boss_active_time": "3日内活跃",
+      "detail": "职责描述：\n1.负责高速数模混合信号IP及产品研发\n2.参与产品定义及产品架构制定，优化功耗/面积/性能\n3.负责高速数字设计，包括协议实现、混合信号环路、数字较准等RTL实现和验证\n4.完成后端综合，门级仿真，时序分析，ECO和TOP集成\n5.与模拟设计团队完成混合信号环路设计和时序检查\n6.协助产品的调试和测试验证工作\n7.协助解决产品量产中出现的问题和相关客户支持工作\n任职要求：\n1.微电子、电路与系统相关专业，硕士及以上学位\n2.扎实的verilog代码编写能力，熟悉标准数字设计、验证和实现流程\n3.对高速数字及混合信号设计和验证有深刻的理解\n4.有团队合作精神，具有良好的沟通能力\n5.熟悉PCIE，USB，Gigabit Ethernet 等SERDES等协议的优先考虑"
+    }
+  ]
+}

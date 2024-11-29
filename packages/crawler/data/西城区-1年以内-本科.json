@@ -1,0 +1,155 @@
+{
+  "experience": "103",
+  "degree": "203",
+  "areaBusiness": "110102",
+  "total": 7,
+  "catch_total": 7,
+  "jobs": [
+    {
+      "job_name": "web前端工程师",
+      "areaBusiness": "北京·西城区·南礼士路",
+      "salary": "10-15K",
+      "experience": "1年以内",
+      "degree": "本科",
+      "company_name": "巽震数码",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20190924/c5497f9d7ab05e22f6b3d6a35b9c947e2402f54872304d3c308870b3b4a54f85_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "不需要融资",
+      "company_size": "20-99人",
+      "boss_job": "行政人事",
+      "key_words": [
+        "JavaScript",
+        "HTML5",
+        "Vue",
+        "WEB开发",
+        "Web端",
+        "移动端",
+        "PC端",
+        "GIT"
+      ],
+      "boss_active_time": "5月内活跃",
+      "detail": "【背景信息】：\n企业性质：教育信息化、高新技术企业、业内品牌企业\n行业客户：旅游教育行业（中职、高职、大学）\n薪资方式：底薪 + 年终奖励\n【职位描述】：\n1、负责公司产品 Web 前端页面的开发、调试和维护；\n2、负责界面构建、兼容、优化，与设计人员和后端人员协同配合；\n3、维护和改进公司前端技术平台，维护前端工具链、前端技术组件；\n4、跟进前端技术的发展，结合实际应用需求进行技术的改进与创新。\n【职位要求】：\n1、精通jQuery、Vue或node.js，1年前端工作经验；\n2、熟练使用Axure或其它原型设计工具；\n3、熟练使用ES5、ES6、JavaScript、H5、CSS3等标准语法；\n4、熟悉IE8-11浏览器对脚本方法的支持；\n5、熟悉iview、elementui等前端框架；\n6、熟练使用 HBuilder、webpack、echarts等工具；\n7、熟悉 svn、git 等版本管理工具；\n8、具有前后端开发经验者优先；\n9、对界面布局拥有自己的见解，对提升用户体验、优化前端加载速度等具有丰富经验者优先；\n10、对各大主流浏览器（浏览器，谷歌，火狐，IE，360等）兼容经验丰富者优先；\n11、具有良好的沟通能力及团队合作意识；\n【工作环境】：\n1、工作、生活、娱乐一体化的便捷办公环境；\n2、地铁直达，金融街商圈。\n【公司福利】：\n1、全额社会保险、《北京市工作居住证》、补充商业保险；\n2、年终奖金、项目奖金；\n3、年假、法定带薪假，春节11天以上的带薪休假；\n4、培训机制：定期培训；\n5、文化活动：体育活动+公司日常娱乐活动+旅游等等；\n6、节日福利：购物卡、专属福利、生日趴&生日礼物；\n7、其他：免费零食和咖啡。\n在这里有一群年轻活力的团队；\n在这里有一份高额的收入；\n在这里公司给你提供优秀的平台，无限的职业发展空间；\n只要你敢挑战，只要你有能力；\n不要再犹豫了，赶紧行动起来，加入我们吧！！！\n让我们在一起,为了共同目标，齐头并进，共创价值。"
+    },
+    {
+      "job_name": "Java开发工程师",
+      "areaBusiness": "北京·西城区·马甸",
+      "salary": "8-9K",
+      "experience": "1年以内",
+      "degree": "本科",
+      "company_name": "强讯科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20171218/fd3f6be8d2fc98c363e8fe6f2aef5a7fcfcd208495d565ef66e7dff9f98764da.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "通信/网络设备",
+      "company_listing": "不需要融资",
+      "company_size": "100-499人",
+      "boss_job": "人事",
+      "key_words": [
+        "Java",
+        "HTML",
+        "CSS"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "岗位职责:\n1、公司核心产品研发；\n2、业务模块与接口的设计与编码；\n3、产品技术框架的维护与演进。\n任职资格:\n1、计算机相关专业本科及以上学历，1年以上Java开发经验；\n2、熟悉面向对象的设计和编程，具有扎实的Java基础知识；\n3、熟悉Tomcat等应用服务器的应用部署和配置，有linux操作经验；\n4、精通JSP/Servlet、HTML、CSS、JavaScript、Ajax、Jquery等WEB开发技术，熟悉webmvc框架，参与web产品前端部分的设计与开发。\n5、熟悉 J2EE主流框架springmvc、hibernate、 struts2、mybatis等；\n6、熟练掌握 Eclipse 等开发工具；熟悉redis、memcached、ehcache其中一种缓存机制；\n7、熟练使用 Mysql/MongoDB 等关系及非关系型数据库产品；\n8、热爱软件开发技术，学习能力强，踏实稳重，具备良好的团队协作能力。"
+    },
+    {
+      "job_name": "报表工程师",
+      "areaBusiness": "北京·西城区·金融街",
+      "salary": "4-5K",
+      "experience": "1年以内",
+      "degree": "本科",
+      "company_name": "启高科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/logo/20201225/1419767f03a572b4622e705daaa30d323bfc9ddc88ce8b33a02b522263b0379d.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机服务",
+      "company_listing": "不需要融资",
+      "company_size": "100-499人",
+      "boss_job": "项目经理",
+      "key_words": [
+        "计算机相关专业",
+        "数学/统计相关专业"
+      ],
+      "boss_active_time": "本月活跃",
+      "detail": "职务描述：\n1.参与项目中的需求沟通输出项目文档、可视化分析、前端及分析维度设计\n2.参与项目数仓/BI的实施工作，设计数据仓库开发、报表开发、文档输出等工作\n任职要求：\n1.统招计算机相关专业本科及以上学历，计算机、信息管理、数学、统计学相关专业\n2.熟悉数据仓库模型设计及体系架构\n3.熟悉Mysql，Oracle，Doris等数据开发语言及大数据相关技术\n4.熟悉常见的可视化呈现工具，如SugarBI，帆软BI/FineReport等，可以进行数据处理及可视化开发\n5.有良好的沟通能力和快速学习能力，对业务有较强的理解能力"
+    },
+    {
+      "job_name": "康复治疗师",
+      "areaBusiness": "北京·西城区·陶然亭",
+      "salary": "5-8K",
+      "experience": "1年以内",
+      "degree": "本科",
+      "company_name": "赫思康欣医生集团",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20160622/c7efc3bde1c1c309412595fb88f27d1d1fac2ec3d73f041ecf46c34eb0bf74b9.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "医疗健康",
+      "company_listing": "天使轮",
+      "company_size": "20-99人",
+      "boss_job": "人事主管",
+      "key_words": [
+        "运动治疗师",
+        "呼吸治疗师",
+        "康复治疗师"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "工作职责：\n1.负责床旁康复治疗(心内科，呼吸科，消化内科，心外科，普外科等)\n2.与医生反馈沟通患者情况\n3.做好患者病情康复记录\n4.以及领导交代的其他事项\n要求：\n1.有床旁康复经验。(实习期也可以)\n2. 专业课程无挂科；\n3. 可以适应高强度工作；\n4. 工作严谨，服从管理。\n5. 有康复师资格证优先\n6.有上进心，热爱学习(很重要！！！)\n我们的优势：\n1.不打卡，公司氛围好，领导nice，零食不断，苹果饮料瓜子矿泉水啥的，想吃啥你提 我买~~~\n2.良好的学习氛围，免费培训，进步快，空间大！\n3.创业团队，走在心肺康复同行业的前端，未来市场不可估量！"
+    },
+    {
+      "job_name": "网站编辑",
+      "areaBusiness": "北京·西城区·马甸",
+      "salary": "260-320元/天",
+      "experience": "1年以内",
+      "degree": "本科",
+      "company_name": "勤思教育",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20191024/a14b27d24703d53a7aecdfa61ddc632428c9b1d9fb8e5756e6b11fd9a96744b0_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "在线教育",
+      "company_listing": "不需要融资",
+      "company_size": "100-499人",
+      "boss_job": "招聘专员",
+      "key_words": [
+        "策划编辑",
+        "网站",
+        "审核编辑",
+        "图片编辑",
+        "教育类"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "工作时间：不限\n工作时段：不限\n结算方式：月结\n招聘截止时间：2023-07-01\n一：岗位职责\n1.根据网站业务规划，完成网站具体频道、栏目的内容\n策划及文字编辑发布运营工作；\n2.熟悉网站专题原型图制作工具，负责网站专题及项目\n的策划及更新工作;\n3.协助完成频道管理与栏目的更新规划，促进网站知名\n度的提高;\n4.熟悉其他自媒体平台运营机制，拓展视频号、微博、\n小红书、头条、知乎、社群等平台矩阵;\n5.平台运营活动的策划和执行,实现平台流量点击增长\n和品牌营销；\n6.能够根据统计工具数据,进行简单的数据分析并制定\n阶段性运营计划目标。\n二：岗位要求\n1.网站编辑运营相关经验1年以上，有自媒体、短视频、\n直播运营经验优先；\n2.具备较强的文案编辑能力，熟悉网站推广运营、有\nseo优化推广经验优先;\n3.能熟练使用word、excel、PPT、做图工具等办公制\n图软件；\n4.能熟练掌握HTML, CSS, Javascript网站编辑语言\n5.具有良好的沟通表达和执行能力，性格开朗，积极向\n上，工作勤奋，责任心强优先；\n6.统招本科及以上学历，有教育行业工作经验优先"
+    },
+    {
+      "job_name": "UI设计师",
+      "areaBusiness": "北京·西城区·德胜门",
+      "salary": "5-10K",
+      "experience": "1年以内",
+      "degree": "本科",
+      "company_name": "国脉时空",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20180110/eae265207595fc72274e9f034943454845511bb02d9f11c3d745f016d466aba9.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "大数据",
+      "company_listing": "不需要融资",
+      "company_size": "20-99人",
+      "boss_job": "行政专员",
+      "key_words": [
+        "广告设计",
+        "美工",
+        "UI"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "岗位职责： \n1、参与大数据产品规划构思和创意过程，负责大数据产品界面视觉用户研究、设计流行趋势分析；\n2、负责大数据应用及相关产品PC及移动端界面的视觉图形设计；\n3、负责公司市场宣传和办公环境相关设计；\n任职要求：\n1、 有良好的美术功底和优秀的创意、审美、实现能力，能把设计风格和专题、产品特色进行有效的结合； \n2、具备C/S、B/S界面设计经验； \n3、分析业务需求，并加以分解归纳出产品人机交互界面需求，熟练使用原型制作工具； \n4、研发团队紧密协作，积极地推进视觉设计的产品化； \n5、精通Photoshop/AI等常用设计制作软件，对图片渲染和视觉效果有较好认识； \n6、了解html，div+css等网页编辑语言和规范标准的优先； \n7、有大数据行业经验者优先考虑。"
+    },
+    {
+      "job_name": "产品经理",
+      "areaBusiness": "北京·西城区·广内大街",
+      "salary": "9-10K",
+      "experience": "1年以内",
+      "degree": "本科",
+      "company_name": "新链科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20200201/b5e18d7b94b6ca481b5b7f54bed998a0253e06cbe94ba66dd0111f8c83688174_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网",
+      "company_listing": "未融资",
+      "company_size": "0-20人",
+      "boss_job": "董事长",
+      "key_words": [
+        "交互设计",
+        "互联网金融",
+        "APP"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "1. 负责产品Web、APP、HTML5界面原型设计、产品文档编写、产品研发跟进；\n2. 产品迭代升级、用户体验改进优化；\n3. 产品培训说明\n任职要求：\n1、2年以上互联网产品工作经验、有WEB和APP案例至少各一个在线可以查看；\n2、高效使用Axure、Visio 、PPT 完成产品相关文档；\n3、具有良好的逻辑分析能力；"
+    }
+  ]
+}
