@@ -3,6 +3,7 @@ import fs from 'fs'
 import { type JobInfo } from './types/index'
 import { type Params, areabussiness_map, degree_map, experience_map } from './params/index'
 import * as chrome from 'selenium-webdriver/chrome';
+import { ip_proxy } from './ip_proxy'
 
 class Crawler {
   base_url = 'https://www.zhipin.com/web/geek/job'
@@ -337,7 +338,7 @@ class Crawler {
       }
 
       is_finished = await this.go_next_page()
-      if(is_finished) break
+      if (is_finished) break
 
       await this.before_page()
       page_num += 1
@@ -400,6 +401,15 @@ class Crawler {
   }
 
 
+  async check_proxy_work(proxy: string) {
+    await this.driver.get('https://httpbin.org/ip')
+    await this.driver.sleep(5000)
+    const pageSource = await this.driver.getPageSource();
+    const ok = pageSource.includes(proxy.split(':')[0])
+    return ok
+  }
+
+
   async get_all_job() {
     this.create_log_file()
 
@@ -441,20 +451,40 @@ class Crawler {
 
 (async function main() {
 
-  const options = new chrome.Options();
-  options.addArguments("--ignore-certificate-errors");
-  options.addArguments("--disable-blink-features=AutomationControlled");
-  const proxy = '49.71.118.30:8089'
-  options.addArguments(`--proxy-server=http://${proxy}`);
+  let c: Crawler
+
+  do {
+    const proxy = ip_proxy.pop()
+
+    const options = new chrome.Options();
+    // options.addArguments("--ignore-certificate-errors");
+    // options.addArguments("--disable-blink-features=AutomationControlled");
+    options.addArguments(`--proxy-server=http://${proxy}`);
 
 
+    const driver = await new Builder()
+      .forBrowser(Browser.CHROME)
+      .setChromeOptions(options)
+      .build();
 
-  const driver = await new Builder()
-    .forBrowser(Browser.CHROME)
-    .setChromeOptions(options)
-    .build();
 
-  const c = new Crawler(driver)
+    c = new Crawler(driver)
+    try{
+      if (proxy) {
+        const proxy_ok = await c.check_proxy_work(proxy)
+        if (proxy_ok) {
+          console.log('------proxy ok---------------\n');
+          break
+        } else {
+          console.log(`---${proxy}------fail-----\n`)
+          await driver.quit()
+        }
+      }
+    }catch{
+      await driver.quit()
+    }
+  } while (ip_proxy.length > 0)
+
   c.get_all_job()
 
 })();
