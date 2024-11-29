@@ -401,12 +401,15 @@ class Crawler {
   }
 
 
-  async check_proxy_work(proxy: string) {
-    await this.driver.get('https://httpbin.org/ip')
-    await this.driver.sleep(5000)
-    const pageSource = await this.driver.getPageSource();
-    const ok = pageSource.includes(proxy.split(':')[0])
-    return ok
+  async check_proxy_work() {
+    try {
+      await this.driver.get('https://www.zhipin.com/web/geek/job?query=')
+      const flag = this.wait_el_visable('.job-list-box li:nth_child(1)', this.driver, false, 10000)
+      if (flag !== null) return true
+      return false
+    } catch (e) {
+      return false
+    }
   }
 
 
@@ -446,7 +449,11 @@ class Crawler {
   }
 }
 
-
+function sleep(timeout: number) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, timeout);
+  })
+}
 
 
 (async function main() {
@@ -454,37 +461,31 @@ class Crawler {
   let c: Crawler
 
   do {
-    const proxy = ip_proxy.pop()
+    const proxy = ip_proxy.shift()
 
     const options = new chrome.Options();
     // options.addArguments("--ignore-certificate-errors");
     // options.addArguments("--disable-blink-features=AutomationControlled");
     options.addArguments(`--proxy-server=http://${proxy}`);
-
-
     const driver = await new Builder()
       .forBrowser(Browser.CHROME)
       .setChromeOptions(options)
       .build();
-
-
     c = new Crawler(driver)
-    try{
-      if (proxy) {
-        const proxy_ok = await c.check_proxy_work(proxy)
-        if (proxy_ok) {
-          console.log('------proxy ok---------------\n');
-          break
-        } else {
-          console.log(`---${proxy}------fail-----\n`)
-          await driver.quit()
-        }
+
+    if (proxy) {
+      const proxy_ok = await c.check_proxy_work()
+      if (proxy_ok) {
+        console.log(`------proxy${proxy} ok---------------\n`);
+        await c.get_all_job()
+        break
+      } else {
+        console.log(`-- proxy -${proxy}--- -- -fail- -- --\n`)
+        await driver.quit()
+        await sleep(1200)
       }
-    }catch{
-      await driver.quit()
+    } else {
+      throw Error('无可用代理--------------')
     }
   } while (ip_proxy.length > 0)
-
-  c.get_all_job()
-
 })();
