@@ -457,7 +457,8 @@ function sleep(timeout: number) {
   // options.addArguments("--ignore-certificate-errors");
   // options.addArguments("--disable-blink-features=AutomationControlled");
 
-  const proxy = await get_proxy()
+  const res = await get_proxy()
+  const proxy = res.data
   console.log(proxy);
 
   options.addArguments(`--proxy-server=http://${proxy}`);
@@ -466,7 +467,8 @@ function sleep(timeout: number) {
     .setChromeOptions(options)
     .build();
   const c = new Crawler(driver)
-  await c.get_all_job()
+  await c.driver.get('https://www.bilibili.com/')
+  // await c.get_all_job()
   return
 
   do {

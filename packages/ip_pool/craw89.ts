@@ -23,14 +23,16 @@ async function get_ips(): Promise<string[]> {
 function check_ip_work(ip: string) {
   return new Promise((resolve, reject) => {
     const [host, port] = ip.split(':')
-    axios_ins.get('http://www.baidu.com', {
+    axios_ins.get('http://www.bilibili.com', {
       proxy: {
         host,
         port: Number(port)
       },
       timeout: 3000
-    }).then(res=> {
-      if (res.status === 200) resolve(ip)
+    }).then(res => {
+      if (res.status === 200) {
+        resolve(ip)
+      }
       reject()
     }).catch(e => {
       reject()
@@ -40,9 +42,9 @@ function check_ip_work(ip: string) {
 
 async function get_work_ip() {
   const ips = await get_ips()
-  
+
   const tasks = []
-  for(let ip of ips) {
+  for (let ip of ips) {
     const task = check_ip_work(ip)
     tasks.push(task)
   }
@@ -53,7 +55,7 @@ async function get_work_ip() {
 
 app.get('/proxy', async (req, res) => {
   const ip = await get_work_ip()
-  console.log('---获取到可用ip----',ip);
+  console.log('---获取到可用ip----', ip);
   res.send(ip)
 })
 
