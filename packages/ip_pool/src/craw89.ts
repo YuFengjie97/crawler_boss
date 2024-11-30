@@ -50,7 +50,7 @@ function check_ip_work_by_axios(ip: string): Promise<{ ip: string, work: boolean
       
       resolve({ ip, work: false })
     }).catch(e => {
-      console.log('----------------error');
+      console.error('----------------error', e);
 
       resolve({ ip, work: false })
     })

@@ -1,10 +1,10 @@
 import { By, Builder, Browser, WebElement, WebDriver, until } from "selenium-webdriver";
 import fs from 'fs'
-import { type JobInfo } from './types/index'
-import { type Params, areabussiness_map, degree_map, experience_map } from './params/index'
+import { type JobInfo } from '../types/index'
+import { type Params, areabussiness_map, degree_map, experience_map } from '../params/index'
 import * as chrome from 'selenium-webdriver/chrome';
-import { ip_proxy } from './ip_proxy'
-import { get_proxy } from "./api/proxy";
+import { ip_proxy } from '../ip_proxy'
+import { get_proxy } from "../api/proxy";
 
 class Crawler {
   base_url = 'https://www.zhipin.com/web/geek/job'
@@ -454,21 +454,19 @@ function sleep(timeout: number) {
 
 (async function main() {
   const options = new chrome.Options();
-  // options.addArguments("--ignore-certificate-errors");
-  // options.addArguments("--disable-blink-features=AutomationControlled");
+  options.addArguments("--ignore-certificate-errors");
+  options.addArguments("--disable-blink-features=AutomationControlled");
 
-  const res = await get_proxy()
-  const proxy = res.data
-  console.log(proxy);
+  // const res = await get_proxy()
+  // const proxy = res.data
 
-  options.addArguments(`--proxy-server=http://${proxy}`);
+  // options.addArguments(`--proxy-server=http://${proxy}`);
   const driver = await new Builder()
     .forBrowser(Browser.CHROME)
     .setChromeOptions(options)
     .build();
   const c = new Crawler(driver)
-  await c.driver.get('https://www.bilibili.com/')
-  // await c.get_all_job()
+  await c.get_all_job()
   return
 
   do {

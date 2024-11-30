@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "crawler": "npx tsx index.ts"
+    "cs": "npx tsx ./src/crawler_by_selenium.ts"
   },
   "keywords": [],
   "author": "",

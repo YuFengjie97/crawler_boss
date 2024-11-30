@@ -5,7 +5,7 @@
   "main": "index.js",
   "workspaces": [],
   "scripts": {
-    "crawler": "pnpm -r run crawler",
+    "cs": "pnpm -r run cs",
     "dev": "pnpm -r run dev",
     "serve89": "pnpm -r run serve89"
   },
