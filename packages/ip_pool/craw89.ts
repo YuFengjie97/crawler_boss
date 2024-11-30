@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as cherrio from "cheerio";
 import express from 'express'
 const app = express()
 const port = 3000
@@ -11,19 +12,23 @@ const axios_ins = axios.create({
   },
 })
 
-async function get_ips(): Promise<string[]> {
-  const res = await axios_ins.get('http://api.89ip.cn/tqdl.html?api=1&num=100&port=&address=北京&isp=')
-  if (res.status === 200) {
-    const ips = res.data.match(/\d+\.\d+\.\d+\.\d+\:\d+/gim)
-    return ips
+async function get_ips(api_89: string): Promise<string[]> {
+  try {
+    const res = await axios_ins.get(api_89)
+    if (res.status === 200) {
+      const ips = res.data.match(/\d+\.\d+\.\d+\.\d+\:\d+/gim)
+      return ips
+    }
+    return []
+  } catch (e) {
+    return []
   }
-  return []
 }
 
-function check_ip_work(ip: string) {
+function check_ip_work_by_axios(ip: string): Promise<{ ip: string, work: boolean }> {
   return new Promise((resolve, reject) => {
     const [host, port] = ip.split(':')
-    axios_ins.get('http://www.bilibili.com', {
+    axios_ins.get('https://ip.900cha.com/', {
       proxy: {
         host,
         port: Number(port)
@@ -31,32 +36,49 @@ function check_ip_work(ip: string) {
       timeout: 3000
     }).then(res => {
       if (res.status === 200) {
-        resolve(ip)
+        const $ = cherrio.load(res.data)
+        const ip_check = $('.text-danger.mt-2').text()
+        console.log(`ip检测是否一致:${ip_check === ip}, ${ip_check}  ${ip}`);
+        if (ip_check === ip) {
+          resolve({ ip, work: true })
+        }
+        resolve({ ip, work: false })
       }
-      reject()
+      resolve({ ip, work: false })
     }).catch(e => {
-      reject()
+      resolve({ ip, work: false })
     })
   })
 }
 
-async function get_work_ip() {
-  const ips = await get_ips()
+function check_ip_work_by_http(ip: string) {
+  return new Promise((resolve, reject) => {
+
+  })
+}
+
+async function get_work_proxy() {
+  const api_89 = 'http://api.89ip.cn/tqdl.html?api=1&num=100&port=8089&address=&isp='
+  const ips = await get_ips(api_89)
 
   const tasks = []
   for (let ip of ips) {
-    const task = check_ip_work(ip)
+    const task = check_ip_work_by_axios(ip)
     tasks.push(task)
   }
-  const res = await Promise.any(tasks)
-  return res
+  const res = await Promise.all(tasks)
+  return {
+    success: res.filter((item) => item.work).map(item => item.ip),
+    fail: res.filter((item) => !item.work).map(item => item.ip)
+  }
 }
 
 
 app.get('/proxy', async (req, res) => {
-  const ip = await get_work_ip()
-  console.log('---获取到可用ip----', ip);
-  res.send(ip)
+  console.log('/proxy');
+
+  const proxy_status = await get_work_proxy()
+  res.send(proxy_status)
 })
 
 
