@@ -6,6 +6,7 @@
   "workspaces": [],
   "scripts": {
     "cs": "pnpm -r run cs",
+    "cp": "pnpm -r run cp",
     "dev": "pnpm -r run dev",
     "serve89": "pnpm -r run serve89"
   },

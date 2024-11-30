@@ -1,8 +1,8 @@
 # crawler boss
 
-## 爬取
+## 使用selenium爬取(node.js version需要18)
 ```
-pnpm run crawler
+pnpm run cs
 ```
 
 ## 占比分析(未完成)

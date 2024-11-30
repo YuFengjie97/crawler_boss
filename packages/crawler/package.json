@@ -2,14 +2,18 @@
   "name": "crawler",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
   "scripts": {
-    "cs": "npx tsx src/crawler_by_selenium"
+    "cs": "npx tsx ./src/crawler_by_selenium.ts",
+    "cp": "npx tsx /src/crawler_by_puppeteer"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.8",
+    "chromedriver": "^131.0.1",
+    "puppeteer": "^23.9.0",
     "selenium-webdriver": "^4.26.0"
   },
   "devDependencies": {

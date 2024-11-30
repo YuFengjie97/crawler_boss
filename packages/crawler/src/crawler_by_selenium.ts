@@ -3,8 +3,6 @@ import fs from 'fs'
 import { type JobInfo } from '../types/index'
 import { type Params, areabussiness_map, degree_map, experience_map } from '../params/index'
 import * as chrome from 'selenium-webdriver/chrome';
-import { ip_proxy } from '../ip_proxy'
-import { get_proxy } from "../api/proxy";
 
 
 class Crawler {
@@ -290,34 +288,6 @@ class Crawler {
     }
   }
 
-  // // 当前参数下,一共多少job
-  // async get_total(): Promise<number> {
-  //   let total = 0
-  //   const page_bts = await this.driver.findElements(By.css('.options-pages a'))
-  //   // 空页
-  //   if(page_bts.length === 0) {
-  //     total = 0
-  //   }
-  //   // 只有1页数据,按钮分别是<, 1, >,
-  //   else if (page_bts.length === 3) {
-  //     const jobs = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'))
-  //     total = jobs.length
-  //   }
-  //   // 多页
-  //   else {
-  //     const first_page_bt= page_bts[2]
-  //     const last_page_bt = page_bts[page_bts.length - 2]
-  //     const last_page_num = Number(await last_page_bt.getText())
-  //     await last_page_bt.click()
-  //     await this.before_page()
-  //     const last_page_jobs = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'))
-  //     total = last_page_num * 30 + await last_page_jobs.length
-  //     await first_page_bt.click()
-  //     await this.before_page()
-  //   }
-  //   return total
-  // }
-
   // 获取当前参数下的所有页的job
   async get_jobs_by_current_params() {
     let is_finished = false
@@ -362,12 +332,6 @@ class Crawler {
     if (el_login_pop !== null) {
       await this.driver.executeScript(`arguments[0].style.display = 'none';`, el_login_pop)
     }
-    // await this.driver.executeScript(`
-    //     const dialog = document.querySelector('div.boss-login-dialog');
-    //     if(dialog !== null) {
-    //       dialog.style.display = 'none';
-    //     }
-    //   `);
 
     //隐藏列表页,中间的二维码横条
     const el_weixincode = await this.wait_el_visable('div.subscribe-weixin-wrapper', this.driver, false)
@@ -388,7 +352,7 @@ class Crawler {
 
   async before_page() {
     await this.sleep(5000, 10000)
-    // await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
+    await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
     await this.check_need_verify()
     await this.close_dialog()
   }
@@ -410,13 +374,12 @@ class Crawler {
       if (flag !== null) return true
       return false
     } catch (e) {
-      console.log('---------',e);
+      console.log('---------', e);
       return false
     }
   }
-
-
   async get_all_job() {
+
     this.create_log_file()
 
 
@@ -446,58 +409,29 @@ class Crawler {
   }
 }
 
-function sleep(timeout: number) {
-  return new Promise((resolve, reject) => {
-    setTimeout(resolve, timeout);
-  })
-}
-
-
 (async function main() {
-  const options = new chrome.Options();
-  options.addArguments("--ignore-certificate-errors");
-  options.addArguments("--disable-blink-features=AutomationControlled");
-
-  // const res = await get_proxy()
-  // const proxy = res.data
-
-  // options.addArguments(`--proxy-server=http://${proxy}`);
-  const driver = await new Builder()
-    .forBrowser(Browser.CHROME)
-    .setChromeOptions(options)
-    .build();
-  const c = new Crawler(driver)
-  await c.get_all_job()
-  return
-
-  do {
-    const proxy = ip_proxy.shift()
 
     const options = new chrome.Options();
+
     // options.addArguments("--ignore-certificate-errors");
     // options.addArguments("--disable-blink-features=AutomationControlled");
+
+    // const res = await get_proxy()
+    // const proxy = res.data
+
     // options.addArguments(`--proxy-server=http://${proxy}`);
+
+    console.log(1111);
+
     const driver = await new Builder()
       .forBrowser(Browser.CHROME)
       .setChromeOptions(options)
       .build();
+
+    console.log(222);
+
     const c = new Crawler(driver)
 
-    if (proxy) {
-      const proxy_ok = await c.check_proxy_work()
-      console.log(proxy_ok);
-      
-      if (proxy_ok) {
-        console.log(`------proxy  ${proxy}  ok---------------\n`);
-        await c.get_all_job()
-        break
-      } else {
-        console.log(`-- proxy -  ${proxy}--- -- -fail- -- --\n`)
-        await driver.quit()
-        await sleep(1200)
-      }
-    } else {
-      throw Error('无可用代理--------------')
-    }
-  } while (ip_proxy.length > 0)
+    await c.get_all_job()
+
 })();
