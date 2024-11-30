@@ -2,9 +2,8 @@
   "name": "crawler",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "cs": "npx tsx ./src/crawler_by_selenium.ts"
+    "cs": "npx tsx src/crawler_by_selenium"
   },
   "keywords": [],
   "author": "",

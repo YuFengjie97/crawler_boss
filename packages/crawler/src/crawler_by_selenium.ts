@@ -6,6 +6,7 @@ import * as chrome from 'selenium-webdriver/chrome';
 import { ip_proxy } from '../ip_proxy'
 import { get_proxy } from "../api/proxy";
 
+
 class Crawler {
   base_url = 'https://www.zhipin.com/web/geek/job'
   driver: WebDriver
