@@ -12,7 +12,9 @@ const axios_ins = axios.create({
   },
 })
 
-async function get_ips(api_89: string): Promise<string[]> {
+async function get_ips_by_89(): Promise<string[]> {
+  const api_89 = 'http://api.89ip.cn/tqdl.html?api=1&num=100&port=8089&address=&isp='
+
   try {
     const res = await axios_ins.get(api_89)
     if (res.status === 200) {
@@ -44,23 +46,19 @@ function check_ip_work_by_axios(ip: string): Promise<{ ip: string, work: boolean
         }
         resolve({ ip, work: false })
       }
+      console.log('----------------not 200');
+      
       resolve({ ip, work: false })
     }).catch(e => {
+      console.log('----------------error');
+
       resolve({ ip, work: false })
     })
   })
 }
 
-function check_ip_work_by_http(ip: string) {
-  return new Promise((resolve, reject) => {
 
-  })
-}
-
-async function get_work_proxy() {
-  const api_89 = 'http://api.89ip.cn/tqdl.html?api=1&num=100&port=8089&address=&isp='
-  const ips = await get_ips(api_89)
-
+async function get_work_proxy(ips: string[]) {
   const tasks = []
   for (let ip of ips) {
     const task = check_ip_work_by_axios(ip)
@@ -75,9 +73,11 @@ async function get_work_proxy() {
 
 
 app.get('/proxy', async (req, res) => {
-  console.log('/proxy');
+  console.log('---api----/proxy');
+  // const ips = get_ips_by_89()
+  const ips = ['218.87.205.194:21273']
 
-  const proxy_status = await get_work_proxy()
+  const proxy_status = await get_work_proxy(ips)
   res.send(proxy_status)
 })
 
