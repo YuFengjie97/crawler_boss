@@ -4,6 +4,7 @@ import { type JobInfo } from './types/index'
 import { type Params, areabussiness_map, degree_map, experience_map } from './params/index'
 import * as chrome from 'selenium-webdriver/chrome';
 import { ip_proxy } from './ip_proxy'
+import { get_proxy } from "./api/proxy";
 
 class Crawler {
   base_url = 'https://www.zhipin.com/web/geek/job'
@@ -455,7 +456,11 @@ function sleep(timeout: number) {
   const options = new chrome.Options();
   // options.addArguments("--ignore-certificate-errors");
   // options.addArguments("--disable-blink-features=AutomationControlled");
-  // options.addArguments(`--proxy-server=http://${proxy}`);
+
+  const proxy = await get_proxy()
+  console.log(proxy);
+
+  options.addArguments(`--proxy-server=http://${proxy}`);
   const driver = await new Builder()
     .forBrowser(Browser.CHROME)
     .setChromeOptions(options)

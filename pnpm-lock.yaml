@@ -33,6 +33,9 @@ importers:
 
   packages/crawler:
     dependencies:
+      axios:
+        specifier: ^1.7.8
+        version: 1.7.8
       selenium-webdriver:
         specifier: ^4.26.0
         version: 4.26.0
