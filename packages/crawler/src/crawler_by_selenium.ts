@@ -413,25 +413,22 @@ class Crawler {
 
     const options = new chrome.Options();
 
-    // options.addArguments("--ignore-certificate-errors");
-    // options.addArguments("--disable-blink-features=AutomationControlled");
+    options.addArguments("--ignore-certificate-errors");
+    options.addArguments("--disable-blink-features=AutomationControlled");
 
     // const res = await get_proxy()
     // const proxy = res.data
+    // const proxy = '183.234.215.11:8443'
 
     // options.addArguments(`--proxy-server=http://${proxy}`);
-
-    console.log(1111);
 
     const driver = await new Builder()
       .forBrowser(Browser.CHROME)
       .setChromeOptions(options)
       .build();
-
-    console.log(222);
+    // await driver.get('http://www.bilibili.com')
 
     const c = new Crawler(driver)
-
     await c.get_all_job()
 
 })();

@@ -30,21 +30,23 @@ async function get_ips_by_89(): Promise<string[]> {
 function check_ip_work_by_axios(ip: string): Promise<{ ip: string, work: boolean }> {
   return new Promise((resolve, reject) => {
     const [host, port] = ip.split(':')
+    console.log(host,port);
+    
     axios_ins.get('https://ip.900cha.com/', {
       proxy: {
         host,
         port: Number(port)
       },
-      timeout: 3000
+      timeout: 10000
     }).then(res => {
       if (res.status === 200) {
-        const $ = cherrio.load(res.data)
-        const ip_check = $('.text-danger.mt-2').text()
-        console.log(`ip检测是否一致:${ip_check === ip}, ${ip_check}  ${ip}`);
-        if (ip_check === ip) {
-          resolve({ ip, work: true })
-        }
-        resolve({ ip, work: false })
+        // const $ = cherrio.load(res.data)
+        // const ip_check = $('.text-danger.mt-2').text()
+        // console.log(`ip检测是否一致:${ip_check === ip}, ${ip_check}  ${ip}`);
+        // if (ip_check === ip) {
+        //   resolve({ ip, work: true })
+        // }
+        resolve({ ip, work: true })
       }
       console.log('----------------not 200');
       
@@ -70,6 +72,12 @@ async function get_work_proxy(ips: string[]) {
     fail: res.filter((item) => !item.work).map(item => item.ip)
   }
 }
+
+app.get('/check/:ip', async(req, res) => {
+  const { ip } = req.params
+  const msg = await check_ip_work_by_axios(ip)
+  res.send(msg)
+})
 
 
 app.get('/proxy', async (req, res) => {
