@@ -1,0 +1,52 @@
+{
+  "experience": "103",
+  "degree": "202",
+  "areaBusiness": "110102",
+  "total": 2,
+  "catch_total": 2,
+  "jobs": [
+    {
+      "job_name": "net初级开发工程师",
+      "areaBusiness": "北京·西城区·车公庄",
+      "salary": "7-12K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "北京理正",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20180306/fe7909e45ff1f76015c027dc3f03708dcfcd208495d565ef66e7dff9f98764da.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "未融资",
+      "company_size": "500-999人",
+      "boss_job": "部门副经理",
+      "key_words": [
+        "SQL",
+        "HTML",
+        "SQL Server",
+        "MySQL"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "公司招聘若干名.net开发工程师，工作地点:北京西城区车公庄(2号线或6号线车公庄站H口)\n1.计算机相关专业，应届毕业生或2年以内开发工作经验;\n2.熟练使用visual studio开发环境，具有独立开发能力;\n3.熟悉.net平台开发，有较强的逻辑思维能力;\n4.熟悉B/S开发架构和设计模式，具备面向对象编程思想；\n5.熟悉vue、jquery、HTML5等前端技术优先考虑\n6.熟悉数据库原理,具备熟练sql语句、存储过程等开发经验，具备sqlserver\n或mysql数据库开发经验；\n7.具备良好的沟通能力，较强的责任心及团队合作精神。"
+    },
+    {
+      "job_name": "Java",
+      "areaBusiness": "北京·西城区·复兴门",
+      "salary": "6-8K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "北京康达惠",
+      "company_logo": "https://img.bosszhipin.com/beijin/app/mobile/normal-0e3f1e4441a21d4874cece3a3d81f0fe.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "其他行业",
+      "company_listing": "无阶段",
+      "company_size": "0-20人",
+      "boss_job": "人力资源",
+      "key_words": [
+        "Java开发经验",
+        "Java",
+        "JavaScript",
+        "MySQL",
+        "后端工程师"
+      ],
+      "boss_active_time": "4月内活跃",
+      "detail": "JAVA工程师招聘\n岗位职责：\n1.负责开发程序设计与实现，提供优质、高效的可行性技术方案服务，确保业务正常运行；\n2.负责查找、分析JAVA系统所发生的问题及快速解决问题；\n3.能够组织完成软件上线的部署安排；\n4.负责JAVA系统新技术的创新、应用与测试；\n任职要求：\n1 有1年以上JAVA开发经验，大专以上学历。\n2 有良好的代码书写、注释和单元测试习惯，熟练运用多种软件设计模式，能够编写高质量、高性能程序代码； \n3 精通 J2EE 体系结构，精通springboot、struts、springMVC、spring、mybatis、hibernate等框架；\n4 熟悉vue、Javascript、xml、ajax、html、jquery、css等技术；\n5 熟悉MySQL相关技术，能进行性能优化及解决常见问题；\n6 熟悉tomcat、nginx等应用服务器的配置和部署；\n7 逻辑分析能力、创新能力强，良好的语言表达和沟通能力，有良好的团队合作精神；\n8 熟悉Linux操作系统以及SSH框架优先；\n9 有过高并发处理经验优先；\n10 熟悉简单的ps优先。"
+    }
+  ]
+}
