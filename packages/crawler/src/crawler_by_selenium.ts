@@ -5,9 +5,6 @@ import { type Params, areabussiness_map, degree_map, experience_map } from '../p
 import * as chrome from 'selenium-webdriver/chrome';
 
 
-let page_start = 
-
-
 class Crawler {
   base_url = 'https://www.zhipin.com/web/geek/job'
   driver: WebDriver
@@ -59,13 +56,20 @@ class Crawler {
     fs.appendFileSync(`log/${this.log_file_name}.txt`, info)
   }
 
-  save_data(data: {
-    experience: string
-    degree: string
-    areaBusiness: string
-    jobs: JobInfo[]
-  }) {
+
+  create_data_file() {
+    const data = {
+      ...this.params,
+      jobs: []
+    }
+    fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
+  }
+
+  save_job(job: JobInfo) {
     try {
+      const res = fs.readFileSync(`data/${this.data_file_name}.json`, 'utf-8')
+      const data = JSON.parse(res)
+      data.jobs.push(job)
       fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
       console.log(`写入数据success,${this.data_file_name}`);
     } catch (e) {
@@ -162,7 +166,7 @@ class Crawler {
     return el === null ? '' : el.getText()
   }
 
-  async get_job_info_by_job_card(job_card: WebElement, job_info_list: JobInfo[]) {
+  async get_job_info_by_job_card(job_card: WebElement) {
     try {
       console.log('----获取卡片信息');
       // await this.simulate_human_scroll(job_card)
@@ -213,7 +217,8 @@ class Crawler {
         boss_job: '',
         key_words: [],
         boss_active_time: '',
-        detail: ''
+        detail: '',
+        page: '1'
       };
 
 
@@ -250,15 +255,14 @@ class Crawler {
       job_info.detail = await this.getTextOrDefault('div.job-detail-section div.job-sec-text:nth-child(4)');
 
 
-      job_info_list.push(job_info)
-      console.log('------current params get job: ', job_info_list.length);
+      const url = new URL(await this.driver.getCurrentUrl())
+      const page = url.searchParams.get('page')
+      job_info.page = page !== null ? page : '1'
 
-      this.save_data({
-        experience: this.params.experience,
-        degree: this.params.degree,
-        areaBusiness: this.params.areaBusiness,
-        jobs: job_info_list
-      })
+
+      console.log('------current params get job: ');
+
+      this.save_job(job_info)
 
 
       // 切回列表页
@@ -272,66 +276,47 @@ class Crawler {
     }
   }
 
-  async get_jobs_from_page(job_info_list: JobInfo[]): Promise<WebElement[]> {
-    const job_cards = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'));
-    return job_cards
-  }
 
-
-  // 返回值为是否已到达最后一页
   async go_next_page(): Promise<boolean> {
     const next_page_bt = await this.wait_el_visable('div.options-pages a:last-of-type')
+
     if (next_page_bt === null) {
-      return true
+      return false
     }
 
     const bt_class_name = await next_page_bt.getAttribute('class')
     const is_disabled = bt_class_name.includes('disabled');
 
-
-    if (is_disabled) {
+    if (next_page_bt !== null && !is_disabled) {
+      next_page_bt.click()
       return true
-    } else {
-      // await this.simulate_human_scroll(next_page_bt)
-      await next_page_bt.click()
-      return false
     }
+    return false
   }
 
+
   // 获取当前参数下的所有页的job
-  async get_jobs_by_current_params() {
-    let is_finished = false
-    const job_info_list: JobInfo[] = []
-    let total = 0
+  async get_jobs_by_current_params(start_page = 1) {
     let page_num = 1
+    while (page_num < start_page) {
+      await this.go_next_page()
+      page_num += 1
+      await this.sleep(5000)
+    }
+
     do {
       console.log('----page ', page_num);
+      const job_cards = await this.driver.findElements(By.css('ul.job-list-box li.job-card-wrapper'));
 
-      const job_cards = await this.get_jobs_from_page(job_info_list);
-      // 第一页判空
-      if (job_cards.length === 0) {
-        is_finished = true
-        break
-      }
-
-      // total += job_cards.length
       for (let job_card of job_cards) {
-        await this.get_job_info_by_job_card(job_card, job_info_list);
+        await this.get_job_info_by_job_card(job_card);
       }
 
-      is_finished = await this.go_next_page()
-      if (is_finished) break
-
-      await this.before_page()
+      const is_finished = await this.go_next_page()
       page_num += 1
-    } while (!is_finished)
-
-    // this.save_data({
-    //   experience: this.params.experience,
-    //   degree: this.params.degree,
-    //   areaBusiness: this.params.areaBusiness,
-    //   jobs: job_info_list
-    // })
+      if (is_finished) break
+      await this.before_page()
+    } while (true)
   }
 
   async hide_annoy_el() {
@@ -364,8 +349,8 @@ class Crawler {
       await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
       await this.check_need_verify()
       await this.close_dialog()
-    }catch(e) {
-      this.save_err_log('--before_page--\n'+JSON.stringify(e))
+    } catch (e) {
+      this.save_err_log('--before_page--\n' + JSON.stringify(e))
     }
   }
   async close_dialog() {
@@ -393,6 +378,10 @@ class Crawler {
   async get_all_job() {
 
     this.create_log_file()
+    const res = fs.readFileSync('data/complete.txt', 'utf-8')
+    const complete = JSON.parse(res)
+    let start_page = Number(complete.quit_page)
+    const complete_arr = complete.arr
 
 
     for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
@@ -403,6 +392,11 @@ class Crawler {
             experience: experience_key,
             degree: degree_key
           }
+          const complete_id = `${areaBusiness_key}_${experience_key}_${degree_key}`
+          if(complete_arr.includes(complete_id)){
+            continue
+          }
+
           this.update_params(current_params)
           this.data_file_name = `${areaBusiness_info}-${experience_info}-${degree_info}`
 
@@ -413,7 +407,8 @@ class Crawler {
           await this.before_page()
 
 
-          await this.get_jobs_by_current_params()
+          await this.get_jobs_by_current_params(start_page)
+          start_page = 1
         }
       }
     }
