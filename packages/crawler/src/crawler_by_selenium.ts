@@ -73,7 +73,7 @@ class Crawler {
       fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
       console.log(`写入数据success,${this.data_file_name}`);
     } catch (e) {
-      console.log(`写入数据fail,${this.data_file_name}`);
+      console.log(`写入数据fail,${this.data_file_name}`,e);
     }
   }
 
@@ -380,7 +380,6 @@ class Crawler {
     }
   }
   async get_all_job() {
-    try {
 
     this.create_log_file()
     const res = fs.readFileSync('data/complete.json', 'utf-8')
@@ -427,9 +426,6 @@ class Crawler {
       }
     }
     this.driver.quit()
-    }catch(e) {
-      this.save_err_log(`get all----\n${JSON.stringify(e)}\n`)
-    }
   }
 }
 
