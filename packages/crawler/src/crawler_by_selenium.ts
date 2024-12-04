@@ -224,6 +224,10 @@ class Crawler {
         detail_url: ''
       };
 
+      const url = new URL(await this.driver.getCurrentUrl())
+      const page = url.searchParams.get('page')
+      job_info.page = page !== null ? page : '1'
+
 
       // 获取详情页上的信息
       await job_card.click();
@@ -258,12 +262,7 @@ class Crawler {
 
       job_info.detail = await this.getTextOrDefault('div.job-detail-section div.job-sec-text:nth-child(4)');
 
-
-      const url = new URL(await this.driver.getCurrentUrl())
-      const page = url.searchParams.get('page')
-      job_info.page = page !== null ? page : '1'
-
-
+     
       console.log('------current params get job: ');
 
       this.save_job(job_info)
