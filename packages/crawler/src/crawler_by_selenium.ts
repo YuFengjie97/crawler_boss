@@ -284,7 +284,7 @@ class Crawler {
     const next_page_bt = await this.wait_el_visable('div.options-pages a:last-of-type')
 
     if (next_page_bt === null) {
-      return false
+      return true
     }
 
     const bt_class_name = await next_page_bt.getAttribute('class')
@@ -292,9 +292,9 @@ class Crawler {
 
     if (next_page_bt !== null && !is_disabled) {
       next_page_bt.click()
-      return true
+      return false
     }
-    return false
+    return true
   }
 
 
@@ -380,6 +380,7 @@ class Crawler {
     }
   }
   async get_all_job() {
+    try {
 
     this.create_log_file()
     const res = fs.readFileSync('data/complete.json', 'utf-8')
@@ -426,6 +427,9 @@ class Crawler {
       }
     }
     this.driver.quit()
+    }catch(e) {
+      this.save_err_log(`get all----\n${JSON.stringify(e)}\n`)
+    }
   }
 }
 
