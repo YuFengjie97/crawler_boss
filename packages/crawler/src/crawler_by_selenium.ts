@@ -56,6 +56,23 @@ class Crawler {
     fs.appendFileSync(`log/${this.log_file_name}.txt`, info)
   }
 
+  save_data(data: {
+    experience: string
+    degree: string
+    areaBusiness: string
+    total: number
+    catch_total: number
+    jobs: JobInfo[]
+  }) {
+    try {
+      fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
+      console.log(`写入数据success,${this.data_file_name}`);
+    } catch (e) {
+      console.log(`写入数据fail,${this.data_file_name}`);
+    }
+  }
+
+
   async sleep(time_min: number = 1000, time_max = time_min) {
     const random_time = time_min + (time_max - time_min) * Math.random()
     console.log(`sleep ${random_time}ms`);
@@ -115,22 +132,7 @@ class Crawler {
 
 
 
-  save_data(data: {
-    experience: string
-    degree: string
-    areaBusiness: string
-    total: number
-    catch_total: number
-    jobs: JobInfo[]
-  }) {
-    try {
-      fs.writeFileSync(`data/${this.data_file_name}.json`, JSON.stringify(data, null, 2))
-      console.log(`写入数据success,${this.data_file_name}`);
-    } catch (e) {
-      console.log(`写入数据fail,${this.data_file_name}`);
-    }
-  }
-
+ 
 
   async wait_el_visable(selector: string, el_father: WebDriver | WebElement = this.driver, save_error = true, timeout: number = 1000): Promise<WebElement | null> {
 

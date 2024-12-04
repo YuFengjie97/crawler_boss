@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cs": "npx tsx ./src/crawler_by_selenium.ts",
-    "cp": "npx tsx /src/crawler_by_puppeteer"
+    "cp": "npx tsx ./src/crawler_by_puppeteer.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
     "axios": "^1.7.8",
     "chromedriver": "^131.0.1",
     "puppeteer": "^23.9.0",
+    "puppeteer-core": "^23.10.0",
     "selenium-webdriver": "^4.26.0"
   },
   "devDependencies": {
