@@ -413,7 +413,8 @@ class Crawler {
 
 
           await this.get_jobs_by_current_params(start_page)
-          start_page = 1
+          start_page = 1 // 重置起始页
+
           complete_arr.push(complete_id)
           fs.writeFileSync('data/complete.json', JSON.stringify({
             quit_page: 1,
