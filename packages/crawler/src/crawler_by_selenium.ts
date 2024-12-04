@@ -387,6 +387,9 @@ class Crawler {
     const complete = JSON.parse(res)
     let start_page = Number(complete.quit_page)
     const complete_arr = complete.arr
+    console.log(start_page)
+    console.log(complete_arr)
+    
 
 
     for (let [areaBusiness_key, areaBusiness_info] of Object.entries(areabussiness_map.value)) {
