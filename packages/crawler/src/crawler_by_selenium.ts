@@ -420,9 +420,11 @@ class Crawler {
 
     // const res = await get_proxy()
     // const proxy = res.data
-    // const proxy = '183.234.215.11:8443'
 
-    // options.addArguments(`--proxy-server=http://${proxy}`);
+    const tunnelHost = 'a209.kdltps.com'
+    const tunnelPort = '15818'
+    const proxy = `${tunnelHost}:${tunnelPort}`
+    options.addArguments(`--proxy-server=http://${proxy}`);
 
     const driver = await new Builder()
       .forBrowser(Browser.CHROME)
@@ -432,5 +434,4 @@ class Crawler {
 
     const c = new Crawler(driver)
     await c.get_all_job()
-
 })();
