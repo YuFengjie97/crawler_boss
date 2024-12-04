@@ -5,6 +5,9 @@ import { type Params, areabussiness_map, degree_map, experience_map } from '../p
 import * as chrome from 'selenium-webdriver/chrome';
 
 
+let page_start = 
+
+
 class Crawler {
   base_url = 'https://www.zhipin.com/web/geek/job'
   driver: WebDriver
@@ -356,10 +359,14 @@ class Crawler {
   }
 
   async before_page() {
-    await this.sleep(15000, 25000)
-    await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
-    await this.check_need_verify()
-    await this.close_dialog()
+    try {
+      await this.sleep(15000, 25000)
+      await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
+      await this.check_need_verify()
+      await this.close_dialog()
+    }catch(e) {
+      this.save_err_log('--before_page--\n'+JSON.stringify(e))
+    }
   }
   async close_dialog() {
     const dialog = await this.wait_el_visable('.boss-login-dialog', this.driver, false)

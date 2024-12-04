@@ -1,0 +1,110 @@
+{
+  "experience": "103",
+  "degree": "202",
+  "areaBusiness": "110105",
+  "jobs": [
+    {
+      "job_name": "VUE前端实习工程师",
+      "areaBusiness": "北京·朝阳区·水碓子",
+      "salary": "3-5K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "法财库",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20190725/b72b49335923267f6a33977cadae6c61511fa56d8eb60674973e65d94ad4d78d_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "移动互联网",
+      "company_listing": "未融资",
+      "company_size": "20-99人",
+      "boss_job": "招聘者",
+      "key_words": [
+        "Vue",
+        "HTML5",
+        "Node.js",
+        "前端开发经验"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "一、【岗位职责】\n1、使用VUE3.0，Node.js，h5，css3进行移动端或pc端研发；\n2、与后台开发人员协同工作，负责公司的移动端和pc端项目开发。\n二、【任职资格】\n1、大学专科及以上学历，计算机、通信相关专业；\n2、有vue实际开发经验优先，有JQuery或Node.js、HTML5等开发经验优先，能熟练使用ES6；\n3、熟悉模块化、组件化、前端工程化，熟悉webpack、gulp、bower等前端构建工具。\n4、有wangEditor、editor.md、h5-Dooring、易企秀、MAKA相关H5编辑器的开发经验优先。"
+    },
+    {
+      "job_name": "uniapp前端",
+      "areaBusiness": "北京·朝阳区·高碑店",
+      "salary": "5-6K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "聚盛祥",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "文化艺术/娱乐",
+      "company_listing": "无阶段",
+      "company_size": "20-99人",
+      "boss_job": "人事主管",
+      "key_words": [
+        "HTML",
+        "CSS",
+        "HTML5"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "1.较熟练uniapp开发框架\n2.熟悉Java、HTML5 、CSS等技术\n3.会使用前端的框架\n4.能够撰写、修改技术框架\n5.具备较强的学习能力和主动性，有良好的流程意识和团队合作精神，热爱前端技术，团队意识强。"
+    },
+    {
+      "job_name": "前端开发实习生",
+      "areaBusiness": "北京·朝阳区·石佛营",
+      "salary": "4-6K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "元气在线",
+      "company_logo": "https://img.bosszhipin.com/beijin/app/mobile/normal-0e3f1e4441a21d4874cece3a3d81f0fe.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "无阶段",
+      "company_size": "0-20人",
+      "boss_job": "人事总监",
+      "key_words": [
+        "前端开发",
+        "HTML",
+        "JavaScript",
+        "CSS",
+        "Vue",
+        "移动端",
+        "小程序",
+        "cocos2d"
+      ],
+      "boss_active_time": "刚刚活跃",
+      "detail": "岗位职责\n1 负责分配的功能模块的设计，开发任务\n2 根据项目的需求，配合团队进行产品的开发，升级以及维护工作\n3 参与规划与制定前端整体发展计划与基础建设\n岗位要求：\n1、 计算机及相关专业，本科或本科以上\n2、 基础扎实，精通HTML5、CSS3、JavaScript、ES6等前端开发技术；\n3、 熟练掌握Vue框架的使用，掌握其原理，能独立开发常用组件；\n4、 熟悉前端自动化和工程化，熟悉webpack，熟练使用Git；\n5、 有较强的自学能力,工作积极主动，具有良好的沟通能力，团队合作精神，能承担工作压力；"
+    },
+    {
+      "job_name": "C++前端开发工程师",
+      "areaBusiness": "北京·朝阳区·高碑店",
+      "salary": "8-13K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "易智生教育科技",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20190211/131c7147f1887080c15cda8c2fc83a219a026ae601c7df95ae8ceff2a644db62.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "在线教育",
+      "company_listing": "A轮",
+      "company_size": "20-99人",
+      "boss_job": "招聘者",
+      "key_words": [
+        "游戏引擎",
+        "C++"
+      ],
+      "boss_active_time": "3月内活跃",
+      "detail": "岗位职责：\n1 基于cocos2d-x引擎进行跨平台应用与游戏的开发\n2 根据需求文档，独立完成功能模块的开发与维护\n3 完成领导交办的其它事项\n任职要求：\n1 统招本科及以上学历，计算机相关专业，一年以上软件开发经验\n2 精通C/C++编程语言、STL算法，熟练使用Visual Studio开发工具\n3 具有良好的面向对象编程思想、数据结构及算法基础\n4 学习能力强，对工作认真负责\n5 善于沟通，有团队合作精神\n6 了解cocos2d-x引擎及周边开发工具优先录用"
+    },
+    {
+      "job_name": "医美线上咨询",
+      "areaBusiness": "北京·朝阳区·朝外",
+      "salary": "5-8K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "北京倾美咨询有限公司",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "美容",
+      "company_listing": "不需要融资",
+      "company_size": "500-999人",
+      "boss_job": "人事经理",
+      "key_words": [
+        "医美网电咨询"
+      ],
+      "boss_active_time": "今日活跃",
+      "detail": "1、医美行业优先\n2、有过直客非渠道医美经验半年以上优先\n3、做过咨询助理，网电咨询线上咨询前端咨询的优先\n岗位内容：线上与顾客沟通，顾客到院全程接诊，陪诊，并参与项目铺垫并进行系统备注，以服务为主，销售为辅开展工作；"
+    }
+  ]
+}
