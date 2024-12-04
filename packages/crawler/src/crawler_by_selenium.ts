@@ -201,6 +201,7 @@ class Crawler {
         company_kind = await company_info[0].getText()
         company_size = await company_info[1].getText()
       }
+      const card_url = await this.driver.getCurrentUrl()
 
       const job_info: JobInfo = {
         job_name,
@@ -218,7 +219,9 @@ class Crawler {
         key_words: [],
         boss_active_time: '',
         detail: '',
-        page: '1'
+        page: '1',
+        card_url,
+        detail_url: ''
       };
 
 
@@ -228,6 +231,7 @@ class Crawler {
       await this.driver.switchTo().window(handles[1]); // 切换详情页标签
       console.log('----切换详情页标签');
       await this.before_page()
+      job_info.detail_url = await this.driver.getCurrentUrl()
 
 
       const boss_info_el = await this.wait_el_visable('.boss-info-attr')
@@ -299,6 +303,7 @@ class Crawler {
   async get_jobs_by_current_params(start_page = 1) {
     let page_num = 1
     while (page_num < start_page) {
+      console.log('----page ', page_num);
       await this.go_next_page()
       page_num += 1
       await this.sleep(5000)
@@ -378,7 +383,7 @@ class Crawler {
   async get_all_job() {
 
     this.create_log_file()
-    const res = fs.readFileSync('data/complete.txt', 'utf-8')
+    const res = fs.readFileSync('data/complete.json', 'utf-8')
     const complete = JSON.parse(res)
     let start_page = Number(complete.quit_page)
     const complete_arr = complete.arr
@@ -409,6 +414,11 @@ class Crawler {
 
           await this.get_jobs_by_current_params(start_page)
           start_page = 1
+          complete_arr.push(complete_id)
+          fs.writeFileSync('data/complete.json', JSON.stringify({
+            quit_page: 1,
+            arr: complete_arr
+          }))
         }
       }
     }

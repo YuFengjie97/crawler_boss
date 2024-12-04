@@ -16,4 +16,6 @@ export  interface JobInfo {
     boss_active_time: string
     detail: string
     page: string // 所属页,异常中断时记录中断页数
+    card_url: string
+    detail_url: string
   }
