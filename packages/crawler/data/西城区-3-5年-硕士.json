@@ -1,0 +1,221 @@
+{
+  "experience": "105",
+  "degree": "204",
+  "areaBusiness": "110102",
+  "jobs": [
+    {
+      "job_name": "web前端",
+      "areaBusiness": "北京·西城区·金融街",
+      "salary": "15-25K·18薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "申万宏源",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20170802/ff7cc97587c2d43417dc61434aa09289939e202058648f5e07711d6a1fefc48a.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网金融",
+      "company_listing": "已上市",
+      "company_size": "10000人以上",
+      "boss_job": "业务经理",
+      "key_words": [
+        "JavaScript",
+        "前端开发",
+        "移动端",
+        "HTML",
+        "CSS",
+        "HTML5",
+        "SQL",
+        "MVC开发"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "前端开发工程师—业务系统方向\n工作职责：\n1、负责公司自营投资、场外衍生品、基金托管，债券销售等业务系统前端及移动终端的需求分析、系统设计和开发工作；\n2、负责把控项目进度并制定持续迭代计划；\n3、参与集成测试，保证系统性能指标，解决软件缺陷；\n4、负责参与基础框架选项并持续提升研发效能；\n5、负责持续优化系统性能，保证系统的安全、稳定和效率。\n任职资格：\n1、硕士（含）以上学历，特别优秀者可放宽至本科学历；计算机相关专业；\n2、二年（含）以上的工作经验，其中一年以上前端应用开发经验；\n3、掌握 Java(包括Spring Boot)/JS 等主流开发语言或者熟练掌握前端开发；\n4、掌握移动应用前端开发技术，具有较强的自主学习能力；\n5、有较强的组织计划执行能力，良好的沟通协调和项目管理能力，优秀的创新能力；\n6、有较强的责任心，思路清晰，学习能力强，有团队精神，能够承受一定的工作压力。\n7、有证券期货类系统开发经验者优先。"
+    },
+    {
+      "job_name": "Java开发工程师",
+      "areaBusiness": "北京·西城区·金融街",
+      "salary": "30-60K·20薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "淡水泉投资",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "基金",
+      "company_listing": "无阶段",
+      "company_size": "100-499人",
+      "boss_job": "HR",
+      "key_words": [
+        "后端开发"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "岗位描述：\n作为公司IT体系的建造者，对内，将与公司各个业务团队进行全方位合作，对外管理第三方外包商，共同构建数据中心、一体化客户服务平台、投研一体化平台、运营自动化平台等。系统打造公司整体数据分析、业务系统、人工智能等方向能力。\n要求:\n1） 重点高校计算机相关专业硕士及以上学历；\n2）精通一种以上编程语言（Java，Python，JavaScript, C / C ++等）\n3）精通Spring/Springboot、MyBatis/JPA等主流的Java开发框架；熟悉关系数据库、NOSQL、缓存、消息队列的知识；\n4）精通HTML、CSS、JS前端开发，熟练使用Vue前端框架或者jQuery等前端技术；\n5） 具有2年以上项目开发经验（软件设计，开发，测试，性能优化和集成）；\n6） 有高度的抽象设计能力，思路清晰，善于思考，能独立驱动、分析和解决问题；"
+    },
+    {
+      "job_name": "数据平台研发工程师",
+      "areaBusiness": "北京",
+      "salary": "10-15K·13薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "国能信控",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20210906/7bf6f160950405e9ebe415ea276026d0d9e38a88a1d9ad2912f4f3f0c18a3ef94a63870c43535508.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "信息安全",
+      "company_listing": "未融资",
+      "company_size": "500-999人",
+      "boss_job": "研发管理部人力专责",
+      "key_words": [
+        "Java",
+        "数仓建设经验",
+        "大数据开发经验",
+        "计算机相关专业"
+      ],
+      "boss_active_time": "4月内活跃",
+      "detail": "岗位职责: \n1.负责数据平台相关产品的技术方案制定、系统设计、开发、测试及质量管理工作。\n2.负责数据平台相关产品维护、技术支持及人员培训等工作。\n3,参与数据平台相关产品解决方案的策划及编写工作。\n任职要求: \n1.JAVA 开发基础扎实，有良好的面向对象程序设计思想，熟悉设计模式及UML设计工具，熟悉分布式架构系统的设计和开发，精通10、多线程并发、集合等基础框架技术。\n2.熟练使用 Spring Boot、Spring Cloud 等主流开发框架，熟悉vue、jQuery、Angular等前端框架及类库，熟悉 Redis、Kafka、Elasticsearch等常用的中间件。\n3,熟悉 Linux系统，熟悉SVN、GIT等代码版本管理工具，熟悉 Maven等项目工具。\n4.熟悉 PostgreSQL、MYSQL等主流关系数据库，熟练掌握并编写SQL语言，了解SQL优化。\n5.有较强的业务需求分析管理能力，熟悉软件产品设计、需求分析、数据分析、原型图绘制。\n6.熟悉DAMA知识体系，具备数据治理领域相关知识和经验，有数据平台开发或数据治理项目经验者优先。\n7.有较好的沟通表达能力和自学能力，在面对陌生环境下抗压能力强，具有较强的自我解决问题能力。\n岗位福利: \n六险一金，通讯费，过节费，餐补"
+    },
+    {
+      "job_name": "语音合成算法工程师",
+      "areaBusiness": "北京·西城区·长椿街",
+      "salary": "15-30K·13薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "中国移动研究院",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/logo/20200927/a7850ce443ba6912438bda3b4d0ad709b41344d8666595a3322cced4c5da9bea.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "人工智能",
+      "company_listing": "已上市",
+      "company_size": "10000人以上",
+      "boss_job": "员工",
+      "key_words": [
+        "算法设计",
+        "深度学习算法",
+        "语音算法",
+        "C++",
+        "Python",
+        "TensorFlow",
+        "PyTorch"
+      ],
+      "boss_active_time": "刚刚活跃",
+      "detail": "职位描述\n1. 负责语音合成算法研究和落地，包括但不限于前端、声学模型、声码器等；\n2. 负责优化各模块的性能，提高语音合成的自然度、可懂度和情感化表达能力；\n3. 负责通用、基于少数据量目标语音的合成系统的效果分析和优化；\n4. 负责跟进业界最新研究进展\n职位要求\n1. 计算机、信号处理、电子信息、自动化等相关专业硕士及以上学历；\n2. 具有较强的学习能力和较深的深度学习功底;\n3. 具备较好的 C、C++ 或 python 编程能力，熟悉 TensorFlow 或 PyTorch 等工具\n4. 有TTS项目/产品落地和优化经验，有基于少数据量目标语音合成系统的落地经验优先；\n5. 熟悉包括不限于vall-e，vits等模型;"
+    },
+    {
+      "job_name": "通信芯片中端设计",
+      "areaBusiness": "北京·西城区·大悦城",
+      "salary": "25-50K·15薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "芯昇科技有限公司",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20240614/7bf6f160950405e9ed4a407b57e0b86cc9121791a21e1d0922726dea2e4824f9d8afc902e2dd94a1.png.webp?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "半导体/芯片",
+      "company_listing": "B轮",
+      "company_size": "100-499人",
+      "boss_job": "招聘经理",
+      "key_words": [
+        "电路设计",
+        "DFT",
+        "数字电路综合设计"
+      ],
+      "boss_active_time": "2周内活跃",
+      "detail": "工作职责:\n1、负责芯片中端流程设计实现，包括综合，形式验证，静态时序分析、DFT实现等;\n2、负责Module和chip层次的timing constraints，UPFfle，Synthesis，STA，formal验证，功耗分析，与前端及后端工程师合作进行逻辑综合优化，时序收敛和signoff等工作;\n3、负责chip的DFT实现，包括Scan、Boundary Scan、MBIST等，负责ATE测试中的向量产生和debug，功能验证等;\n4、编写设计实现相关文档、应用指导文档。\n5、其他上级交办的任务\n任职资格:\n1.信息与通信系统、计算机、自控、电子、微电子等相关专业，硕士3年以上工作经验；\n2.3年以上STA/synthesis/formal/DFT工作经验，熟悉低功耗设计流程;\n3.熟练使用EDA工具如DC/Formality/PT等，熟练使用DFT工具如Tessent等;\n4.能够熟练使用一种脚本，如Perl/Tcl/Shell/Phython脚本编程;\n5.具有良好的表达沟通能力及团队合作精神，具有独立工作能力及自主学习能力"
+    },
+    {
+      "job_name": "高级生物信息工程师",
+      "areaBusiness": "北京·西城区·马甸",
+      "salary": "20-30K·13薪",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "博瑞迪",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20211126/7bf6f160950405e9b9d611bae9ce8b198dde59210d728a3769d0d33bb8ca2f65dee5fffb88ff207b.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "检测/认证/知识产权",
+      "company_listing": "A轮",
+      "company_size": "100-499人",
+      "boss_job": "行政专员",
+      "key_words": [
+        "Python",
+        "R",
+        "生物信息",
+        "遗传",
+        "基因鉴定",
+        "测序",
+        "生物技术",
+        "分子生物"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "岗位职责：\n1、负责基于高通量测序技术（NGS）的生物信息分析流程建立，实现相关功能模块及日常数据分析、维护；\n2、负责云计算平台的设计、搭建、开发和维护；\n3、针对具体生物信息业务需求设计算法模型，实现相关模块功能；\n4、承担科研合作分析项目。\n岗位要求：\n1、生物信息学、计算机生物学或计算机学等相关专业；\n2、熟悉NCBI、Ensembl等大型生物信息学数据库；\n3、至少精通一门python，R等编程语言；\n4、熟悉mysql,mongo,hbase等数据库SQL操作；\n5、熟练掌握生信各领域功能及流程开发加分，如QTL、GWAS、群体分析等；\n6、掌握深度学习、机器学习相关开源框架工具加分，如pytorch、sklesrn等；\n7、对kubernetes、docker的常用操作熟悉掌握加分；\n8、对后端接口开发和前端vue3开发框架熟悉掌握加分；\n9、具有可视化展示能力，良好的英语阅读能力，以及较强的语言表达和文档撰写能力，具备独立完成项目的能力；"
+    },
+    {
+      "job_name": "自然语言处理工程师",
+      "areaBusiness": "北京·西城区·西单",
+      "salary": "35-65K",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "智慧足迹",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20160720/243d1e182fe251741098bb5e8520a37367639d10f5496c504ac438a594a2ee0a.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "大数据",
+      "company_listing": "不需要融资",
+      "company_size": "100-499人",
+      "boss_job": "HRBP",
+      "key_words": [
+        "NLP",
+        "BERT",
+        "GPT"
+      ],
+      "boss_active_time": "刚刚活跃",
+      "detail": "岗位职责:\n1、基于主流开源模型,开发垂直领域大模型，工作包括训练数据构建、预训练、指令微调的模型优化、下游任务优化及效果验证等。\n2、利用NLP技术实现知识抽取和知识图谱构建。\n3、与数据、算法、前端等团队密切合作,打造领先的NLP产品和解决方案。\n职位要求:\n1、数学和算法基础扎实,精通NLP核心技术,,如命名实体识别、关系抽取、文本生成等。\n2、深入理解预训练语言模型原理,例如BERT、GPT等,并熟练使用。\n3、大规模分布式模型训练经验丰富,熟悉PyTorch等框架。\n4、精通Python,熟练使用Linux。\n5、国外留学理工科硕士及以上学历,计算机、NLP等领域相关专业。\n加分条件:\n1、发表过相关顶级论文者优先。\n2、参与过百亿规模预训练项目者优先。\n目标人才画像\n1、学历及专业：理工科硕士及以上学历,计算机、NLP等领域相关专业；\n2、从业经验：3-5年；\n3、base地：北京\n4、关键技能：\n（1）精通-python、NLP核心技术（,如命名实体识别、关系抽取、文本生成等）；\n（2）熟练-预训练语言模型原理（如BERT、GPT等），Pytorch、Linux。"
+    },
+    {
+      "job_name": "高级无线通信技术工程师",
+      "areaBusiness": "北京·西城区·长椿街",
+      "salary": "30-60K",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "移动终端公司",
+      "company_logo": "https://c-res.zhipin.com/jrs/4cf7fb6c9e166b9aa58f5afb6651cb9e.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "运营商/增值服务",
+      "company_listing": "不需要融资",
+      "company_size": "",
+      "boss_job": "招聘主管",
+      "key_words": [
+        "5G",
+        "无线通信"
+      ],
+      "boss_active_time": "2月内活跃",
+      "detail": "岗位职责：\n【高层协议】\n1. 负责研究5G/卫星无线通信协议，深入研究3GPP无线通信L2.L3.NAS等高层协议和技术，研究解决高层协议相关关键问题，撰写技术研究报告。\n2. 负责研究5G/卫星通信技术及标准在终端.芯片上的实现方案，组织终端.芯片新技术方案的评估及验证。\n3. 负责研究移动终端无线通信技术和产业发展趋势，开展终端通信新技术和产业推动，制定终端技术发展策略和产品技术要求。\n【物理层协议】\n1. 负责研究5G/卫星无线通信协议，深入研究3GPP无线通信物理层协议，研究解决物理层协议相关关键问题，撰写技术研究报告。\n2. 负责研究5G/卫星通信技术及标准在终端.芯片上的实现方案，组织终端.芯片新技术方案的评估及验证。\n3. 负责研究移动终端无线通信技术和产业发展趋势，开展终端通信新技术和产业推动，制定终端技术发展策略和产品技术要求。\n【射频】\n1. 负责研究移动终端射频技术，制定终端射频前端技术方案，撰写技术研究报告。\n2. 研究移动终端射频发展技术和产业趋势，研究终端射频产业相关关键问题，开展终端射频发展产业推进。\n3. 负责研究5G通信技术及标准在终端射频上的实现方案，组织终端射频方案的评估及验证。\n4. 负责终端射频前端芯片.元器件设计和研发。\"\n任职资格：\n【教育背景】：全日制硕士研究生及以上，无线通信、计算机、电子工程、自动控制等相关专业。\n【知识技能】：\n1、掌握4G/5G/卫星移动通信系统架构和原理，了解无线通信信令和业务流程；\n2、熟悉3GPP协议标准体系，熟悉3GPP协议，包括：MAC、RLC、PDCP、RRC、NAS、IMS等技术和协议规范。\n3、熟悉3GPP协议标准体系，熟悉3GPP物理层技术和协议规范。\n4、熟悉3GPP协议标准体系，熟悉3GPP射频相关标准，熟悉射频技术原理，熟悉射频前端器件技术原理。\n5、熟悉天线辐射各项指标、熟悉移动终端天线原理，熟悉终端天线开发及测试流程；具有天线仿真设计与调测经验，熟练使用射频仿真软件及测试仪表。\n6、具备创新意识、良好的团队协作和沟通协调能力好，有高度责任心及敬业精神。\n7、能够使用英语阅读专业技术文档，进行工作交流。\n【工作经验】\n具备3年以上无线通信行业工作经验"
+    },
+    {
+      "job_name": "前端研发工程师",
+      "areaBusiness": "北京·西城区·金融街",
+      "salary": "15-30K",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "申万宏源",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20170802/ff7cc97587c2d43417dc61434aa09289939e202058648f5e07711d6a1fefc48a.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "互联网金融",
+      "company_listing": "已上市",
+      "company_size": "10000人以上",
+      "boss_job": "业务经理",
+      "key_words": [
+        "移动端",
+        "计算机软件",
+        "前端开发",
+        "IOS",
+        "Android",
+        "Web端"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "工作职责：\n1）负责移动终端的规划设计、系统设计和开发测试工作；制定持续迭代计划，把控项目进度；制定技术方案，协助解决技术难题，协调所需资源；\n2）负责移动终端需求的收集整理，需求的初步评估与分析，承担与部门外部需求沟通与协调工作。\n任职资格：\n1）全日制本科及以上学历，本科至少二年，计算机相关专业；\n2）硕士2年或本科3年以上软件研发工作经验；\n3）2年以上团队管理经验；\n4）2年以上证券公司或相关软件行业工作经验；\n5）深刻理解证券公司相关业务流程，精通证券交易规则，全面了解证券公司相关业务系统；\n6）精熟练运用HTML5、CSS3、JavaScript等前端开发语言，具有原生JS代码编写能力，熟悉ES6语法以及前端开发规范；\n7）熟练掌握前端框架（Vue/React等）及其全家桶的应用，对各框架的核心原理有深刻的理解，有Vue实战项目者优先；\n8）关注互联网技术的前沿发展，主动学习，具备跨团队的技术影响力，并能主动推动技术成果落地；\n9）有较强的组织计划执行能力，良好的沟通协调和项目管理能力，优秀的创新能力。"
+    },
+    {
+      "job_name": "高级无线通信技术工程师（空天地）",
+      "areaBusiness": "北京·西城区·长椿街",
+      "salary": "30-60K",
+      "experience": "3-5年",
+      "degree": "硕士",
+      "company_name": "移动终端公司",
+      "company_logo": "https://c-res.zhipin.com/jrs/4cf7fb6c9e166b9aa58f5afb6651cb9e.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "运营商/增值服务",
+      "company_listing": "不需要融资",
+      "company_size": "",
+      "boss_job": "招聘主管",
+      "key_words": [
+        "5G",
+        "无线通信"
+      ],
+      "boss_active_time": "2月内活跃",
+      "detail": "岗位职责：\n高层协议\n1. 负责研究5G/卫星无线通信协议，深入研究3GPP无线通信L2、L3、NAS等高层协议和技术，研究解决高层协议相关关键问题，撰写技术研究报告。\n2. 负责研究5G/卫星通信技术及标准在终端、芯片上的实现方案，组织终端、芯片新技术方案的评估及验证。\n3. 负责研究移动终端无线通信技术和产业发展趋势，开展终端通信新技术和产业推动，制定终端技术发展策略和产品技术要求。\n物理层协议\n1. 负责研究5G/卫星无线通信协议，深入研究3GPP无线通信物理层协议，研究解决物理层协议相关关键问题，撰写技术研究报告。\n2. 负责研究5G/卫星通信技术及标准在终端、芯片上的实现方案，组织终端、芯片新技术方案的评估及验证。\n3. 负责研究移动终端无线通信技术和产业发展趋势，开展终端通信新技术和产业推动，制定终端技术发展策略和产品技术要求。\n射频\n1. 负责研究移动终端射频技术，制定终端射频前端技术方案，撰写技术研究报告。\n2. 研究移动终端射频发展技术和产业趋势，研究终端射频产业相关关键问题，开展终端射频发展产业推进。\n3. 负责研究5G通信技术及标准在终端射频上的实现方案，组织终端射频方案的评估及验证。\n4. 负责终端射频前端芯片、元器件设计和研发。\n任职要求：\n【教育背景】：全日制硕士研究生及以上，无线通信、计算机、电子工程、自动控制等相关专业。\n【知识技能】：\n1、掌握4G/5G/卫星移动通信系统架构和原理，了解无线通信信令和业务流程；\n2、熟悉3GPP协议标准体系，熟悉3GPP协议，包括：MAC、RLC、PDCP、RRC、NAS、IMS等技术和协议规范。\n3、熟悉3GPP协议标准体系，熟悉3GPP物理层技术和协议规范。\n4、熟悉3GPP协议标准体系，熟悉3GPP射频相关标准，熟悉射频技术原理，熟悉射频前端器件技术原理。\n5、具备创新意识、良好的团队协作和沟通协调能力好，有高度责任心及敬业精神。\n6、能够使用英语阅读专业技术文档，进行工作交流。\n岗位经验：\n具备3年以上无线通信行业工作经验"
+    }
+  ]
+}

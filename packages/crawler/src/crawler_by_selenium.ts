@@ -60,8 +60,6 @@ class Crawler {
     experience: string
     degree: string
     areaBusiness: string
-    total: number
-    catch_total: number
     jobs: JobInfo[]
   }) {
     try {
@@ -132,7 +130,7 @@ class Crawler {
 
 
 
- 
+
 
   async wait_el_visable(selector: string, el_father: WebDriver | WebElement = this.driver, save_error = true, timeout: number = 1000): Promise<WebElement | null> {
 
@@ -252,6 +250,13 @@ class Crawler {
       job_info_list.push(job_info)
       console.log('------current params get job: ', job_info_list.length);
 
+      this.save_data({
+        experience: this.params.experience,
+        degree: this.params.degree,
+        areaBusiness: this.params.areaBusiness,
+        jobs: job_info_list
+      })
+
 
       // 切回列表页
       await this.driver.close();
@@ -306,7 +311,7 @@ class Crawler {
         break
       }
 
-      total += job_cards.length
+      // total += job_cards.length
       for (let job_card of job_cards) {
         await this.get_job_info_by_job_card(job_card, job_info_list);
       }
@@ -318,14 +323,12 @@ class Crawler {
       page_num += 1
     } while (!is_finished)
 
-    this.save_data({
-      experience: this.params.experience,
-      degree: this.params.degree,
-      areaBusiness: this.params.areaBusiness,
-      total,
-      catch_total: job_info_list.length,
-      jobs: job_info_list
-    })
+    // this.save_data({
+    //   experience: this.params.experience,
+    //   degree: this.params.degree,
+    //   areaBusiness: this.params.areaBusiness,
+    //   jobs: job_info_list
+    // })
   }
 
   async hide_annoy_el() {
@@ -353,7 +356,7 @@ class Crawler {
   }
 
   async before_page() {
-    await this.sleep(5000, 10000)
+    await this.sleep(15000, 25000)
     await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
     await this.check_need_verify()
     await this.close_dialog()
@@ -413,25 +416,25 @@ class Crawler {
 
 (async function main() {
 
-    const options = new chrome.Options();
+  const options = new chrome.Options();
 
-    options.addArguments("--ignore-certificate-errors");
-    options.addArguments("--disable-blink-features=AutomationControlled");
+  options.addArguments("--ignore-certificate-errors");
+  options.addArguments("--disable-blink-features=AutomationControlled");
 
-    // const res = await get_proxy()
-    // const proxy = res.data
+  // const res = await get_proxy()
+  // const proxy = res.data
 
-    const tunnelHost = 'a209.kdltps.com'
-    const tunnelPort = '15818'
-    const proxy = `${tunnelHost}:${tunnelPort}`
-    options.addArguments(`--proxy-server=http://${proxy}`);
+  // const tunnelHost = 'a209.kdltps.com'
+  // const tunnelPort = '15818'
+  // const proxy = `${tunnelHost}:${tunnelPort}`
+  // options.addArguments(`--proxy-server=http://${proxy}`);
 
-    const driver = await new Builder()
-      .forBrowser(Browser.CHROME)
-      .setChromeOptions(options)
-      .build();
-    // await driver.get('http://www.bilibili.com')
+  const driver = await new Builder()
+    .forBrowser(Browser.CHROME)
+    .setChromeOptions(options)
+    .build();
+  // await driver.get('http://www.bilibili.com')
 
-    const c = new Crawler(driver)
-    await c.get_all_job()
+  const c = new Crawler(driver)
+  await c.get_all_job()
 })();

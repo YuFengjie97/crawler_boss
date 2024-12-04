@@ -1,0 +1,149 @@
+{
+  "experience": "104",
+  "degree": "204",
+  "areaBusiness": "110102",
+  "jobs": [
+    {
+      "job_name": "web前端",
+      "areaBusiness": "北京·西城区·月坛",
+      "salary": "10-15K",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "东北证券股份",
+      "company_logo": "https://img.bosszhipin.com/beijin/app/mobile/normal-0e3f1e4441a21d4874cece3a3d81f0fe.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "证券/期货",
+      "company_listing": "无阶段",
+      "company_size": "1000-9999人",
+      "boss_job": "信息技术主管",
+      "key_words": [
+        "前端开发",
+        "React",
+        "Vue"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "1. 负责固定收益类业务系统的设计与开发，如交易系统、业务管理系统、策略系统等；\n2.参与业务需求分析和运营支持；\n3.完成部门交办的其他工作。\n【任职要求】\n1. 全日制硕士及以上学历，毕业院校为国内211，985院校或QS世界大学排名前200所国际院校；\n2. 数学、金融、计算机等专业背景，熟悉主流vue  react前端开发框架和Python，有1-2年开发工作经验；"
+    },
+    {
+      "job_name": "前端开发经理",
+      "areaBusiness": "北京·西城区·西直门",
+      "salary": "20-23K",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "金泰腾达",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "风电",
+      "company_listing": "无阶段",
+      "company_size": "20-99人",
+      "boss_job": "HR",
+      "key_words": [
+        "不接受居家办公",
+        "HTML5",
+        "JavaScript",
+        "前端开发经验",
+        "计算机/软件工程相关专业"
+      ],
+      "boss_active_time": "2月内活跃",
+      "detail": "1、优化新能源电力现货交易辅助决策系统；\n2、根据电力现货交易价格预测模型，设置合理输入数据完成预测模型搭建；\n3、优化包含中长期交易、现货交易的申报、结算操作及数据统计、分析复盘系统；\n4、开展相关科技项目的研究及开发;\n5、其他相关工作任务。\n岗位要求\n1、具备电力营销信息化、现货辅助决策系统等相关产品开发经验；\n2、精通前端开发\n3、使用过多种web框架\n4、熟悉使用主流等数据处理库；\n5、熟练操作本专业所需软件，并具备良好的学习能力和创新意识；\n6、具备较高的责任心及良好的团队协作精神。\n5、具备现货报价经验，新能源发电侧报价经验优先\n6、熟悉中长期差价合约套利策略\n7、熟悉绿电交易政策及试点交易情况\n8、研究生及以上学历"
+    },
+    {
+      "job_name": "资深后端开发工程师",
+      "areaBusiness": "北京·西城区·前门",
+      "salary": "10-15K·13薪",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "灵动天地",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/logo/20210223/b8599fe9ba91fa301dd789fd635960b5152d7c77fb90764488863fcfca6bfa11.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "广告/公关/会展",
+      "company_listing": "未融资",
+      "company_size": "0-20人",
+      "boss_job": "招聘者",
+      "key_words": [
+        "不接受居家办公",
+        "团队管理经验",
+        "C",
+        "分布式经验",
+        "Docker",
+        "SpringCloud",
+        "MySQL",
+        "创业心态，性格坚毅",
+        "SQL Server",
+        "架构设计经验",
+        "Python"
+      ],
+      "boss_active_time": "3日内活跃",
+      "detail": "1、本科及以上学历，3年以上开发经验\n2、精通python体系架构，熟悉微服务架构以及相关主流的开源框架，具备 docker、k8s使用经验，了解最新的技术及发展趋势\n3、熟悉MySQL数据库的使用以及SQL优化，有大规模高并发环境下MySQL优化经验\n4、熟悉html js postman\n5、能够独立部署云端服务器，熟悉主流云服务提供商（如AWS、阿里云等）的操作流程\n6、对于SD、MJ等图形模型有深入理解，能够部署后端，确保模型稳定运行\n7、能够将SD、MJ等图形模型的接口接入前端，实现前后端交互\n8、负责后端系统的性能优化、故障排查及日常维护工作\n9、积极参与团队技术分享，推动团队技术进步"
+    },
+    {
+      "job_name": "系统开发工程师（前端）",
+      "areaBusiness": "北京·西城区·金融街",
+      "salary": "12-20K·16薪",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "东北证券固收",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/logo/20211215/7b5b554d84f9729c3c583ede2baaa4376cb939e9c5905b094adbcbd0977676b142a7f6e91f6c55c6.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "证券/期货",
+      "company_listing": "不需要融资",
+      "company_size": "20-99人",
+      "boss_job": "销售交易经理",
+      "key_words": [
+        "HTML",
+        "前端开发",
+        "Vue",
+        "React",
+        "Angular",
+        "AngularJS",
+        "Vue.js",
+        "React.JS"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "岗位职责：\n 1、 负责固定收益系统的核心模块（偏向前端）的软件设计和开发工作；\n 2、 承担固定收益相关部门的技术支持工作；\n 3、 追踪研究IT新技术与新产品，保持固定收益开发创新能力。\n岗位要求：\n 1、硕士（含）以上学历；计算机相关专业；\n 2、二年（含）以上的工作经验，其中一年（含）以上的前端应用开发经验；\n 3、有实际证券行业或互联网行业相关开发设计经验优先；\n 4、熟练掌握Java或Python主流开发框架或前端主流开发框架；\n 5、熟悉H5 web以下框架中至少两个：Vue.js、React.js、AngularJs\n 6、热爱金融行业、学习能力强，有团队精神，能够承受一定的工作压力。"
+    },
+    {
+      "job_name": "固定收益开发工程师",
+      "areaBusiness": "北京·西城区·月坛",
+      "salary": "12-17K·20薪",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "东北证券股份",
+      "company_logo": "https://img.bosszhipin.com/beijin/app/mobile/normal-0e3f1e4441a21d4874cece3a3d81f0fe.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "证券/期货",
+      "company_listing": "无阶段",
+      "company_size": "1000-9999人",
+      "boss_job": "信息技术主管",
+      "key_words": [
+        "前端开发",
+        "Python",
+        "管理系统",
+        "全栈开发",
+        "人工智能"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "【岗位名称】开发工程师\n【工作地点】北京\n【岗位职责】\n1. 负责固定收益类业务系统的设计与开发，如交易系统、业务管理系统、策略系统等；\n2. 参与固定收益类量化策略研究及实现；\n3. 参与业务需求分析和运营支持；\n4. 完成部门交办的其他工作。\n【任职要求】\n1. 全日制硕士及以上学历，毕业院校为国内211，985院校或QS世界大学排名前20所国际院校；\n2. 数学、金融、计算机等专业背景，熟悉主流前端开发框架和Python，有1-2年开发工作经验；\n3. 熟悉机器学习，深度学习优先；\n4. 具备券商、银行、基金等金融机构从业经验者优先。"
+    },
+    {
+      "job_name": "系统开发工程师（后端）",
+      "areaBusiness": "北京·西城区·金融街",
+      "salary": "12-20K·16薪",
+      "experience": "1-3年",
+      "degree": "硕士",
+      "company_name": "东北证券固收",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/logo/20211215/7b5b554d84f9729c3c583ede2baaa4376cb939e9c5905b094adbcbd0977676b142a7f6e91f6c55c6.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "证券/期货",
+      "company_listing": "不需要融资",
+      "company_size": "20-99人",
+      "boss_job": "销售交易经理",
+      "key_words": [
+        "Oracle",
+        "MySQL",
+        "Redis",
+        "Java",
+        "Django",
+        "Flask",
+        "Tornado",
+        "Python"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "工作职责：\n 1、 负责固定收益系统的核心模块（偏向后端）的软件设计和开发工作；\n 2、 承担固定收益相关部门的技术支持工作；\n 3、追踪研究IT新技术与新产品，保持固定收益开发创新能力。\n任职资格：\n 1、硕士（含）以上学历；计算机相关专业；\n 2、二年（含）以上开发工作经验，能独立完成开发工作；\n 3、有实际证券行业或互联网行业相关开发设计经验优先；\n 4、熟练掌握Java或Python主流开发框架或前端主流开发框架；\n 5、熟悉常用数据库（Oracle、Mysql、Redis）应用以及常用性能诊断和优化技术；\n 6、热爱金融行业、学习能力强，有团队精神，能够承受一定的工作压力。"
+    }
+  ]
+}

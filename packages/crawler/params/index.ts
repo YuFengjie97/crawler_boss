@@ -35,7 +35,7 @@ export const areabussiness_map: M = {
   key: 'areaBusiness',
   value: {
     // 110101: '东城区',
-    110102: '西城区',
+    // 110102: '西城区',
     110105: '朝阳区',
     110107: '石景山',
     110106: '丰台区',
