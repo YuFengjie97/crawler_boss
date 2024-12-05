@@ -426,6 +426,7 @@ class Crawler {
 
   options.addArguments("--ignore-certificate-errors");
   options.addArguments("--disable-blink-features=AutomationControlled");
+  options.addArguments('--headless', '--disable-gpu', '--window-size=1920,1080');
 
   // const res = await get_proxy()
   // const proxy = res.data
