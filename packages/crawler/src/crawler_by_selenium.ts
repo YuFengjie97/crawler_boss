@@ -307,6 +307,7 @@ class Crawler {
       const is_finished = await this.go_next_page()
       page_num += 1
       if (is_finished) break
+
       await this.before_page()
     } while (true)
   }
@@ -337,10 +338,11 @@ class Crawler {
 
   async before_page() {
     try {
-      await this.sleep(10000, 15000)
+      await this.sleep(5000)
       await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
       await this.check_need_verify()
       await this.close_dialog()
+      await this.sleep(5000, 10000)
     } catch (e) {
       this.save_err_log('--before_page--\n' + JSON.stringify(e))
     }
@@ -351,7 +353,7 @@ class Crawler {
       const close_bt = await this.wait_el_visable('.boss-login-close', dialog, false)
       close_bt?.click()
       console.log('------------------关闭登录弹框');
-      await this.sleep(500, 1400)
+      await this.sleep(500, 1000)
     }
   }
 
