@@ -396,7 +396,10 @@ class Crawler {
 
           this.update_params(current_params)
           this.data_file_name = `${areaBusiness_info}-${experience_info}-${degree_info}`
-          this.create_data_file()
+          // 续写,不需要新建
+          if(start_page === 1) {
+            this.create_data_file()
+          }
 
           const url = this.generate_url_by_params()
           console.log('---new params-----', this.data_file_name, '\n');
@@ -406,7 +409,8 @@ class Crawler {
 
 
           await this.get_jobs_by_current_params(start_page)
-          start_page = 1 // 重置起始页
+          // 续写完毕,重置起始页
+          start_page = 1
 
           complete_arr.push(complete_id)
           fs.writeFileSync('data/complete.json', JSON.stringify({
