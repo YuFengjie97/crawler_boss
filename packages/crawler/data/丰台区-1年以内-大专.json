@@ -1,0 +1,127 @@
+{
+  "areaBusiness": "110106",
+  "experience": "103",
+  "degree": "202",
+  "jobs": [
+    {
+      "job_name": "数据挖掘",
+      "areaBusiness": "北京·丰台区·科技园区",
+      "salary": "6-9K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "北京信构信用管理有",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20190318/1245cab7ff0057c20320883e4535a426402f85671a07a970bdd917a0260b0c5d_s.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "信息安全",
+      "company_listing": "未融资",
+      "company_size": "20-99人",
+      "boss_job": "人力资源部经理",
+      "key_words": [
+        "文本挖掘",
+        "数据处理"
+      ],
+      "boss_active_time": "半年前活跃",
+      "detail": "岗位职责：\n1负责电商行业的数据爬取和数据采集系统的设计和开发，完成数据的抓取，分析，清洗入库。\n2.负责爬虫核心算法的策略优化研究，提升爬虫抓取效率和质量，提升网页抓取的效率和质量。\n3.设计 爬虫策略和防屏获规则，解决封账号封IP验证码，JS加密等难点攻克\n4.与大数据工程师对接，完成实时数据与离线数据的爬取与对接\n5.负责 爬虫系统的日常维护工作，持续优化平台，确保系统稳定\n6.领导安排的其他工作。\n任职资格：\n1.擅长技术方案设计和实现。熟练掌握至少一门编程语言，python go优先\n2.熟悉Mysgl Mongo DB Redis等数据库。\n3.熟采反爬措施，熟悉多线程，网络编程，正则表达式\n4.熟悉web前端，对cookie管理、登录等流程有深入理解，熟悉js css html等。\n5.有大型分布式爬虫系统的开发经验，并有可解决复杂的反爬限制实践经验，如图片验证，账号限制，IP 限制等，熟悉JS逆向解析。\n6.具备良好的编码习惯，结构清晰，命名规范，逻辑性强，代码冗余率低。\n7.具备良好的团队合作精神，善干沟通和表达，有强烈的责任感和服务意识",
+      "page": "1",
+      "card_url": "https://www.zhipin.com/web/geek/job?areaBusiness=110106&experience=103&degree=202&query=%E5%89%8D%E7%AB%AF&city=101010100",
+      "detail_url": "https://www.zhipin.com/job_detail/151d1d1ff8b8c7bc03N_0tS-E1A~.html?lid=3r9r6PVJ4JE.search.1&securityId=aJVhZ7cfEcAM--41ucvdr4kv7Vzoh6njJTlM4x5rUezXrL_mZ4dia9rpx1fN9N0_wx0ImXMDu4t6Ytxh8sVeitQUtBGC_kMk1peokyIHbmpT9b4-&sessionId="
+    },
+    {
+      "job_name": "区块链技术",
+      "areaBusiness": "北京·丰台区·丽泽",
+      "salary": "10-15K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "光娱传媒",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20160616/1ad54fbabd2d2dcd9c60234d20639d9c2ba16ea344a967467e8a349dd72fff1e.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "音乐/视频/阅读",
+      "company_listing": "未融资",
+      "company_size": "0-20人",
+      "boss_job": "CEO",
+      "key_words": [
+        "C语言",
+        "后端开发",
+        "前端开发"
+      ],
+      "boss_active_time": "3月内活跃",
+      "detail": "1:了解数字藏品的优先\n2:有相关工作经验\n3:认真负责的\n前端 后端开发都需要",
+      "page": "1",
+      "card_url": "https://www.zhipin.com/web/geek/job?areaBusiness=110106&experience=103&degree=202&query=%E5%89%8D%E7%AB%AF&city=101010100",
+      "detail_url": "https://www.zhipin.com/job_detail/c1792836aeed15341XB-3Nm7GFdV.html?lid=3r9r6PVJ4JE.search.2&securityId=HzZsPjBTqSRbr-l1-840nK9Zj76UkEP_UCA3PxknitOTyxQWTkECzvaBSqWsuHo48Ul6fCxVKfL5_YnKVneQUpke5l6Jz96U19jaRAFUtiIyaggV&sessionId="
+    },
+    {
+      "job_name": "金融贷款专员",
+      "areaBusiness": "北京·丰台区·科技园区",
+      "salary": "20-30K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "百服融创",
+      "company_logo": "https://img.bosszhipin.com/beijin/upload/com/workfeel/20221019/7bf6f160950405e988543978d9a683155057f1f9e2a57938dc85ea6ecef8820880089ac38b484ade.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "银行",
+      "company_listing": "不需要融资",
+      "company_size": "100-499人",
+      "boss_job": "人事总监",
+      "key_words": [
+        "客户邀约",
+        "互联网金融",
+        "月入过万",
+        "近地铁",
+        "谈判/方案制定",
+        "普通话标准",
+        "企业（To B）",
+        "金融产品",
+        "高提成",
+        "客户签约"
+      ],
+      "boss_active_time": "刚刚活跃",
+      "detail": "薪资福利：\n1.底薪5000-6000，提成12%-40%阶梯式提成+高额奖金+（日常激励+员工关怀等奖品例如：iPhone15PM，iPad，小金砖）\n2.新人月均2万以上，上不封顶;\n3.工作时间9：00-18：30，中午休息1.5小时，按照国家法定节假日作息，带薪年假;\n4.新员工可享受入职培训、由行业大牛一对一帮带、营销技能培训，促进员工持续提升，保证新进员工“0”基础入门，快速了解工作。\n5.公司为能力优秀者提供晋升空间(保证3个月内提升)\n无责底薪+提成+奖金（还有部门内部的开单奖这类的其他奖金）\n公司每天提供意向客户（前端广告投放，意向引流，抖音小红书）\n我们公司的亮点是什么？\n1.客户资源好（公司业绩证明一切）\n2.气氛好（没有压抑感全都是95年左右的小哥哥小姐姐）\n3.如果你是小白，我们会培养你；如果你是销售精英，我们会培养你的管理能力；\n工作内容：\n1.了解和分析客户情况，制定融资方案；\n2.进行客户的邀约、谈判、签约，跟进后期手续的办理；\n3.为客户提供贷前、贷中及贷后服务，促进二次成交和转介绍；\n4.公司内部有标准化培训体系，可快速熟悉业务；\n5.任职期间必须遵守国家相应的法律法规。\n任职资格：\n1.年龄(18--38)岁，工作经验不限，只要有高薪的欲望我们帮你实现;\n2.良好的心理素质，抗压性强，愿意接受挑战，学习能力强;\n3.具有良好的沟通和人际交往能力;诚实守信，为人谦虚、勤奋努力；\n4.具有良好的团队合作精神和高度的工作热情。\n5.按时参加公司内部培训，会议。\n我们喜欢积极活泼又才华横溢的你，\n你与美好生活的距离，只差这一份工作\n你与美好生活的目标，只差这一份面试\n来吧，小可爱们，欢迎你的加入!",
+      "page": "1",
+      "card_url": "https://www.zhipin.com/web/geek/job?areaBusiness=110106&experience=103&degree=202&query=%E5%89%8D%E7%AB%AF&city=101010100",
+      "detail_url": "https://www.zhipin.com/job_detail/9718dfaed4abfee61HV43du5F1NT.html?lid=3r9r6PVJ4JE.search.3&securityId=U5kt9MnMLn2fp-h1GMNjpnoO0aSK8mGCfSLIg3LGFtRh5GYLqfSfe6p0MVe8srIMvYlTy2Ks38H7hXfKNLIzIkosp9dM0TM5A5U7l1brFgsGx_1bjJYq8Gw2940ptbUZlM8-ELZG21CJ_m76xxWVHCQ~&sessionId="
+    },
+    {
+      "job_name": "PHP",
+      "areaBusiness": "北京·丰台区·世界公园",
+      "salary": "6-10K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "技能云_SkillCloud.cn",
+      "company_logo": "https://img.bosszhipin.com/beijin/mcs/chatphoto/20190212/c2b02e81bc5ebbca190360482f7ee352a75c594796438235ff8faccf96f493ad.jpg?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "计算机软件",
+      "company_listing": "天使轮",
+      "company_size": "0-20人",
+      "boss_job": "开发主管",
+      "key_words": [
+        "PHP",
+        "Javascript",
+        "HTML/CSS"
+      ],
+      "boss_active_time": "本月活跃",
+      "detail": "PHP程序员\nl技能要求：\n1、大专以上学历，计算机软件专业，2年以上php工作经验。\n2、 熟悉Linux基本操作，熟悉Apache、MySQL、PHP等软件的编译安装和最优化配置，了解这些软件的版本差异和不同安装/运行方式及原理；\n3、 精通PHP 5，具备OOP编程思想，熟悉设计模式和算法，深入了解PHP的性能最优化和安全最大化；\n4、 熟练掌握XML、HTML/XHTML、CSS、Javascrīpt、AJAX、JSON等Web页面技术。\n5、 熟悉php的MVC架构例如用过Yii、Zend Framework、ThinkPHP、FleaPHP等框架。\n6、 具有MySQL优化经验、PHP缓存技术、静态化设计方面的经验；\n7、 会用SVN等团队开发工具，有多团队开发经验者佳。",
+      "page": "1",
+      "card_url": "https://www.zhipin.com/web/geek/job?areaBusiness=110106&experience=103&degree=202&query=%E5%89%8D%E7%AB%AF&city=101010100",
+      "detail_url": "https://www.zhipin.com/job_detail/d8558a223c9eefc81HRz3t-9Els~.html?lid=3r9r6PVJ4JE.search.4&securityId=xEqGlClygjobk-71v-8t-CNiD0xhsM5NL0Gig7-qnhSRVMszwLr5h8GgT2GxJHfa84sZ9XnfZ_A8xo60Qolv7qROf9WuXE8JMOd2nobZkmi_ulWI&sessionId="
+    },
+    {
+      "job_name": "PHP",
+      "areaBusiness": "北京·丰台区·马家堡",
+      "salary": "5-10K",
+      "experience": "1年以内",
+      "degree": "大专",
+      "company_name": "铨思",
+      "company_logo": "https://img.bosszhipin.com/beijin/icon/894ce6fa7e58d64d57e7f22d2f3a9d18afa7fcceaa24b8ea28f56f1bb14732c0.png?x-oss-process=image/resize,w_100,limit_0",
+      "company_kind": "大数据",
+      "company_listing": "无阶段",
+      "company_size": "0-20人",
+      "boss_job": "企业法人代表",
+      "key_words": [
+        "PHP开发经验",
+        "PHP"
+      ],
+      "boss_active_time": "本月活跃",
+      "detail": "职位职责:\n1、参与电商的商城、后台系统的需求分析负责功能实现和后期维护;\n2、快速学习并理解业务知识，准确的实现业务需求;\n3、解决项目开发过程中遇到的技术和业务难题。任职要求\n1、3-5年以上互联网项目php开发经验，本科及以上学历，计算机相关专业;\n2、熟练掌握PHP，有扎实的编程功底，具备良好的编码规范。熟悉面向对象和数据结构;\n3、熟练掌握Spring Vue、html、js等开发框架，对框架原理有一定的理解;\n4、熟悉Mysql数据库，有良好的数据库设计能力和sql编写能\n力。",
+      "page": "1",
+      "card_url": "https://www.zhipin.com/web/geek/job?areaBusiness=110106&experience=103&degree=202&query=%E5%89%8D%E7%AB%AF&city=101010100",
+      "detail_url": "https://www.zhipin.com/job_detail/8c13610ef8dcccb81XF72ty-E1NU.html?lid=3r9r6PVJ4JE.search.5&securityId=Fqvl_ZfZsIeD_-z1QvN83YYUjiLWzDFxT6oWCnRC5etF0s_ONOr825cSyIrPWFHDQi7UzujER3jww9LY_ovqwmD_f4xWdrnsnQTN1PefIbuU2hik8pA~&sessionId="
+    }
+  ]
+}
