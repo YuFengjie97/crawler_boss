@@ -412,7 +412,7 @@ class Crawler {
           fs.writeFileSync('data/complete.json', JSON.stringify({
             quit_page: 1,
             arr: complete_arr
-          }))
+          }, null, 2))
         }
       }
     }
@@ -440,8 +440,13 @@ class Crawler {
     .forBrowser(Browser.CHROME)
     .setChromeOptions(options)
     .build();
-  // await driver.get('http://www.bilibili.com')
 
   const c = new Crawler(driver)
   await c.get_all_job()
+
+  // await c.driver.get('http://www.bilibili.com')
+  // await c.sleep(5000)
+  // const el = await c.wait_el_visable('.bili-video-card__cover')
+  // console.log('----------',el);
+
 })();
