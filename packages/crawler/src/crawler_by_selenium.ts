@@ -137,8 +137,6 @@ class Crawler {
 
 
 
-
-
   async wait_el_visable(selector: string, el_father: WebDriver | WebElement = this.driver, save_error = true, timeout: number = 1000): Promise<WebElement | null> {
 
     let el: WebElement | null = null
@@ -163,15 +161,12 @@ class Crawler {
 
   async getTextOrDefault(selector: string, el_father: WebElement | WebDriver = this.driver): Promise<string> {
     const el = await this.wait_el_visable(selector, el_father)
-    return el === null ? '' : el.getText()
+    return el === null ? '' : await el.getText()
   }
 
   async get_job_info_by_job_card(job_card: WebElement) {
     try {
       console.log('----获取卡片信息');
-      // await this.simulate_human_scroll(job_card)
-      // 滚动元素到视口内
-      // await this.driver.executeScript("arguments[0].scrollIntoView(true);", job_card);
 
       // 获取卡片上的信息
       const job_name = await this.getTextOrDefault('span.job-name', job_card);
@@ -179,10 +174,6 @@ class Crawler {
       const salary = await this.getTextOrDefault('span.salary', job_card);
       const experience = await this.getTextOrDefault('ul.tag-list li:nth-child(1)', job_card);
       const degree = await this.getTextOrDefault('ul.tag-list li:nth-child(2)', job_card);
-      // 这个标签很容易报错,改在详情页获取
-      // const boss_job = await this.getTextOrDefault('div.info-public em', job_card);
-      // const boss_info = (await this.getTextOrDefault('div.info-public', job_card)).split('\n')[0];
-      // const boss_name = boss_info.split(boss_job)[0]
       const company_name = await this.getTextOrDefault('h3.company-name a', job_card);
       const company_logo = await (await job_card.findElement(By.css('div.company-logo img'))).getAttribute('src');
 
@@ -247,8 +238,6 @@ class Crawler {
 
       job_info.key_words.push(...key_words)
 
-      // const boss_avatar = await this.wait_el_visable('.detail-figure')
-      // await this.simulate_human_scroll(boss_avatar as WebElement)
 
       const boss_active_time = await this.driver.findElements(By.css('span.boss-active-time'))
       if (boss_active_time.length > 0) {
@@ -260,7 +249,7 @@ class Crawler {
         job_info.boss_active_time = '刚刚活跃'
       }
 
-      job_info.detail = await this.getTextOrDefault('div.job-detail-section div.job-sec-text:nth-child(4)');
+      job_info.detail = await this.getTextOrDefault('div.job-detail-section div.job-sec-text');
 
      
       console.log('------current params get job: ');
@@ -271,7 +260,6 @@ class Crawler {
       // 切回列表页
       await this.driver.close();
       await this.driver.switchTo().window(handles[0]);
-      // await this.before_page()
 
     } catch (e) {
       await this.save_err_log(`get_job_info\n${JSON.stringify(e)}`)
@@ -406,6 +394,7 @@ class Crawler {
 
           this.update_params(current_params)
           this.data_file_name = `${areaBusiness_info}-${experience_info}-${degree_info}`
+          this.create_data_file()
 
           const url = this.generate_url_by_params()
           console.log('---new params-----', this.data_file_name, '\n');
