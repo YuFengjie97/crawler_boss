@@ -110,7 +110,7 @@ class Crawler {
     }
 
     console.log('人工滚动完毕');
-    await this.sleep(1200, 2100)
+    await this.sleep(1000, 1500)
   }
 
   // 在未登录时,连续爬取,ip会被封禁一天,登录后继续爬取
@@ -337,7 +337,7 @@ class Crawler {
 
   async before_page() {
     try {
-      await this.sleep(15000, 25000)
+      await this.sleep(10000, 15000)
       await this.driver.executeScript(`Object.defineProperty(navigator, 'webdriver', { get: () => undefined });`)
       await this.check_need_verify()
       await this.close_dialog()
