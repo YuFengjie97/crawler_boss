@@ -303,6 +303,86 @@ app.post('/wai_bao_in_month', async (req, res) => {
 })
 
 
+app.post('/wai_bao_in_month_normal_benke_experience_in_3_year', async (req, res) => {
+  const pipeline = [
+    {
+      $match: {
+        boss_active_time: /刚刚活跃|本月内活跃/gm,
+        experience: /1年以内|1-3年/gm,
+        degree: /本科/gm
+      }
+    },
+    {
+      $set: {
+        is_waibao: {
+          $or: [
+            { $regexMatch: { input: "$company_name", regex: /纬创|独创时代|博思软件|中软国际|云科集智|博彦|德科|集联软件|瑞应|人才|先进数通|纽斯达|软通|法本|北京青钱|汉克|博镭|巨榴莲|天宇正清|京北方|达普信|恒辉|裕宁|微创|信华信|艾融|神州信息|中电金信|北京人和|君宏|信雅达|铭思|浪潮/gmi } },
+            { $regexMatch: { input: "$detail", regex: /学信|外派|驻场|人力/gm } }
+          ]
+        }
+      }
+    },
+    {
+      $group: {
+        _id: null,
+        is_waibao: { $sum: { $cond: ["$is_waibao", 1, 0] } },
+        not_waibao: { $sum: { $cond: [{ $not: ["$is_waibao"] }, 1, 0] } }
+      }
+    },
+    {
+      $project: {
+        _id: 0, // 隐藏 `_id` 字段
+        is_waibao: 1,
+        not_waibao: 1,
+      }
+    }, {
+      $project: {
+        resultArray: [
+          { name: '外包', value: "$is_waibao" },
+          { name: '非外包', value: "$not_waibao" },
+        ]
+      }
+    },
+    { $unwind: "$resultArray" },
+    { $replaceRoot: { newRoot: "$resultArray" } }
+  ]
+  const data = await jobsCollection.aggregate(pipeline).toArray()
+
+  res.send(data)
+})
+
+app.post('/key_word', async(req, res) => {
+  const pipeline = [
+    {
+      $unwind: "$key_words" // 拆分 keywords 数组中的每个关键字为独立文档
+    },
+    {
+      $group: {
+        _id: "$key_words", // 以关键字分组
+        count: { $sum: 1 } // 统计每个关键字的出现次数
+      }
+    },
+    {
+      $sort: {
+        count: -1, // 按出现次数从多到少排序
+      }
+    },
+    {
+      $limit: 10
+    },
+    {
+      $project: {
+        name: "$_id",
+        value: "$count",
+        _id: 0
+      }
+    }
+  ]
+  const data = await jobsCollection.aggregate(pipeline).toArray()
+  res.send(data)
+})
+
+
 
 
 app.listen(port, () => {

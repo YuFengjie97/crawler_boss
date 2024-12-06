@@ -36,3 +36,11 @@ export function get_wai_bao_in_half_year() {
 export function get_wai_bao_in_month() {
   return api.post('wai_bao_in_month')
 }
+
+export function get_wai_bao_in_month_normal_benke_experience_in_3_year() {
+  return api.post('wai_bao_in_month_normal_benke_experience_in_3_year')
+}
+
+export function get_key_word() {
+  return api.post('key_word')
+}
