@@ -43,6 +43,57 @@ app.post('/activetime', async (req, res) => {
 })
 
 
+
+app.post('/companysize', async (req, res) => {
+  try {
+    const pipeline = [
+      {
+        $group: {
+          _id: "$company_size", // 按 boss_active_time 字段分组
+          count: { $sum: 1 }        // 统计每组的数量
+        }
+      },
+      {
+        $project: {
+          name: "$_id",
+          value: "$count",
+          _id: 0
+        }
+      }
+    ]
+    const data = await jobsCollection.aggregate(pipeline).toArray()
+    res.send(data)
+  } catch (e) { }
+})
+
+
+app.post('/bossjob', async (req, res) => {
+  try {
+    const pipeline = [
+      {
+        $group: {
+          _id: "$boss_job", // 按 boss_active_time 字段分组
+          count: { $sum: 1 }        // 统计每组的数量
+        }
+      },
+      {
+        $project: {
+          name: "$_id",
+          value: "$count",
+          _id: 0
+        }
+      }
+    ]
+    const data = await jobsCollection.aggregate(pipeline).toArray()
+    res.send(data)
+  } catch (e) { }
+})
+
+
+
+
+
+
 app.listen(port, () => {
   console.log(`服务启动 ${port}`)
 })

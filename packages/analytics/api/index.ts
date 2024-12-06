@@ -7,3 +7,11 @@ const api = axios.create({
 export function getActiveTime() {
   return api.post('/activetime')
 }
+
+export function getCompanySize() {
+  return api.post('/companysize')
+}
+
+export function getBossJob() {
+  return api.post('/bossjob')
+}
