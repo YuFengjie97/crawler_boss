@@ -15,3 +15,7 @@ export function getCompanySize() {
 export function getBossJob() {
   return api.post('/bossjob')
 }
+
+export function getDegree() {
+  return api.post('/degree')
+}

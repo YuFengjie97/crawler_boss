@@ -1,7 +1,7 @@
 import * as echarts from 'echarts';
 import { type JobInfo } from '@crawler/types/index'
 import { areabussiness_map, degree_map, experience_map } from '@crawler/params/index'
-import { getActiveTime, getBossJob, getCompanySize } from '../api';
+import { getActiveTime, getBossJob, getCompanySize,getDegree } from '../api';
 
 // 学历歧视关键字
 const super_education = ['985', '211']
@@ -71,6 +71,9 @@ async function main() {
   c3.init_chart(function() {
     this.option.legend.show = false
   })
+
+  const c4 = new Pie('.chart4', '学历分布', getDegree)
+  c4.init_chart()
 }
 
 

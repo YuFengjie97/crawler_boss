@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve89": "ts-node-dev --respawn src/craw89.ts",
-    "jsonToDB": "npx tsx src/jsonToDB.ts",
+    "json_to_db": "npx tsx src/json_to_db.ts",
     "serve": "ts-node-dev --respawn src/index.ts"
   },
   "keywords": [],
