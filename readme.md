@@ -31,6 +31,11 @@ crawler_boss
      └─server node后端服务
 ```
 
+## 最后差不多长这个样子
+![Alt text](image.png)
+![Alt text](image-1.png)
+
+
 ## 开发流水账
 
 > boss直聘爬虫,一开始是想直接axios模拟前端请求,但是他里面加了防爬的token.太鸡巴麻烦,么得调试.
