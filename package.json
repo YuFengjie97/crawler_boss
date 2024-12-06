@@ -9,7 +9,8 @@
     "cp": "pnpm -r run cp",
     "dev": "pnpm -r run dev",
     "serve89": "pnpm -r run serve89",
-    "jsonToDB": "pnpm -r run jsonToDB"
+    "jsonToDB": "pnpm -r run jsonToDB",
+    "serve": "pnpm -r run serve"
   },
   "keywords": [],
   "author": "",
